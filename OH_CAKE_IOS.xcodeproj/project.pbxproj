@@ -13,6 +13,8 @@
 		4A05492327E25D6300D9EB71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A05492127E25D6300D9EB71 /* Main.storyboard */; };
 		4A05492527E25D6800D9EB71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A05492427E25D6800D9EB71 /* Assets.xcassets */; };
 		4A05492827E25D6800D9EB71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A05492627E25D6800D9EB71 /* LaunchScreen.storyboard */; };
+		F4A4FEDB27FF0C2C006B7DCD /* OfertasCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A4FEDA27FF0C2C006B7DCD /* OfertasCell.swift */; };
+		F4A4FEDD27FF0C43006B7DCD /* MejoresCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A4FEDC27FF0C43006B7DCD /* MejoresCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		4A05492427E25D6800D9EB71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A05492727E25D6800D9EB71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A05492927E25D6800D9EB71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4A4FEDA27FF0C2C006B7DCD /* OfertasCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfertasCell.swift; sourceTree = "<group>"; };
+		F4A4FEDC27FF0C43006B7DCD /* MejoresCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MejoresCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,12 +63,22 @@
 				4A05491B27E25D6300D9EB71 /* AppDelegate.swift */,
 				4A05491D27E25D6300D9EB71 /* SceneDelegate.swift */,
 				4A05491F27E25D6300D9EB71 /* ViewController.swift */,
+				F4A4FED927FF0C06006B7DCD /* Collections */,
 				4A05492127E25D6300D9EB71 /* Main.storyboard */,
 				4A05492427E25D6800D9EB71 /* Assets.xcassets */,
 				4A05492627E25D6800D9EB71 /* LaunchScreen.storyboard */,
 				4A05492927E25D6800D9EB71 /* Info.plist */,
 			);
 			path = OH_CAKE_IOS;
+			sourceTree = "<group>";
+		};
+		F4A4FED927FF0C06006B7DCD /* Collections */ = {
+			isa = PBXGroup;
+			children = (
+				F4A4FEDA27FF0C2C006B7DCD /* OfertasCell.swift */,
+				F4A4FEDC27FF0C43006B7DCD /* MejoresCell.swift */,
+			);
+			path = Collections;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +152,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4A4FEDB27FF0C2C006B7DCD /* OfertasCell.swift in Sources */,
+				F4A4FEDD27FF0C43006B7DCD /* MejoresCell.swift in Sources */,
 				4A05492027E25D6300D9EB71 /* ViewController.swift in Sources */,
 				4A05491C27E25D6300D9EB71 /* AppDelegate.swift in Sources */,
 				4A05491E27E25D6300D9EB71 /* SceneDelegate.swift in Sources */,
