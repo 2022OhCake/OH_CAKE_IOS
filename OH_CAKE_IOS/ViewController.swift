@@ -39,6 +39,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             let ofertas = collectionView.dequeueReusableCell(withReuseIdentifier: "ofertascelda", for: indexPath) as! OfertasCell
             
             return ofertas
+    
         }
         
         else{
