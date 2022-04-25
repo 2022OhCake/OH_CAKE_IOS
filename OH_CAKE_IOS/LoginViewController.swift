@@ -42,7 +42,13 @@ class LoginViewController: UIViewController {
         
         else{
             //Hacer aqui la peticion al servidor
+            
         }
+    }
+    
+    
+    func login(user:String, passwd: String){
+        
     }
     
 

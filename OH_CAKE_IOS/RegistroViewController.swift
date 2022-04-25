@@ -62,7 +62,19 @@ class RegistroViewController: UIViewController {
             
             present(alert, animated: true, completion: nil)
         }
+        
+        else{
+            registrar(nombre: nombreText.text!, apellidos: ApellidosText.text!, telefono: telefonoText.text!, email: emailText.text!, passwd: PasswdText.text!, sexo: sexo)
+        }
        
+    }
+    
+    func registrar(nombre: String, apellidos: String, telefono:String, email: String, passwd:String, sexo:String){
+        
+        //TO DO - Hacer peticion
+        
+        let urlString = ""
+        let url = URL(string: urlString)
     }
     
     @IBAction func ManBtn(_ sender: Any) {
@@ -70,6 +82,7 @@ class RegistroViewController: UIViewController {
         HombreBtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#EBD3DA")
         MujerBtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#77CBCC")
         OtroBtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#77CBCC")
+        
         //EBD3DA rosa
         //77CBCC azul
     }
