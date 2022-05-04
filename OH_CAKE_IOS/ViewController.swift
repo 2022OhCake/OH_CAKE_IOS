@@ -49,5 +49,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
         
     }
+    
+    func descargarDatos(){
+        //Hacer aqui la peticion para descargar los datos
+        
+    }
 }
 

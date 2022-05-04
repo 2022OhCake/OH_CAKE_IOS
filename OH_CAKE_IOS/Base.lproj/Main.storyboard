@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QDC-1D-BdM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QDC-1D-BdM">
     <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -486,7 +486,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Djc-cT-MJr">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1022.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BIENVENIDO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zf5-10-D5K">
                                                 <rect key="frame" x="30" y="20" width="138" height="28"/>
@@ -501,7 +501,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T8l-As-kcD">
-                                                <rect key="frame" x="30" y="96.5" width="260" height="90"/>
+                                                <rect key="frame" x="30" y="96.5" width="260" height="112.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iwz-4h-L1V">
                                                         <rect key="frame" x="83.5" y="74" width="93" height="28.5"/>
@@ -510,7 +510,7 @@
                                                         <buttonConfiguration key="configuration" style="filled" title="Crear cuenta" cornerStyle="medium">
                                                             <fontDescription key="titleFontDescription" name="Kailasa-Bold" family="Kailasa" pointSize="11"/>
                                                             <color key="baseForegroundColor" red="0.35686274509999999" green="0.18823529410000001" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <color key="baseBackgroundColor" red="0.92156862750000001" green="0.82745098039999998" blue="0.85490196080000003" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="baseBackgroundColor" red="0.93539488319999997" green="0.85389018059999999" blue="0.91373139619999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </buttonConfiguration>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Todavía o estás registrado? Aún estas a tiempo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GoI-bg-Lwh">
@@ -525,6 +525,7 @@
                                                     <constraint firstItem="GoI-bg-Lwh" firstAttribute="leading" secondItem="T8l-As-kcD" secondAttribute="leading" constant="20" id="BRI-ck-sUV"/>
                                                     <constraint firstItem="iwz-4h-L1V" firstAttribute="top" secondItem="GoI-bg-Lwh" secondAttribute="bottom" constant="30" id="Doc-uM-UYE"/>
                                                     <constraint firstAttribute="trailing" secondItem="GoI-bg-Lwh" secondAttribute="trailing" constant="20" id="QHm-W7-hhm"/>
+                                                    <constraint firstAttribute="bottom" secondItem="iwz-4h-L1V" secondAttribute="bottom" constant="10" id="T6x-zA-kLm"/>
                                                     <constraint firstItem="GoI-bg-Lwh" firstAttribute="top" secondItem="T8l-As-kcD" secondAttribute="top" constant="15" id="Yqm-kW-XTU"/>
                                                     <constraint firstItem="GoI-bg-Lwh" firstAttribute="centerX" secondItem="T8l-As-kcD" secondAttribute="centerX" id="mGN-Bc-CDt"/>
                                                     <constraint firstItem="iwz-4h-L1V" firstAttribute="centerX" secondItem="T8l-As-kcD" secondAttribute="centerX" id="nwk-kj-APg"/>
@@ -536,7 +537,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Q0-49-A5Y">
-                                                <rect key="frame" x="30" y="211.5" width="120" height="35.5"/>
+                                                <rect key="frame" x="30" y="234" width="120" height="35.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="120" id="KHc-dE-5YW"/>
                                                 </constraints>
@@ -557,13 +558,13 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ofertas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="569-Lk-are">
-                                                <rect key="frame" x="30" y="425" width="81" height="28"/>
+                                                <rect key="frame" x="30" y="447.5" width="81" height="28"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                                 <color key="textColor" red="0.35686274509999999" green="0.18823529410000001" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ais-bs-zTv">
-                                                <rect key="frame" x="30" y="488" width="260" height="150"/>
+                                                <rect key="frame" x="30" y="510.5" width="260" height="150"/>
                                                 <color key="backgroundColor" red="0.98823529409999999" green="0.96078431369999995" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="150" id="225-g8-LCW"/>
@@ -619,7 +620,7 @@
                                                 </cells>
                                             </collectionView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7r-Sg-mvM">
-                                                <rect key="frame" x="170" y="211.5" width="120" height="35.5"/>
+                                                <rect key="frame" x="170" y="234" width="120" height="35.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="120" id="q7f-N9-keg"/>
                                                 </constraints>
@@ -636,7 +637,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rFu-o7-QeM">
-                                                <rect key="frame" x="30" y="711" width="260" height="150"/>
+                                                <rect key="frame" x="30" y="733.5" width="260" height="150"/>
                                                 <color key="backgroundColor" red="0.98823529409999999" green="0.96078431369999995" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="150" id="2Z3-Dt-YhY"/>
@@ -689,31 +690,31 @@
                                                 </cells>
                                             </collectionView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¡Lo Mejor!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVF-46-xO6">
-                                                <rect key="frame" x="30" y="675" width="107" height="28"/>
+                                                <rect key="frame" x="30" y="697.5" width="107" height="28"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                                 <color key="textColor" red="0.35686274509999999" green="0.18823529410000001" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="CWD-IW-W9T">
-                                                <rect key="frame" x="30" y="267" width="260" height="150"/>
+                                                <rect key="frame" x="30" y="289.5" width="260" height="150"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="150" id="7Uw-JT-F0p"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nuestras mejores ofertas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xeC-OF-E4Y">
-                                                <rect key="frame" x="30" y="461" width="163" height="17"/>
+                                                <rect key="frame" x="30" y="483.5" width="163" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" ¿Todavía no estas registrado?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUu-IL-ci8">
-                                                <rect key="frame" x="30" y="891" width="260" height="21"/>
+                                                <rect key="frame" x="30" y="913.5" width="260" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.35686274509999999" green="0.18823529410000001" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="my9-X9-wDX">
-                                                <rect key="frame" x="30" y="932" width="260" height="38"/>
+                                                <rect key="frame" x="30" y="954.5" width="260" height="38"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Crear Cuenta">
                                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
@@ -722,7 +723,7 @@
                                                 </buttonConfiguration>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8kM-tr-ILo">
-                                                <rect key="frame" x="203" y="449.5" width="87" height="28.5"/>
+                                                <rect key="frame" x="203" y="472" width="87" height="28.5"/>
                                                 <color key="tintColor" red="0.33146506549999999" green="0.19753232600000001" blue="0.08232329041" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Ver Todas">
