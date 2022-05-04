@@ -310,10 +310,10 @@
             </objects>
             <point key="canvasLocation" x="125.59999999999999" y="1517.0914542728638"/>
         </scene>
-        <!--View Controller-->
+        <!--Mapa View Controller-->
         <scene sceneID="t3Z-2y-msS">
             <objects>
-                <viewController id="YZl-kl-D64" sceneMemberID="viewController">
+                <viewController id="YZl-kl-D64" customClass="MapaViewController" customModule="OH_CAKE_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o7s-4p-zaB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -375,6 +375,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="h0E-eA-21s"/>
+                    <connections>
+                        <outlet property="mapa" destination="c57-dT-d4H" id="OKb-UP-554"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mQJ-ZV-9h3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
