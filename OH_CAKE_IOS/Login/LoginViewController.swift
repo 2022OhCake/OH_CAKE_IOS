@@ -104,10 +104,8 @@ class LoginViewController: UIViewController {
                        var request = URLRequest(url: url)
        
                        request.httpMethod = "POST"
-
-                       let cosasParaPasar = ""
                    
-                       let bodyData = "user=\(cosasParaPasar)"
+                       let bodyData = "user=\(user)&password=\(passwd)&password_confirmation=\(passwd)"
         
                        request.setValue(String(bodyData.lengthOfBytes(using: .utf8)), forHTTPHeaderField: "Content-Length")
         
@@ -127,9 +125,13 @@ class LoginViewController: UIViewController {
                                print("Status code: \(res.statusCode)")
                            }
                            guard let datos = data else {return}
-       
-                               let str = String(decoding: datos, as: UTF8.self)
-                               print(str)
+                           
+                           do{
+                           let cosas = try JSONSerialization.data(withJSONObject: data, options: .fragmentsAllowed)
+                           }
+                           catch{
+                               print("Error: \(error)")
+                           }
        
                        }.resume()
     }
