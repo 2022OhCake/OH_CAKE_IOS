@@ -80,7 +80,7 @@ class RegistroViewController: UIViewController {
        
                        request.httpMethod = "POST"
                    
-                       let bodyData = "user=\(nombre)&password=\(passwd)&password_confirmation=\(passwd)"
+                       let bodyData = "first_name=\(nombre)&last_name=\(apellidos)&email=\(email)&telephone=\(telefono)&gender=\(sexo)&password=\(passwd)"
         
                        request.setValue(String(bodyData.lengthOfBytes(using: .utf8)), forHTTPHeaderField: "Content-Length")
         
@@ -101,9 +101,18 @@ class RegistroViewController: UIViewController {
                            }
                            guard let datos = data else {return}
        
-                           //let cosas = JSONSerialization.data(withJSONObject: data, options: .fragmentsAllowed)
+                           do{
+                               let cosas = try JSONSerialization.data(withJSONObject: data, options: .fragmentsAllowed) as! String
+                               
+                               if cosas == "420" {
+                                   //Instancia pantalla login
+                               }
+                               
+                           }
+                           catch{
+                               print("Error: \(error )")
+                           }
                            
-       
                        }.resume()
     }
     

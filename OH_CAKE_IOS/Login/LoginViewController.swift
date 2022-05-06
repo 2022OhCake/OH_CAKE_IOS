@@ -127,7 +127,15 @@ class LoginViewController: UIViewController {
                            guard let datos = data else {return}
                            
                            do{
-                           let cosas = try JSONSerialization.data(withJSONObject: data, options: .fragmentsAllowed)
+                           let cosas = try JSONSerialization.data(withJSONObject: data, options: .fragmentsAllowed) as! String
+                               
+                               if cosas == "420"{
+                                   //Instanciar la pantalla de login
+                               }
+                               
+                               else{
+                                   return
+                               }
                            }
                            catch{
                                print("Error: \(error)")
