@@ -805,10 +805,10 @@
             </objects>
             <point key="canvasLocation" x="-588.75" y="822.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Categorias View Controller-->
         <scene sceneID="G9L-Fj-UJN">
             <objects>
-                <viewController id="lRK-G4-HeM" sceneMemberID="viewController">
+                <viewController id="lRK-G4-HeM" customClass="CategoriasViewController" customModule="OH_CAKE_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Aqv-t6-p9I">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -830,20 +830,20 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="celdaCategorias" id="Hmh-Oy-rOd" customClass="CategoriasCell" customModule="OH_CAKE_IOS" customModuleProvider="target">
-                                        <rect key="frame" x="57.5" y="0.0" width="165" height="179"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="130" height="160"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="D3I-5x-9xP">
-                                            <rect key="frame" x="0.0" y="0.0" width="165" height="179"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="130" height="160"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ew9-P1-Yje">
-                                                    <rect key="frame" x="13" y="8" width="139" height="118"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="base_vacia" translatesAutoresizingMaskIntoConstraints="NO" id="ew9-P1-Yje">
+                                                    <rect key="frame" x="13" y="8" width="104" height="88.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="ew9-P1-Yje" secondAttribute="height" multiplier="20:17" id="15w-Ka-RXm"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categoria" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QK0-LM-ada">
-                                                    <rect key="frame" x="20" y="141" width="125" height="21"/>
+                                                    <rect key="frame" x="20" y="111.5" width="90" height="31.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -860,7 +860,11 @@
                                                 <constraint firstItem="QK0-LM-ada" firstAttribute="leading" secondItem="D3I-5x-9xP" secondAttribute="leading" constant="20" id="hud-bb-8Cc"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="165" height="179"/>
+                                        <size key="customSize" width="130" height="160"/>
+                                        <connections>
+                                            <outlet property="CategoriaLabel" destination="QK0-LM-ada" id="kRE-8D-p8A"/>
+                                            <outlet property="fotoCategoria" destination="ew9-P1-Yje" id="AMd-Ui-wAK"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
