@@ -119,8 +119,8 @@ class RegistroViewController: UIViewController {
     @IBAction func ManBtn(_ sender: Any) {
         sexo = "Hombre"
         HombreBtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#EBD3DA")
-        MujerBtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#77CBCC")
-        OtroBtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#77CBCC")
+        MujerBtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
+        OtroBtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
         
         //EBD3DA rosa
         //77CBCC azul
@@ -128,15 +128,15 @@ class RegistroViewController: UIViewController {
     
     @IBAction func WomanBtn(_ sender: Any) {
         sexo = "Mujer"
-        HombreBtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#77CBCC")
+        HombreBtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
         MujerBtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#EBD3DA")
-        OtroBtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#77CBCC")
+        OtroBtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
     }
     
     @IBAction func OtherBtn(_ sender: Any) {
         sexo = "Otro"
-        HombreBtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#77CBCC")
-        MujerBtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#77CBCC")
+        HombreBtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
+        MujerBtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
         OtroBtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#EBD3DA")
     }
     

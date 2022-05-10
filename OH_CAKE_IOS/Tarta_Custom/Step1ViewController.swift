@@ -23,7 +23,7 @@ class Step1ViewController: UIViewController {
     
     @IBAction func Small(_ sender: Any) {
         size = "Pequeña"
-        smallbtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#77CBCC")
+        smallbtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
         mediumbtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#FCF5F1")
         bigbtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#FCF5F1")
     }
@@ -31,7 +31,7 @@ class Step1ViewController: UIViewController {
     @IBAction func Medium(_ sender: Any) {
         size = "Mediana"
         smallbtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#FCF5F1")
-        mediumbtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#77CBCC")
+        mediumbtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
         bigbtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#FCF5F1")
     }
     
@@ -39,7 +39,7 @@ class Step1ViewController: UIViewController {
         size = "Grande"
         smallbtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#FCF5F1")
         mediumbtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#FCF5F1")
-        bigbtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#77CBCC")
+        bigbtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
     }
     
     @IBAction func step2Btn(_ sender: Any){

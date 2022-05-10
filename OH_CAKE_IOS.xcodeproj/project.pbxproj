@@ -23,6 +23,7 @@
 		F4A4FEDD27FF0C43006B7DCD /* MejoresCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A4FEDC27FF0C43006B7DCD /* MejoresCell.swift */; };
 		F4EA0E63282A55C200E9E71A /* Step2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA0E62282A55C200E9E71A /* Step2ViewController.swift */; };
 		F4EA0E66282A573400E9E71A /* FormaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA0E65282A573400E9E71A /* FormaCell.swift */; };
+		F4EA0E69282A937D00E9E71A /* Step3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA0E68282A937D00E9E71A /* Step3ViewController.swift */; };
 		F4F6835628129D0500A2F67D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F6835528129D0500A2F67D /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		F4A4FEDC27FF0C43006B7DCD /* MejoresCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MejoresCell.swift; sourceTree = "<group>"; };
 		F4EA0E62282A55C200E9E71A /* Step2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step2ViewController.swift; sourceTree = "<group>"; };
 		F4EA0E65282A573400E9E71A /* FormaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormaCell.swift; sourceTree = "<group>"; };
+		F4EA0E68282A937D00E9E71A /* Step3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step3ViewController.swift; sourceTree = "<group>"; };
 		F4F6835528129D0500A2F67D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,6 +102,7 @@
 				F4EA0E64282A571A00E9E71A /* celdas */,
 				F42BEA4F2816A62F009E626C /* Step1ViewController.swift */,
 				F4EA0E62282A55C200E9E71A /* Step2ViewController.swift */,
+				F4EA0E68282A937D00E9E71A /* Step3ViewController.swift */,
 			);
 			path = Tarta_Custom;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				F42BEA502816A62F009E626C /* Step1ViewController.swift in Sources */,
 				F4F6835628129D0500A2F67D /* LoginViewController.swift in Sources */,
 				F4A4FEDB27FF0C2C006B7DCD /* OfertasCell.swift in Sources */,
+				F4EA0E69282A937D00E9E71A /* Step3ViewController.swift in Sources */,
 				F4A4FEDD27FF0C43006B7DCD /* MejoresCell.swift in Sources */,
 				F44A6C9B282264FC00B4C67D /* ArtWork.swift in Sources */,
 				F44A6C99282262BB00B4C67D /* MapaViewController.swift in Sources */,
