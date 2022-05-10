@@ -748,6 +748,7 @@
                                             <constraint firstItem="6Q0-49-A5Y" firstAttribute="top" secondItem="T8l-As-kcD" secondAttribute="bottom" constant="25" id="Deo-YR-tWi"/>
                                             <constraint firstItem="zf5-10-D5K" firstAttribute="top" secondItem="Djc-cT-MJr" secondAttribute="top" constant="20" symbolic="YES" id="JGK-EM-wi0"/>
                                             <constraint firstItem="bVF-46-xO6" firstAttribute="leading" secondItem="Djc-cT-MJr" secondAttribute="leading" constant="30" id="KUA-KS-J6S"/>
+                                            <constraint firstItem="c7r-Sg-mvM" firstAttribute="leading" secondItem="6Q0-49-A5Y" secondAttribute="trailing" constant="20" id="KgU-bi-HJO"/>
                                             <constraint firstAttribute="trailing" secondItem="hUu-IL-ci8" secondAttribute="trailing" constant="30" id="Kku-9W-0PU"/>
                                             <constraint firstAttribute="trailing" secondItem="CWD-IW-W9T" secondAttribute="trailing" constant="30" id="LB8-Lf-420"/>
                                             <constraint firstItem="Ais-bs-zTv" firstAttribute="top" secondItem="xeC-OF-E4Y" secondAttribute="bottom" constant="10" id="NwS-2N-3b9"/>
@@ -756,7 +757,6 @@
                                             <constraint firstAttribute="trailing" secondItem="8kM-tr-ILo" secondAttribute="trailing" constant="30" id="RAk-Sc-P2F"/>
                                             <constraint firstItem="Ais-bs-zTv" firstAttribute="centerX" secondItem="Djc-cT-MJr" secondAttribute="centerX" id="RXk-lq-MDc"/>
                                             <constraint firstItem="xeC-OF-E4Y" firstAttribute="top" secondItem="569-Lk-are" secondAttribute="bottom" constant="8" symbolic="YES" id="UsY-YQ-Em8"/>
-                                            <constraint firstItem="c7r-Sg-mvM" firstAttribute="leading" secondItem="6Q0-49-A5Y" secondAttribute="trailing" constant="20" id="UzX-3Z-Znl"/>
                                             <constraint firstItem="c7r-Sg-mvM" firstAttribute="top" secondItem="T8l-As-kcD" secondAttribute="bottom" constant="25" id="V54-Cv-xAu"/>
                                             <constraint firstItem="T8l-As-kcD" firstAttribute="top" secondItem="MSL-KS-afZ" secondAttribute="bottom" constant="25" id="WR3-J8-iC4"/>
                                             <constraint firstAttribute="trailing" secondItem="MSL-KS-afZ" secondAttribute="trailing" constant="87.5" id="a9z-lD-1Yh"/>
@@ -822,18 +822,18 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qBA-RB-Kd1">
                                 <rect key="frame" x="20" y="56" width="280" height="375"/>
                                 <color key="backgroundColor" red="0.98431372549999996" green="0.96078431369999995" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0sJ-Ly-aO2">
-                                    <size key="itemSize" width="165" height="179"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nIy-za-r2B">
+                                    <size key="itemSize" width="130" height="170"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="celdaCategorias" id="Hmh-Oy-rOd" customClass="CategoriasCell" customModule="OH_CAKE_IOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="130" height="160"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="130" height="170"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="D3I-5x-9xP">
-                                            <rect key="frame" x="0.0" y="0.0" width="130" height="160"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="130" height="170"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="base_vacia" translatesAutoresizingMaskIntoConstraints="NO" id="ew9-P1-Yje">
@@ -843,7 +843,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categoria" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QK0-LM-ada">
-                                                    <rect key="frame" x="20" y="111.5" width="90" height="31.5"/>
+                                                    <rect key="frame" x="20" y="111.5" width="90" height="41.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -860,7 +860,6 @@
                                                 <constraint firstItem="QK0-LM-ada" firstAttribute="leading" secondItem="D3I-5x-9xP" secondAttribute="leading" constant="20" id="hud-bb-8Cc"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="130" height="160"/>
                                         <connections>
                                             <outlet property="CategoriaLabel" destination="QK0-LM-ada" id="kRE-8D-p8A"/>
                                             <outlet property="fotoCategoria" destination="ew9-P1-Yje" id="AMd-Ui-wAK"/>
@@ -875,12 +874,16 @@
                             <constraint firstItem="nbr-Ri-CY5" firstAttribute="top" secondItem="f36-Tw-Bl1" secondAttribute="top" constant="20" id="3mh-9A-jNS"/>
                             <constraint firstItem="qBA-RB-Kd1" firstAttribute="leading" secondItem="f36-Tw-Bl1" secondAttribute="leading" constant="20" id="46n-Bb-f97"/>
                             <constraint firstItem="qBA-RB-Kd1" firstAttribute="bottom" secondItem="f36-Tw-Bl1" secondAttribute="bottom" id="Jpz-Rx-MvJ"/>
+                            <constraint firstItem="f36-Tw-Bl1" firstAttribute="trailing" secondItem="qBA-RB-Kd1" secondAttribute="trailing" constant="20" id="Kvf-RP-bha"/>
                             <constraint firstItem="qBA-RB-Kd1" firstAttribute="centerX" secondItem="Aqv-t6-p9I" secondAttribute="centerX" id="OMs-aT-DaN"/>
                             <constraint firstItem="nbr-Ri-CY5" firstAttribute="leading" secondItem="f36-Tw-Bl1" secondAttribute="leading" constant="20" id="XBr-3x-UGn"/>
                             <constraint firstItem="qBA-RB-Kd1" firstAttribute="top" secondItem="nbr-Ri-CY5" secondAttribute="bottom" constant="8" symbolic="YES" id="mco-YO-iKd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ncl-dn-NIc"/>
+                    <connections>
+                        <outlet property="categoriascollection" destination="qBA-RB-Kd1" id="pxI-L4-ImN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FV7-VS-BNc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1647,10 +1650,10 @@
             </objects>
             <point key="canvasLocation" x="2942" y="1505"/>
         </scene>
-        <!--View Controller-->
+        <!--Step2 View Controller-->
         <scene sceneID="QBW-Ql-c83">
             <objects>
-                <viewController id="Q2l-0k-g1a" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="paso2" id="Q2l-0k-g1a" customClass="Step2ViewController" customModule="OH_CAKE_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KXJ-6g-26u">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1665,14 +1668,14 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Dex-iL-AAc">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="formacell" id="Dex-iL-AAc">
                                         <rect key="frame" x="0.0" y="0.0" width="133" height="113"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="pn9-zt-UPz">
                                             <rect key="frame" x="0.0" y="0.0" width="133" height="113"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eJc-nV-nAj">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="eJc-nV-nAj">
                                                     <rect key="frame" x="8" y="8" width="117" height="71"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forma" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BWk-MB-K0N">
@@ -1738,6 +1741,9 @@
                             <constraint firstItem="Gth-Mi-7WJ" firstAttribute="leading" secondItem="Tqu-aQ-Adw" secondAttribute="leading" constant="20" id="zTF-jU-wmG"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="formacollection" destination="Gth-Mi-7WJ" id="hBN-66-nCL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jEk-kK-xVK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

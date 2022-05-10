@@ -11,9 +11,12 @@ class CategoriasViewController: UIViewController, UICollectionViewDelegate, UICo
     
     let categorias = [""]
     
+    @IBOutlet weak var categoriascollection: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        categoriascollection.delegate = self
+        categoriascollection.dataSource = self
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

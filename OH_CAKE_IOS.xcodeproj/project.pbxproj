@@ -21,6 +21,8 @@
 		F49F963C2816876B00DE5880 /* RegistroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49F963B2816876B00DE5880 /* RegistroViewController.swift */; };
 		F4A4FEDB27FF0C2C006B7DCD /* OfertasCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A4FEDA27FF0C2C006B7DCD /* OfertasCell.swift */; };
 		F4A4FEDD27FF0C43006B7DCD /* MejoresCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A4FEDC27FF0C43006B7DCD /* MejoresCell.swift */; };
+		F4EA0E63282A55C200E9E71A /* Step2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA0E62282A55C200E9E71A /* Step2ViewController.swift */; };
+		F4EA0E66282A573400E9E71A /* FormaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA0E65282A573400E9E71A /* FormaCell.swift */; };
 		F4F6835628129D0500A2F67D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F6835528129D0500A2F67D /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +43,8 @@
 		F49F963B2816876B00DE5880 /* RegistroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroViewController.swift; sourceTree = "<group>"; };
 		F4A4FEDA27FF0C2C006B7DCD /* OfertasCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfertasCell.swift; sourceTree = "<group>"; };
 		F4A4FEDC27FF0C43006B7DCD /* MejoresCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MejoresCell.swift; sourceTree = "<group>"; };
+		F4EA0E62282A55C200E9E71A /* Step2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step2ViewController.swift; sourceTree = "<group>"; };
+		F4EA0E65282A573400E9E71A /* FormaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormaCell.swift; sourceTree = "<group>"; };
 		F4F6835528129D0500A2F67D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,7 +97,9 @@
 		F42BEA4E2816A5A6009E626C /* Tarta_Custom */ = {
 			isa = PBXGroup;
 			children = (
+				F4EA0E64282A571A00E9E71A /* celdas */,
 				F42BEA4F2816A62F009E626C /* Step1ViewController.swift */,
+				F4EA0E62282A55C200E9E71A /* Step2ViewController.swift */,
 			);
 			path = Tarta_Custom;
 			sourceTree = "<group>";
@@ -140,6 +146,14 @@
 				F486F3A328251514006DD483 /* Principal */,
 			);
 			path = Collections;
+			sourceTree = "<group>";
+		};
+		F4EA0E64282A571A00E9E71A /* celdas */ = {
+			isa = PBXGroup;
+			children = (
+				F4EA0E65282A573400E9E71A /* FormaCell.swift */,
+			);
+			path = celdas;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4EA0E63282A55C200E9E71A /* Step2ViewController.swift in Sources */,
 				F486F3A628251549006DD483 /* CategoriasViewController.swift in Sources */,
 				F42BEA502816A62F009E626C /* Step1ViewController.swift in Sources */,
 				F4F6835628129D0500A2F67D /* LoginViewController.swift in Sources */,
@@ -221,6 +236,7 @@
 				F44A6C9B282264FC00B4C67D /* ArtWork.swift in Sources */,
 				F44A6C99282262BB00B4C67D /* MapaViewController.swift in Sources */,
 				4A05492027E25D6300D9EB71 /* ViewController.swift in Sources */,
+				F4EA0E66282A573400E9E71A /* FormaCell.swift in Sources */,
 				F49F963C2816876B00DE5880 /* RegistroViewController.swift in Sources */,
 				F47CB6F3282900DB002CA287 /* CategoriasCell.swift in Sources */,
 				4A05491C27E25D6300D9EB71 /* AppDelegate.swift in Sources */,

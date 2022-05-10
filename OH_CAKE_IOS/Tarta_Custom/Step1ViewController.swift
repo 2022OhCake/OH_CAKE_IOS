@@ -53,6 +53,13 @@ class Step1ViewController: UIViewController {
             
             present(alert, animated: true, completion: nil)
         }
+        else{
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "paso2") as! Step2ViewController
+            
+            vc.size = size
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
         
     }
     
