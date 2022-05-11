@@ -31,6 +31,13 @@ class Step2ViewController: UIViewController, UICollectionViewDelegate, UICollect
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "formacell", for: indexPath)
         
+        if cell.isSelected {
+            cell.contentView.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
+        }
+        else{
+            cell.contentView.backgroundColor = UIColor.clear
+        }
+        
         return cell
     }
     
@@ -44,8 +51,9 @@ class Step2ViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         
-        let cellToDeselect:UICollectionViewCell = formacollection.cellForItem(at: indexPath)!
-        cellToDeselect.contentView.backgroundColor = UIColor.clear
+        if let cellToDeselect:UICollectionViewCell = formacollection.cellForItem(at: indexPath){
+            cellToDeselect.contentView.backgroundColor = UIColor.clear
+        }
     }
     
     @IBAction func step3Btn(_ sender: Any) {

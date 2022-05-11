@@ -32,6 +32,13 @@ class Step3ViewController: UIViewController, UICollectionViewDelegate, UICollect
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "basecell", for: indexPath)
         
+        if cell.isSelected {
+            cell.contentView.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
+        }
+        else{
+            cell.contentView.backgroundColor = UIColor.clear
+        }
+        
         return cell
     }
    
@@ -40,14 +47,15 @@ class Step3ViewController: UIViewController, UICollectionViewDelegate, UICollect
         //Capturar aqui que boton ha pulsado
         
         let selectedCell:UICollectionViewCell = basecollection.cellForItem(at: indexPath)!
-        shape = "kk"
+        base = "kk"
               selectedCell.contentView.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         
-        let cellToDeselect:UICollectionViewCell = basecollection.cellForItem(at: indexPath)!
-        cellToDeselect.contentView.backgroundColor = UIColor.clear
+        if let cellToDeselect:UICollectionViewCell = basecollection.cellForItem(at: indexPath){
+            cellToDeselect.contentView.backgroundColor = UIColor.clear
+        }
     }
     
     @IBAction func rellenoBtn(_ sender: Any) {
@@ -63,10 +71,11 @@ class Step3ViewController: UIViewController, UICollectionViewDelegate, UICollect
         }
         else{
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "paso4") as! Step3ViewController
+            let vc = storyboard.instantiateViewController(withIdentifier: "paso4") as! Step4ViewController
             
             vc.size = size
             vc.shape = shape
+            vc.base = base
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
