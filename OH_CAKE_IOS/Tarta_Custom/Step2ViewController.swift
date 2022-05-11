@@ -38,7 +38,7 @@ class Step2ViewController: UIViewController, UICollectionViewDelegate, UICollect
         //Capturar aqui que boton ha pulsado
         
         let selectedCell:UICollectionViewCell = formacollection.cellForItem(at: indexPath)!
-        
+        shape = "kk"
               selectedCell.contentView.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
     }
     
