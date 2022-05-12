@@ -22,6 +22,7 @@
 		F49F963C2816876B00DE5880 /* RegistroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49F963B2816876B00DE5880 /* RegistroViewController.swift */; };
 		F4A4FEDB27FF0C2C006B7DCD /* OfertasCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A4FEDA27FF0C2C006B7DCD /* OfertasCell.swift */; };
 		F4A4FEDD27FF0C43006B7DCD /* MejoresCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A4FEDC27FF0C43006B7DCD /* MejoresCell.swift */; };
+		F4E68781282CF5D50071D3A2 /* Step5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E68780282CF5D50071D3A2 /* Step5ViewController.swift */; };
 		F4EA0E63282A55C200E9E71A /* Step2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA0E62282A55C200E9E71A /* Step2ViewController.swift */; };
 		F4EA0E66282A573400E9E71A /* FormaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA0E65282A573400E9E71A /* FormaCell.swift */; };
 		F4EA0E69282A937D00E9E71A /* Step3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA0E68282A937D00E9E71A /* Step3ViewController.swift */; };
@@ -46,6 +47,7 @@
 		F49F963B2816876B00DE5880 /* RegistroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroViewController.swift; sourceTree = "<group>"; };
 		F4A4FEDA27FF0C2C006B7DCD /* OfertasCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfertasCell.swift; sourceTree = "<group>"; };
 		F4A4FEDC27FF0C43006B7DCD /* MejoresCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MejoresCell.swift; sourceTree = "<group>"; };
+		F4E68780282CF5D50071D3A2 /* Step5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step5ViewController.swift; sourceTree = "<group>"; };
 		F4EA0E62282A55C200E9E71A /* Step2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step2ViewController.swift; sourceTree = "<group>"; };
 		F4EA0E65282A573400E9E71A /* FormaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormaCell.swift; sourceTree = "<group>"; };
 		F4EA0E68282A937D00E9E71A /* Step3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step3ViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				F42BEA4F2816A62F009E626C /* Step1ViewController.swift */,
 				F4EA0E62282A55C200E9E71A /* Step2ViewController.swift */,
 				F4EA0E68282A937D00E9E71A /* Step3ViewController.swift */,
+				F4E68780282CF5D50071D3A2 /* Step5ViewController.swift */,
 			);
 			path = Tarta_Custom;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				F4EA0E66282A573400E9E71A /* FormaCell.swift in Sources */,
 				F49F963C2816876B00DE5880 /* RegistroViewController.swift in Sources */,
 				F47CB6F3282900DB002CA287 /* CategoriasCell.swift in Sources */,
+				F4E68781282CF5D50071D3A2 /* Step5ViewController.swift in Sources */,
 				4A05491C27E25D6300D9EB71 /* AppDelegate.swift in Sources */,
 				4A05491E27E25D6300D9EB71 /* SceneDelegate.swift in Sources */,
 			);

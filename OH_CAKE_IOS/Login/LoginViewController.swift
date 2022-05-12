@@ -11,6 +11,8 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var PassText: UITextField!
     @IBOutlet weak var UserText: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,6 +42,28 @@ class LoginViewController: UIViewController {
             present(alert, animated: true, completion: nil)
         }
         
+        else if !isValidEmail(string: UserText.text!){
+            let alert = UIAlertController(title: "Error", message: "¡Vaya!, Ese no parece un email valido", preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
+            
+            alert.addAction(action)
+            
+            present(alert, animated: true, completion: nil)
+        }
+        
+        
+        else if PassText.text!.count < 6 {
+            
+            let alert = UIAlertController(title: "Error", message: "Error, el campo contraseña debe tener 6 caracteres como minimo", preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
+            
+            alert.addAction(action)
+            
+            present(alert, animated: true, completion: nil)
+        }
+        
         else{
             
             self.login(user: UserText.text!, passwd: PassText.text!)
@@ -47,9 +71,15 @@ class LoginViewController: UIViewController {
         }
     }
     
+    func isValidEmail(string: String) -> Bool {
+        let emailReg = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailReg)
+        return emailTest.evaluate(with: string)
+    }
+    
     
     func login(user:String, passwd: String){
-        let urlString = "servidor.com/login/"
+        let urlString = "http://rumpusroom.es/tfc/back_cake_api_panels/public/api/auth/login"
        
                        guard let url = URL(string: urlString) else {return}
        
@@ -57,7 +87,7 @@ class LoginViewController: UIViewController {
        
                        request.httpMethod = "POST"
                    
-                       let bodyData = "user=\(user)&password=\(passwd)&password_confirmation=\(passwd)"
+                       let bodyData = "email=\(user)&password=\(passwd)&password_confirmation=\(passwd)"
         
                        request.setValue(String(bodyData.lengthOfBytes(using: .utf8)), forHTTPHeaderField: "Content-Length")
         
@@ -65,6 +95,8 @@ class LoginViewController: UIViewController {
        
                        URLSession.shared.dataTask(with: request){(data,response,error) in
 
+                           var code = 0
+                           
                            //Si el error no es nulo que nos diga que está pasando
                            if error != nil {
                                print ("Error: \(error!.localizedDescription)")
@@ -75,26 +107,93 @@ class LoginViewController: UIViewController {
                            }
                            if let res = response as? HTTPURLResponse {
                                print("Status code: \(res.statusCode)")
+                               code = res.statusCode
                            }
                            guard let datos = data else {return}
-                           
-                           do{
-                           let cosas = try JSONSerialization.data(withJSONObject: data, options: .fragmentsAllowed) as! String
                                
-                               if cosas == "420"{
-                                   //Instanciar la pantalla de login
+//                               let str = String(decoding: datos, as: UTF8.self)
+//                               print(str)
+                           do{
+                               let json = try JSONSerialization.jsonObject(with: datos, options: .fragmentsAllowed)
+                               
+                               guard let newValue = json as? [String: Any] else {
+                                                           print("invalid format")
+                                                           return
+                                                        }
+                               
+                               print(newValue)
+                               
+                               if !(newValue["email"] == nil){
+                                
+                                   let texto = String(describing: newValue["email"]!)
+                                   
+                                   let a = texto.replacingOccurrences(of: "(", with: "")
+                                   let o = a.replacingOccurrences(of: ")", with: "")
+                                   
+                                   DispatchQueue.main.async {
+                                       self.alertas(code: code, message: o)
+                                    }
                                }
                                
                                else{
-                                   return
+                                   DispatchQueue.main.async {
+                                       self.alertas(code: code, message: "")
+                                    }
                                }
+                               
+                           
                            }
-                           catch{
-                               print("Error: \(error)")
+                           catch let jsonError{
+                              // print("Error: \(jsonError)")
                            }
-       
+ 
                        }.resume()
     }
     
 
+    func alertas(code:Int, message: String){
+        
+        
+        if code == 422 {
+            
+            let alert = UIAlertController(title: ":(", message: message, preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
+            
+            alert.addAction(action)
+            
+            self.present(alert, animated: true, completion: nil)
+            
+        }
+        else if code == 401{
+            
+            let alert = UIAlertController(title: "Error", message: "Usuario o contraseña incorrecto", preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
+            
+            alert.addAction(action)
+            
+            self.present(alert, animated: true, completion: nil)
+        }
+        else if code == 200{
+            //Instanciar pantalla usuario
+            let alert = UIAlertController(title: "Correcto", message: "Login realizado", preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
+            
+            alert.addAction(action)
+            
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+        else{
+            let alert = UIAlertController(title: "Error", message: "Error Desconocido", preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
+            
+            alert.addAction(action)
+            
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
 }
