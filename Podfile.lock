@@ -1,0 +1,20 @@
+PODS:
+  - Alamofire (3.5.1)
+  - FittedSheets (2.4.2)
+
+DEPENDENCIES:
+  - Alamofire (~> 3.0)
+  - FittedSheets
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - FittedSheets
+
+SPEC CHECKSUMS:
+  Alamofire: 0dfba1184a543e2aa160f4e39cac4e8aba48d223
+  FittedSheets: 661408776eb4ff514a31da75b3600bd7222b2b3d
+
+PODFILE CHECKSUM: 1d438d3adb4f88de265b8ea9e73238d34b49f003
+
+COCOAPODS: 1.11.3

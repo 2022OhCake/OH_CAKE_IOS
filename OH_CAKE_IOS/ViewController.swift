@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+//Comprobar fittedSheets -> https://github.com/gordontucker/FittedSheets
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
    
     @IBOutlet weak var ofertasCollection: UICollectionView!
