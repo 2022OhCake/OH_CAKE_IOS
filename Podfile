@@ -1,5 +1,6 @@
+platform :ios, '15.2'
+use_frameworks!
+
 target 'OH_CAKE_IOS' do
-  use_frameworks!
-  pod 'Alamofire', '~> 3.0'
   pod 'FittedSheets'
 end
