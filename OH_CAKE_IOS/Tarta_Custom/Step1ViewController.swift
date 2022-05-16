@@ -9,10 +9,12 @@ import UIKit
 
 class Step1ViewController: UIViewController {
 
+    //Outlets
     @IBOutlet weak var bigbtn: UIButton!
     @IBOutlet weak var mediumbtn: UIButton!
     @IBOutlet weak var smallbtn: UIButton!
     
+    //Tamanio de la tarta
     var size = ""
     
     override func viewDidLoad() {
@@ -21,6 +23,7 @@ class Step1ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    ///Botones para seleccionar el tamanio
     @IBAction func Small(_ sender: Any) {
         size = "Pequeña"
         smallbtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
@@ -42,8 +45,10 @@ class Step1ViewController: UIViewController {
         bigbtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
     }
     
+    
     @IBAction func step2Btn(_ sender: Any){
         
+        //Si el usuario no ha seleccionado el tamanio, lanza un error
         if size == ""{
             let alert = UIAlertController(title: "Error", message: "¡Necesitas decir el tamaño antes de continuar!", preferredStyle: .alert)
             
@@ -54,6 +59,7 @@ class Step1ViewController: UIViewController {
             present(alert, animated: true, completion: nil)
         }
         else{
+            //Si lo ha seleccionado todo y no hay nada que se queje, instancia el siguiente controlador
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "paso2") as! Step2ViewController
             

@@ -59,27 +59,26 @@ class Step4ViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     @IBAction func ingredientesBtn(_ sender: Any) {
-        
-//        if relleno == ""{
-//            let alert = UIAlertController(title: "Error", message: "¡No has elegido el relleno!", preferredStyle: .alert)
-//
-//            let action = UIAlertAction(title: "Aceptar", style: .destructive, handler: nil)
-//
-//            alert.addAction(action)
-//
-//            present(alert, animated: true, completion: nil)
-//        }
-//        else{
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            let vc = storyboard.instantiateViewController(withIdentifier: "paso4") as! Step4ViewController
-//
-//            vc.size = size
-//            vc.shape = shape
-//            vc.base = base
-//            self.navigationController?.pushViewController(vc, animated: true)
-//        }
-        
-        print(relleno,base,shape,size)
+        if relleno == ""{
+            let alert = UIAlertController(title: "Error", message: "¡No has elegido el relleno!", preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "Aceptar", style: .destructive, handler: nil)
+            
+            alert.addAction(action)
+            
+            present(alert, animated: true, completion: nil)
+        }
+        else{
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "paso5") as! Step5ViewController
+            
+            vc.size = size
+            vc.shape = shape
+            vc.base = base
+            vc.relleno = relleno
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     

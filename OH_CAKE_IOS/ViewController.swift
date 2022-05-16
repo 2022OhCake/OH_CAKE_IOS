@@ -15,10 +15,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        //Delegate de las ofertas
         ofertasCollection.delegate = self
         ofertasCollection.dataSource = self
         
+        //Delegate de las ofertas 2
         mejorCollection.delegate = self
         mejorCollection.dataSource = self
     }
@@ -35,14 +37,17 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        //Si el collection view que recibe es el de las ofertas, instancia la celda correspondiente
         if collectionView == ofertasCollection {
+            
             let ofertas = collectionView.dequeueReusableCell(withReuseIdentifier: "ofertascelda", for: indexPath) as! OfertasCell
             
             return ofertas
-    
         }
         
         else{
+            
+            //Si no, instancia la otra
             let mejores = collectionView.dequeueReusableCell(withReuseIdentifier: "mejorCelda", for: indexPath) as! MejoresCell
             
             return mejores

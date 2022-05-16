@@ -9,7 +9,7 @@ import UIKit
 
 class RegistroViewController: UIViewController {
 
-    
+    //Outlets
     @IBOutlet weak var nombreText: UITextField!
     @IBOutlet weak var ApellidosText: UITextField!
     @IBOutlet weak var telefonoText: UITextField!
@@ -33,9 +33,10 @@ class RegistroViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
     }
-    
+
     @IBAction func registroBtn(_ sender: Any) {
         
+        //Compruebo si los campos estan vacios y lanzo un alert
         if nombreText.text!.isEmpty || ApellidosText.text!.isEmpty || telefonoText.text!.isEmpty || emailText.text!.isEmpty || PasswdText.text!.isEmpty || RepeatPasswdText.text!.isEmpty {
             
             let alert = UIAlertController(title: "Error", message: "Error, completa todos los campos antes de continuar", preferredStyle: .alert)
@@ -47,6 +48,7 @@ class RegistroViewController: UIViewController {
             present(alert, animated: true, completion: nil)
         }
         
+        //Compruebo si los campos de contraseña y repetir contraseña son iguales
         else if RepeatPasswdText.text != PasswdText.text{
             let alert = UIAlertController(title: "Error", message: "Error, las contraseñas no coinciden", preferredStyle: .alert)
             
@@ -57,6 +59,7 @@ class RegistroViewController: UIViewController {
             present(alert, animated: true, completion: nil)
         }
         
+        //Compruebo si el cliente ha elegido su sexo (Esto se hace con fines puramente estadisticos)
         else if sexo == ""{
             let alert = UIAlertController(title: "Error", message: "Por favor, especifica tu sexo, si prefieres no especificar, selecciona otro", preferredStyle: .alert)
             
@@ -66,7 +69,7 @@ class RegistroViewController: UIViewController {
             
             present(alert, animated: true, completion: nil)
         }
-        
+        //Se comprueba si el email es valido
         else if !isValidEmail(string: emailText.text!){
             let alert = UIAlertController(title: "Error", message: "¡Vaya!, Ese no parece un email valido", preferredStyle: .alert)
             
@@ -76,7 +79,7 @@ class RegistroViewController: UIViewController {
             
             present(alert, animated: true, completion: nil)
         }
-        
+        //Si todo esta en su sitio se lanza la peticion de registro
         else{
             registrar(nombre: nombreText.text!, apellidos: ApellidosText.text!, telefono: telefonoText.text!, email: emailText.text!, passwd: PasswdText.text!, sexo: sexo)
         }
@@ -85,7 +88,7 @@ class RegistroViewController: UIViewController {
     
     func registrar(nombre: String, apellidos: String, telefono:String, email: String, passwd:String, sexo:String){
         
-        //TO DO - Hacer peticion
+    //URL del servidor
         let urlString = "http://rumpusroom.es/tfc/back_cake_api_panels/public/api/auth/register"
        
                        guard let url = URL(string: urlString) else {return}
@@ -94,6 +97,7 @@ class RegistroViewController: UIViewController {
        
                        request.httpMethod = "POST"
                    
+                        //Parametros de la peticion
                        let bodyData = "first_name=\(nombre)&last_name=\(apellidos)&email=\(email)&telephone=\(telefono)&gender=\(sexo)&password=\(passwd)&password_confirmation=\(passwd)"
         
                        request.setValue(String(bodyData.lengthOfBytes(using: .utf8)), forHTTPHeaderField: "Content-Length")
@@ -118,6 +122,7 @@ class RegistroViewController: UIViewController {
                            guard let datos = data else {return}
                            
                            DispatchQueue.main.async {
+                               //Aqui no hay mensajes del json, le paso el codigo a la funcion con las alertas
                                self.ErrorOrSuccess(code: code)
                            }
        
@@ -136,7 +141,9 @@ class RegistroViewController: UIViewController {
     }
     
     func ErrorOrSuccess(code: Int){
+        //En esta funcion detecto si hay algun error
         
+        //Si el codigo es 200 quiere decir que todo guay
         if code == 200{
             let alert = UIAlertController(title: "Usuario registrado", message: "Te has registrado en OH CAKE!, ¡Disfruta! :D", preferredStyle: .alert)
             
@@ -145,8 +152,7 @@ class RegistroViewController: UIViewController {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 
                 let vc = storyboard.instantiateViewController(withIdentifier: "login") as! LoginViewController
-            
-                
+                //Instancio la pantalla de login (En la pantalla de login escondo la barra en el viewWillLoad por que si no aparece el boton de back)
                 self.navigationController?.pushViewController(vc, animated: true)
             })
             
@@ -155,9 +161,10 @@ class RegistroViewController: UIViewController {
             present(alert, animated: true, completion: nil)
         }
         
+        //Si el code es 422 quiere decir que alguna validacion no le ha gustado y le da ansiedad al servidor
         else if code == 422 {
             
-            let alert = UIAlertController(title: "Error", message: "¡Vaya!, Algo ha salido mal, comprueba que los datos introducidos tengan el formato corrcto", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Error", message: "¡Vaya!, Algo ha salido mal, comprueba que los datos introducidos tengan el formato correcto", preferredStyle: .alert)
             
             let action = UIAlertAction(title: "Aceptar", style: .destructive, handler: nil)
             
@@ -166,6 +173,7 @@ class RegistroViewController: UIViewController {
             present(alert, animated: true, completion: nil)
         }
         else{
+            //Otro codigo significa que al servidor le ha dado aun mas ansiedad y no se sabe que ha pasado
             let alert = UIAlertController(title: "Error", message: "Error desconcido, prueba a intentarlo más tarde", preferredStyle: .alert)
             
             let action = UIAlertAction(title: "Aceptar", style: .destructive, handler: nil)
@@ -176,7 +184,7 @@ class RegistroViewController: UIViewController {
         }
     }
     
-    
+    //Estos 3 botones son para seleccionar el sexo, se cambian de color al pulsar cada uno
     @IBAction func ManBtn(_ sender: Any) {
         sexo = "Male"
         HombreBtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#EBD3DA")
@@ -201,6 +209,7 @@ class RegistroViewController: UIViewController {
         OtroBtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#EBD3DA")
     }
     
+    //Esta funcion transforma un codigo hexadecimal a UIColor ya que swift no lo admite por defecto
     func hexStringToUIColor (hex:String) -> UIColor {
         var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
 
@@ -224,6 +233,7 @@ class RegistroViewController: UIViewController {
     }
     
     func isValidEmail(string: String) -> Bool {
+        //Funcion con expresion regular para comprobar si el email es valido
         let emailReg = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailReg)
         return emailTest.evaluate(with: string)

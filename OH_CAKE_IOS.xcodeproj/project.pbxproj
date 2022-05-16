@@ -18,6 +18,7 @@
 		F42BEA502816A62F009E626C /* Step1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42BEA4F2816A62F009E626C /* Step1ViewController.swift */; };
 		F44A6C99282262BB00B4C67D /* MapaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A6C98282262BB00B4C67D /* MapaViewController.swift */; };
 		F44A6C9B282264FC00B4C67D /* ArtWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A6C9A282264FC00B4C67D /* ArtWork.swift */; };
+		F44AC5D128326E6200F44F75 /* FinalStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44AC5D028326E6200F44F75 /* FinalStepViewController.swift */; };
 		F47CB6F3282900DB002CA287 /* CategoriasCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47CB6F2282900DB002CA287 /* CategoriasCell.swift */; };
 		F486F3A628251549006DD483 /* CategoriasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F486F3A528251549006DD483 /* CategoriasViewController.swift */; };
 		F49F963C2816876B00DE5880 /* RegistroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49F963B2816876B00DE5880 /* RegistroViewController.swift */; };
@@ -46,6 +47,7 @@
 		F42BEA4F2816A62F009E626C /* Step1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step1ViewController.swift; sourceTree = "<group>"; };
 		F44A6C98282262BB00B4C67D /* MapaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapaViewController.swift; sourceTree = "<group>"; };
 		F44A6C9A282264FC00B4C67D /* ArtWork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtWork.swift; sourceTree = "<group>"; };
+		F44AC5D028326E6200F44F75 /* FinalStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalStepViewController.swift; sourceTree = "<group>"; };
 		F47CB6F2282900DB002CA287 /* CategoriasCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriasCell.swift; sourceTree = "<group>"; };
 		F486F3A528251549006DD483 /* CategoriasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriasViewController.swift; sourceTree = "<group>"; };
 		F49F963B2816876B00DE5880 /* RegistroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroViewController.swift; sourceTree = "<group>"; };
@@ -76,7 +78,6 @@
 				3A45E3760059D57723B8748A /* Pods-OH_CAKE_IOS.debug.xcconfig */,
 				B899825D28F01247DDD2317A /* Pods-OH_CAKE_IOS.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -133,6 +134,7 @@
 				F4EA0E62282A55C200E9E71A /* Step2ViewController.swift */,
 				F4EA0E68282A937D00E9E71A /* Step3ViewController.swift */,
 				F4E68780282CF5D50071D3A2 /* Step5ViewController.swift */,
+				F44AC5D028326E6200F44F75 /* FinalStepViewController.swift */,
 			);
 			path = Tarta_Custom;
 			sourceTree = "<group>";
@@ -320,6 +322,7 @@
 				F49F963C2816876B00DE5880 /* RegistroViewController.swift in Sources */,
 				F47CB6F3282900DB002CA287 /* CategoriasCell.swift in Sources */,
 				F4E68781282CF5D50071D3A2 /* Step5ViewController.swift in Sources */,
+				F44AC5D128326E6200F44F75 /* FinalStepViewController.swift in Sources */,
 				4A05491C27E25D6300D9EB71 /* AppDelegate.swift in Sources */,
 				4A05491E27E25D6300D9EB71 /* SceneDelegate.swift in Sources */,
 			);
