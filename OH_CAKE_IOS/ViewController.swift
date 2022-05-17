@@ -12,6 +12,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var ofertasCollection: UICollectionView!
     @IBOutlet weak var mejorCollection: UICollectionView!
     
+    let defaults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         //Delegate de las ofertas 2
         mejorCollection.delegate = self
         mejorCollection.dataSource = self
+        
+        self.defaults.set(true, forKey: "logued")
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -34,6 +37,18 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             return 10
         }
     }
+    @IBAction func AccountBtn(_ sender: Any) {
+        self.tabBarController!.selectedIndex = 4
+    }
+    
+    @IBAction func PedirBtn(_ sender: Any) {
+        self.tabBarController!.selectedIndex = 1
+    }
+    
+    @IBAction func CustomBtn(_ sender: Any) {
+        self.tabBarController!.selectedIndex = 2
+    }
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         

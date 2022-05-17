@@ -40,6 +40,22 @@ class Step5ViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         return cell
     }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //Capturar aqui que boton ha pulsado
+        
+        let selectedCell:UICollectionViewCell = IngredientesCollection.cellForItem(at: indexPath)!
+        relleno = "kk"
+              selectedCell.contentView.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        
+        if let cellToDeselect:UICollectionViewCell = IngredientesCollection.cellForItem(at: indexPath){
+            cellToDeselect.contentView.backgroundColor = UIColor.clear
+        }
+    }
 
     @IBAction func FinalStepBtn(_ sender: Any) {
         if ingredientes == ""{
@@ -53,12 +69,13 @@ class Step5ViewController: UIViewController, UICollectionViewDelegate, UICollect
         }
         else{
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "paso5") as! Step5ViewController
+            let vc = storyboard.instantiateViewController(withIdentifier: "final") as! FinalStepViewController
             
             vc.size = size
             vc.shape = shape
             vc.base = base
             vc.relleno = relleno
+            vc.ingredientes = ingredientes
             
             self.navigationController?.pushViewController(vc, animated: true)
         }
