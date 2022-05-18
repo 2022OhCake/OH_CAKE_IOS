@@ -16,6 +16,6 @@ class LogedUserViewController: UIViewController {
     }
     
 
-   
+    
 
 }
