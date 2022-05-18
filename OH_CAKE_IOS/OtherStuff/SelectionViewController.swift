@@ -22,19 +22,19 @@ class SelectionViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        if !def.bool(forKey: "logued"){
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            let vc = storyboard.instantiateViewController(withIdentifier: "login") as! LoginViewController
-//            self.navigationController?.pushViewController(vc, animated: true)
-//        }
-//        else{
-//            
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            let vc = storyboard.instantiateViewController(withIdentifier: "user") as! LogedUserViewController
-//            self.present(vc, animated: true, completion: nil)
-//
-//           
-//        }
+         if !def.bool(forKey: "logued"){
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "login") as! LoginViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        else{
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "user") as! LogedUserViewController
+            self.present(vc, animated: true, completion: nil)
+
+           
+        }
     }
     
    
