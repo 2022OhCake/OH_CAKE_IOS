@@ -201,6 +201,10 @@ class LoginViewController: UIViewController {
             
             let action = UIAlertAction(title: "Aceptar", style: .default, handler: {_ in
                 
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "select") as! SelectionViewController
+                self.navigationController?.pushViewController(vc, animated: true)
+                
                 //Selecciono la primera pantalla para que el tabbar me lleve a inicio
                 self.tabBarController!.selectedIndex = 0
                 

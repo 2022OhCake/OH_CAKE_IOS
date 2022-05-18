@@ -25,7 +25,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         mejorCollection.delegate = self
         mejorCollection.dataSource = self
         
-        self.defaults.set(true, forKey: "logued")
+        //self.defaults.set(true, forKey: "logued")
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

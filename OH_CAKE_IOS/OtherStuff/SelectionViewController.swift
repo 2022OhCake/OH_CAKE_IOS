@@ -15,8 +15,7 @@ class SelectionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let controllerUser = LogedUserViewController()
+       
         let options = SheetOptions(
             useInlineMode: true
         )
@@ -28,7 +27,7 @@ class SelectionViewController: UIViewController {
         }
         else{
             
-            let sheetController = SheetViewController(controller: controllerUser.self, sizes: [.percent(0.3), .fullscreen], options: options)
+            let sheetController = SheetViewController(controller: LogedUserViewController(), sizes: [.percent(0.3), .fullscreen], options: options)
             sheetController.allowGestureThroughOverlay = true
 
             // animate in
@@ -37,8 +36,4 @@ class SelectionViewController: UIViewController {
             
         }
     }
-    
-
-    
-
 }

@@ -1180,7 +1180,7 @@
         <!--Selection View Controller-->
         <scene sceneID="jHf-fg-7I9">
             <objects>
-                <viewController id="Ww6-WD-i36" customClass="SelectionViewController" customModule="OH_CAKE_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="select" id="Ww6-WD-i36" customClass="SelectionViewController" customModule="OH_CAKE_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EVL-tj-cVa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1393,7 +1393,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ji2-rU-UEO">
-                                <rect key="frame" x="30" y="405" width="260" height="158"/>
+                                <rect key="frame" x="30" y="515" width="260" height="48"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="¿No tienes Cuenta? Regístrate">
                                     <color key="baseForegroundColor" red="0.35686274509999999" green="0.18823529410000001" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -1406,7 +1406,7 @@
                         <viewLayoutGuide key="safeArea" id="dY1-fc-sv5"/>
                         <color key="backgroundColor" red="0.98823529409999999" green="0.96078431369999995" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ji2-rU-UEO" firstAttribute="top" secondItem="RbJ-rX-Aad" secondAttribute="bottom" constant="20" id="0X2-UP-gAJ"/>
+                            <constraint firstItem="ji2-rU-UEO" firstAttribute="top" secondItem="RbJ-rX-Aad" secondAttribute="bottom" constant="130" id="0X2-UP-gAJ"/>
                             <constraint firstItem="dY1-fc-sv5" firstAttribute="trailing" secondItem="LwH-7o-jgW" secondAttribute="trailing" constant="30" id="9DQ-a9-lG3"/>
                             <constraint firstItem="RbJ-rX-Aad" firstAttribute="top" secondItem="LwH-7o-jgW" secondAttribute="bottom" constant="20" id="CkG-da-f0T"/>
                             <constraint firstItem="RbJ-rX-Aad" firstAttribute="centerX" secondItem="L15-7R-FP0" secondAttribute="centerX" id="Ew7-A4-zbf"/>
@@ -1430,7 +1430,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UdV-Pe-aox" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2344" y="2350"/>
+            <point key="canvasLocation" x="2344" y="2308"/>
         </scene>
         <!--Loged User View Controller-->
         <scene sceneID="20Z-Mi-ucA">
@@ -1442,6 +1442,9 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lxy-8J-alA">
                                 <rect key="frame" x="60" y="200" width="200" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="zTr-vt-TOE"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Notificaciones">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
@@ -1458,6 +1461,9 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9o8-0w-dIs">
                                 <rect key="frame" x="60" y="260" width="200" height="34.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34.539999999999999" id="oDm-bV-R40"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Mis Pedidos">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
@@ -1466,7 +1472,10 @@
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9w2-9z-jEb">
-                                <rect key="frame" x="60" y="314.5" width="200" height="34.5"/>
+                                <rect key="frame" x="60" y="314.5" width="200" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="fYA-SO-LZn"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Contacto">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
@@ -1474,11 +1483,11 @@
                                     <color key="baseBackgroundColor" red="0.74509803919999995" green="0.8862745098" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </buttonConfiguration>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="J1c-7P-w5Z">
-                                <rect key="frame" x="60" y="369" width="200" height="31"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="J1c-7P-w5Z">
+                                <rect key="frame" x="60" y="374.5" width="200" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qh0-Gd-4TI">
-                                        <rect key="frame" x="0.0" y="0.0" width="51.5" height="31"/>
+                                        <rect key="frame" x="0.0" y="4.5" width="50" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" image="gearshape.fill" catalog="system" cornerStyle="small">
                                             <color key="baseForegroundColor" red="0.35686274509999999" green="0.18823529410000001" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -1486,7 +1495,7 @@
                                         </buttonConfiguration>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3D-Y1-oMf">
-                                        <rect key="frame" x="76.5" y="0.0" width="49" height="31"/>
+                                        <rect key="frame" x="75" y="4.5" width="50" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" image="cart.fill" catalog="system" cornerStyle="small">
                                             <color key="baseForegroundColor" red="0.35686274509999999" green="0.18823529410000001" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -1494,7 +1503,7 @@
                                         </buttonConfiguration>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kxt-dI-bxK">
-                                        <rect key="frame" x="150.5" y="0.0" width="49.5" height="31"/>
+                                        <rect key="frame" x="150" y="4.5" width="50" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" image="rectangle.portrait.and.arrow.right.fill" catalog="system" cornerStyle="small">
                                             <color key="baseForegroundColor" red="0.35686274509999999" green="0.18823529410000001" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -1502,6 +1511,9 @@
                                         </buttonConfiguration>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="GFU-AD-lZb"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Y3-DJ-Y8V"/>
@@ -1514,7 +1526,6 @@
                             <constraint firstItem="J1c-7P-w5Z" firstAttribute="leading" secondItem="6Y3-DJ-Y8V" secondAttribute="leading" constant="60" id="G9o-UJ-M2m"/>
                             <constraint firstItem="9w2-9z-jEb" firstAttribute="top" secondItem="9o8-0w-dIs" secondAttribute="bottom" constant="20" id="Lme-um-yh0"/>
                             <constraint firstItem="W6p-V3-vYR" firstAttribute="centerX" secondItem="alF-uN-rra" secondAttribute="centerX" id="RjK-t9-6XC"/>
-                            <constraint firstItem="6Y3-DJ-Y8V" firstAttribute="bottom" secondItem="J1c-7P-w5Z" secondAttribute="bottom" constant="80" id="RlH-Sc-VH1"/>
                             <constraint firstItem="W6p-V3-vYR" firstAttribute="top" secondItem="6Y3-DJ-Y8V" secondAttribute="top" constant="20" id="U8B-uX-8l1"/>
                             <constraint firstItem="6Y3-DJ-Y8V" firstAttribute="trailing" secondItem="9w2-9z-jEb" secondAttribute="trailing" constant="60" id="ZvB-2K-S3d"/>
                             <constraint firstItem="9o8-0w-dIs" firstAttribute="leading" secondItem="6Y3-DJ-Y8V" secondAttribute="leading" constant="60" id="nsP-ia-Ylh"/>
@@ -1786,7 +1797,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WSZ-7u-geS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3450" y="2275"/>
+            <point key="canvasLocation" x="3304" y="2308"/>
         </scene>
         <!--Step2 View Controller-->
         <scene sceneID="QBW-Ql-c83">
