@@ -14,7 +14,7 @@ class TABBARViewController: UITabBarController, UITabBarControllerDelegate{
     let standards = UserDefaults.standard
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.tabBarController?.delegate = UIApplication.shared.delegate as? UITabBarControllerDelegate
         tabBarController?.delegate = self
         
         // Do any additional setup after loading the view.
@@ -26,35 +26,26 @@ class TABBARViewController: UITabBarController, UITabBarControllerDelegate{
         self.tabBar.items![0].title = "Inicio"
         
     }
-    
-    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-        
-        if self.tabBar.selectedItem?.title == "Usuario"{
-            return false
-        }
-        else{
-            return true
-        }
-    }
+   
     
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        if tabBar.selectedItem?.title == "Usuario"{
-            if !standards.bool(forKey: "logued"){
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewController(withIdentifier: "login") as! LoginViewController
-                self.navigationController?.pushViewController(vc, animated: true)
-            }
-            else{
-                
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                
-                let vc = storyboard.instantiateViewController(withIdentifier: "user") as! LogedUserViewController
-                
-                self.present(vc, animated: true, completion: nil)
-                
-            }
-        }
+//        if tabBar.selectedItem?.title == "Usuario"{
+//            if !standards.bool(forKey: "logued"){
+//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//                let vc = storyboard.instantiateViewController(withIdentifier: "login") as! LoginViewController
+//                self.navigationController?.pushViewController(vc, animated: true)
+//            }
+//            else{
+//
+//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//
+//                let vc = storyboard.instantiateViewController(withIdentifier: "user") as! LogedUserViewController
+//
+//                self.present(vc, animated: true, completion: nil)
+//
+//            }
+//        }
     }
     
    

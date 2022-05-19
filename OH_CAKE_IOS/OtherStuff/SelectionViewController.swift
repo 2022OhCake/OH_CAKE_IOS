@@ -26,15 +26,16 @@ class SelectionViewController: UIViewController {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "login") as! LoginViewController
             self.navigationController?.pushViewController(vc, animated: true)
+             self.tabBarController?.selectedIndex = 0
         }
-        else{
-            
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "user") as! LogedUserViewController
-            self.present(vc, animated: true, completion: nil)
-
-           
-        }
+//        else{
+//            
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let vc = storyboard.instantiateViewController(withIdentifier: "user") as! LogedUserViewController
+//            tabBarController?.present(vc, animated: true, completion: nil)
+//
+//           
+//        }
     }
     
    
