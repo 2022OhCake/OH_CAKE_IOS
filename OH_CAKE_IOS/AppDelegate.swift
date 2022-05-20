@@ -38,15 +38,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         // Check if the view about to load is the second tab and if it is, load the modal form instead.
         if viewController == newController {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateInitialViewController() as? LogedUserViewController
-
-            tabBarController.present(vc!, animated: true, completion: nil)
-
+            let vc = storyboard.instantiateViewController(withIdentifier: "user")
+            tabBarController.present(vc, animated: true, completion: nil)
             return false
         } else {
             return true
         }
     }
-
 }
 

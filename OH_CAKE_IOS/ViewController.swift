@@ -7,7 +7,7 @@
 
 import UIKit
 //Comprobar fittedSheets -> https://github.com/gordontucker/FittedSheets
-class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITabBarControllerDelegate{
    
     @IBOutlet weak var ofertasCollection: UICollectionView!
     @IBOutlet weak var mejorCollection: UICollectionView!
@@ -16,6 +16,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tabBarController?.delegate = self
         
         //Delegate de las ofertas
         ofertasCollection.delegate = self
@@ -26,6 +28,21 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         mejorCollection.dataSource = self
         
         //self.defaults.set(true, forKey: "logued")
+    }
+    
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+                 
+        let newController = SelectionViewController()
+
+        // Check if the view about to load is the second tab and if it is, load the modal form instead.
+        if viewController == newController {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "user")
+            tabBarController.present(vc, animated: true, completion: nil)
+            return false
+        } else {
+            return true
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

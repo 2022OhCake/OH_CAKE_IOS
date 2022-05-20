@@ -197,7 +197,7 @@ class LoginViewController: UIViewController {
         //Si el status code es 200, quiere decir que esta todo guay y que el login se ha hecho bien
         else if code == 200{
            
-            let alert = UIAlertController(title: "Correcto", message: "Login realizado", preferredStyle: .alert)
+            let alert = UIAlertController(title: "¡Hola de nuevo!", message: "Bienvenido ;)", preferredStyle: .alert)
             
             let action = UIAlertAction(title: "Aceptar", style: .default, handler: {_ in
                 

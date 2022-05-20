@@ -8,7 +8,7 @@
 import UIKit
 import FittedSheets
 
-class SelectionViewController: UIViewController {
+class SelectionViewController: UIViewController, UITabBarControllerDelegate {
 
     let def = UserDefaults.standard
     
@@ -22,21 +22,23 @@ class SelectionViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
          if !def.bool(forKey: "logued"){
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "login") as! LoginViewController
             self.navigationController?.pushViewController(vc, animated: true)
-             self.tabBarController?.selectedIndex = 0
+             
         }
-//        else{
-//            
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            let vc = storyboard.instantiateViewController(withIdentifier: "user") as! LogedUserViewController
-//            tabBarController?.present(vc, animated: true, completion: nil)
-//
-//           
-//        }
+        else{
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "user") as! LogedUserViewController
+            tabBarController?.present(vc, animated: true)
+           
+        }
+
     }
+    
+    
     
    
 }
