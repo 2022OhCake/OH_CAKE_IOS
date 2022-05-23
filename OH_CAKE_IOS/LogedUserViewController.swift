@@ -23,6 +23,10 @@ class LogedUserViewController: UIViewController, UIImagePickerControllerDelegate
       
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
     @IBAction func changeProfilepic(_ sender: Any) {
         present(imagepicker, animated: true)
     }
