@@ -31,19 +31,27 @@ class LogedUserViewController: UIViewController, UIImagePickerControllerDelegate
         present(imagepicker, animated: true)
     }
     
+    @IBAction func ContactoBtn(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "contacto") as! ContactoViewController
+        navigationController?.pushViewController(vc, animated: true)
+    }
     @IBAction func logout(_ sender: Any) {
         
         
         
         let alert = UIAlertController(title: "¡Atencion!", message: "¿Seguro que quieres cerrar tu sesion?", preferredStyle: .alert)
         
-        let action = UIAlertAction(title: "Aceptar", style: .default, handler: {_ in
+        let confirmar = UIAlertAction(title: "Aceptar", style: .default, handler: {_ in
             self.dismiss(animated: true)
             self.defaults.set(false, forKey: "logued")
             self.tabBarController?.selectedIndex = 0
         })
         
-        alert.addAction(action)
+        let cancelar = UIAlertAction(title: "Cancelar", style: .destructive, handler: nil)
+        
+        alert.addAction(confirmar)
+        alert.addAction(cancelar)
         
         self.present(alert, animated: true, completion: nil)
         
@@ -61,7 +69,7 @@ class LogedUserViewController: UIViewController, UIImagePickerControllerDelegate
                 self.foto_perfil.image = selectedImage
             }
         }
-    
+//5B300D
 
 }
 
@@ -71,10 +79,32 @@ extension UIImageView {
 
         self.layer.borderWidth = 1
         self.layer.masksToBounds = true
-        self.layer.borderColor = UIColor.black.cgColor
-        self.layer.borderWidth = 2
-        self.layer.cornerRadius = self.frame.width / 2
-        assert(bounds.height == bounds.width, "The aspect ratio isn't 1/1. You can never round this image view!")
+        self.layer.borderColor = hexStringToUIColor(hex: "#5B300D").cgColor
+        self.layer.borderWidth = 3
+        self.layer.cornerRadius = self.frame.height / 2
+        //assert(bounds.height == bounds.width, "The aspect ratio isn't 1/1. You can never round this image view!")
         self.clipsToBounds = true
+    }
+    
+    func hexStringToUIColor (hex:String) -> UIColor {
+        var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+
+        if (cString.hasPrefix("#")) {
+            cString.remove(at: cString.startIndex)
+        }
+
+        if ((cString.count) != 6) {
+            return UIColor.gray
+        }
+
+        var rgbValue:UInt64 = 0
+        Scanner(string: cString).scanHexInt64(&rgbValue)
+
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
     }
 }

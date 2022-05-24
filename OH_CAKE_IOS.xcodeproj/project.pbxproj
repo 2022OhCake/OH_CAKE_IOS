@@ -27,6 +27,7 @@
 		F4A25B1E2833B34800C38BBE /* TABBARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A25B1D2833B34800C38BBE /* TABBARViewController.swift */; };
 		F4A4FEDB27FF0C2C006B7DCD /* OfertasCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A4FEDA27FF0C2C006B7DCD /* OfertasCell.swift */; };
 		F4A4FEDD27FF0C43006B7DCD /* MejoresCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A4FEDC27FF0C43006B7DCD /* MejoresCell.swift */; };
+		F4CC12EA283CF4220006D948 /* ContactoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CC12E9283CF4220006D948 /* ContactoViewController.swift */; };
 		F4E68781282CF5D50071D3A2 /* Step5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E68780282CF5D50071D3A2 /* Step5ViewController.swift */; };
 		F4EA0E63282A55C200E9E71A /* Step2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA0E62282A55C200E9E71A /* Step2ViewController.swift */; };
 		F4EA0E66282A573400E9E71A /* FormaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA0E65282A573400E9E71A /* FormaCell.swift */; };
@@ -59,6 +60,7 @@
 		F4A25B1D2833B34800C38BBE /* TABBARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TABBARViewController.swift; sourceTree = "<group>"; };
 		F4A4FEDA27FF0C2C006B7DCD /* OfertasCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfertasCell.swift; sourceTree = "<group>"; };
 		F4A4FEDC27FF0C43006B7DCD /* MejoresCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MejoresCell.swift; sourceTree = "<group>"; };
+		F4CC12E9283CF4220006D948 /* ContactoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactoViewController.swift; sourceTree = "<group>"; };
 		F4E68780282CF5D50071D3A2 /* Step5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step5ViewController.swift; sourceTree = "<group>"; };
 		F4EA0E62282A55C200E9E71A /* Step2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step2ViewController.swift; sourceTree = "<group>"; };
 		F4EA0E65282A573400E9E71A /* FormaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormaCell.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				F44A6C98282262BB00B4C67D /* MapaViewController.swift */,
 				F4A25B1D2833B34800C38BBE /* TABBARViewController.swift */,
 				F4A25B1B2833B30300C38BBE /* LogedUserViewController.swift */,
+				F4CC12E8283CF4030006D948 /* Funciones Usuario */,
 				F44A6C972822626500B4C67D /* Login */,
 				F42BEA4E2816A5A6009E626C /* Tarta_Custom */,
 				F4A4FED927FF0C06006B7DCD /* Collections */,
@@ -190,6 +193,14 @@
 				F486F3A328251514006DD483 /* Principal */,
 			);
 			path = Collections;
+			sourceTree = "<group>";
+		};
+		F4CC12E8283CF4030006D948 /* Funciones Usuario */ = {
+			isa = PBXGroup;
+			children = (
+				F4CC12E9283CF4220006D948 /* ContactoViewController.swift */,
+			);
+			path = "Funciones Usuario";
 			sourceTree = "<group>";
 		};
 		F4EA0E64282A571A00E9E71A /* celdas */ = {
@@ -321,6 +332,7 @@
 				F42BEA502816A62F009E626C /* Step1ViewController.swift in Sources */,
 				4A0C3FA4282C18E500ED6C74 /* Step4ViewController.swift in Sources */,
 				F4A25B1E2833B34800C38BBE /* TABBARViewController.swift in Sources */,
+				F4CC12EA283CF4220006D948 /* ContactoViewController.swift in Sources */,
 				F4F6835628129D0500A2F67D /* LoginViewController.swift in Sources */,
 				F4A4FEDB27FF0C2C006B7DCD /* OfertasCell.swift in Sources */,
 				F4EA0E69282A937D00E9E71A /* Step3ViewController.swift in Sources */,
