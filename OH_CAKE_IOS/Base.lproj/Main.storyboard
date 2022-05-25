@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QDC-1D-BdM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QDC-1D-BdM">
     <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -472,7 +472,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rwB-rW-PAp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4652" y="3114"/>
+            <point key="canvasLocation" x="3728" y="4045"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="pnw-7h-27r">
@@ -1206,10 +1206,10 @@
             </objects>
             <point key="canvasLocation" x="2344" y="1515"/>
         </scene>
-        <!--View Controller-->
+        <!--Notifications View Controller-->
         <scene sceneID="kP5-DF-ISL">
             <objects>
-                <viewController id="eFD-OQ-0hu" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="notifications" id="eFD-OQ-0hu" customClass="NotificationsViewController" customModule="OH_CAKE_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cfc-dj-Jq6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1228,9 +1228,9 @@
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="61E-NN-BPH">
                                 <rect key="frame" x="16" y="112.5" width="288" height="347.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.98431372549999996" green="0.96098428960000004" blue="0.94901841880000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="123" id="gUV-T5-Y4N">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="notificationscell" rowHeight="123" id="gUV-T5-Y4N" customClass="NotificationsCell" customModule="OH_CAKE_IOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="288" height="123"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gUV-T5-Y4N" id="j26-ee-q3M">
@@ -1276,6 +1276,12 @@
                                                 <constraint firstItem="jLp-rw-KHE" firstAttribute="top" secondItem="j26-ee-q3M" secondAttribute="top" constant="6" id="yzm-N3-YYG"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="FechaPedido" destination="bXC-Mg-L9O" id="1FG-uF-ocE"/>
+                                            <outlet property="NumPedido" destination="mPn-AG-s52" id="gEu-89-CYS"/>
+                                            <outlet property="foto_pedido" destination="jLp-rw-KHE" id="L2D-ik-38C"/>
+                                            <outlet property="tituloPedido" destination="bIt-OQ-DdF" id="aIP-v5-0JB"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -1293,10 +1299,13 @@
                             <constraint firstItem="61E-NN-BPH" firstAttribute="top" secondItem="bmZ-Kg-nby" secondAttribute="bottom" constant="30" id="nVO-ub-G31"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="notificationsTableView" destination="61E-NN-BPH" id="4nH-1J-ejW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oGo-5g-LmN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3938" y="3123"/>
+            <point key="canvasLocation" x="3092" y="4045"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="A8m-ov-c64">
@@ -1453,6 +1462,9 @@
                                     <color key="baseForegroundColor" red="0.35686274509999999" green="0.18823529410000001" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="baseBackgroundColor" red="0.74509803919999995" green="0.8862745098" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="notificationsBtn:" destination="YGd-Zy-QrX" eventType="touchUpInside" id="hWQ-SE-ycn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9o8-0w-dIs">
                                 <rect key="frame" x="60" y="295.5" width="200" height="34.5"/>
@@ -1517,13 +1529,13 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre Usuario" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFl-cF-mFV">
-                                <rect key="frame" x="30" y="224" width="260" height="1.5"/>
+                                <rect key="frame" x="30" y="180" width="260" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <color key="textColor" red="0.35686274509999999" green="0.18823529410000001" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="jU4-lR-IVq">
-                                <rect key="frame" x="95" y="64" width="130" height="130"/>
+                                <rect key="frame" x="95" y="20" width="130" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="jU4-lR-IVq" secondAttribute="height" multiplier="1:1" id="Jmp-oT-tKV"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="300" id="L1M-AQ-npK"/>
@@ -1531,7 +1543,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mh8-f0-rlM">
-                                <rect key="frame" x="185" y="176" width="40" height="40"/>
+                                <rect key="frame" x="185" y="132" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="SeS-yF-G5R"/>
                                     <constraint firstAttribute="width" secondItem="mh8-f0-rlM" secondAttribute="height" multiplier="1:1" id="Vmh-vl-hYb"/>
@@ -1667,17 +1679,6 @@
                                                     <color key="baseBackgroundColor" red="0.74509803919999995" green="0.8862745098" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 </buttonConfiguration>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ky-IF-JPc">
-                                                <rect key="frame" x="243.5" y="20" width="46.5" height="31"/>
-                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" image="arrowshape.turn.up.backward.fill" catalog="system" title="">
-                                                    <color key="baseForegroundColor" red="0.35686274509999999" green="0.18823529410000001" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                </buttonConfiguration>
-                                                <connections>
-                                                    <action selector="backBTN:" destination="k3H-ZO-TCJ" eventType="touchUpInside" id="NRa-E0-bv7"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.98823529409999999" green="0.96078431369999995" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -1697,13 +1698,11 @@
                                             <constraint firstItem="out-Do-wh9" firstAttribute="leading" secondItem="dac-qr-70H" secondAttribute="leading" constant="30" id="RSf-zQ-a5B"/>
                                             <constraint firstItem="MI9-UP-ybV" firstAttribute="leading" secondItem="dac-qr-70H" secondAttribute="leading" constant="30" id="SJV-se-y6M"/>
                                             <constraint firstItem="Hp7-fs-bIJ" firstAttribute="leading" secondItem="dac-qr-70H" secondAttribute="leading" constant="30" id="U31-M2-wqj"/>
-                                            <constraint firstAttribute="trailing" secondItem="4Ky-IF-JPc" secondAttribute="trailing" constant="30" id="Uzj-Vq-7BL"/>
                                             <constraint firstItem="NnY-jz-O6g" firstAttribute="leading" secondItem="dac-qr-70H" secondAttribute="leading" constant="30" id="a48-7A-Xs7"/>
                                             <constraint firstItem="XBy-vL-SbC" firstAttribute="top" secondItem="dac-qr-70H" secondAttribute="top" constant="20" id="bfb-HI-TZI"/>
                                             <constraint firstItem="XBy-vL-SbC" firstAttribute="leading" secondItem="dac-qr-70H" secondAttribute="leading" constant="30" id="edT-7H-FaJ"/>
                                             <constraint firstItem="dkz-Kb-TAs" firstAttribute="top" secondItem="MyK-nO-2pb" secondAttribute="bottom" constant="30" id="fyy-hy-CLk"/>
                                             <constraint firstItem="ZUS-MM-B2b" firstAttribute="top" secondItem="dkz-Kb-TAs" secondAttribute="bottom" constant="10" id="gGQ-zL-VrJ"/>
-                                            <constraint firstItem="4Ky-IF-JPc" firstAttribute="top" secondItem="dac-qr-70H" secondAttribute="top" constant="20" id="gy5-YU-Zq1"/>
                                             <constraint firstAttribute="trailing" secondItem="K58-NT-g50" secondAttribute="trailing" constant="50" id="jKu-3X-1gx"/>
                                             <constraint firstItem="MI9-UP-ybV" firstAttribute="top" secondItem="NnY-jz-O6g" secondAttribute="bottom" constant="10" id="krh-Ph-mnw"/>
                                             <constraint firstAttribute="trailing" secondItem="ZUS-MM-B2b" secondAttribute="trailing" constant="30" id="kxj-bk-cF6"/>
@@ -1740,22 +1739,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n1b-oW-tSA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2344" y="4045"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="zkd-9V-ipX">
-            <objects>
-                <navigationController id="7bs-BP-pY7" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yTj-Zj-e6u">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="YGd-Zy-QrX" kind="relationship" relationship="rootViewController" id="THP-uf-Qtn"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LLG-7y-iCZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3092" y="3036"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mQH-Oi-7B1">
@@ -2668,7 +2651,6 @@
     <resources>
         <image name="Logo" width="399" height="334"/>
         <image name="Logo_Menu_icon" width="40" height="40"/>
-        <image name="arrowshape.turn.up.backward.fill" catalog="system" width="128" height="106"/>
         <image name="banner" width="5924" height="2353"/>
         <image name="base_vacia" width="433" height="355"/>
         <image name="cart.fill" catalog="system" width="128" height="102"/>

@@ -23,6 +23,11 @@ class LogedUserViewController: UIViewController, UIImagePickerControllerDelegate
       
     }
     
+    @IBAction func notificationsBtn(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "notifications") as! NotificationsViewController
+        self.present(vc, animated: true)
+    }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
     }

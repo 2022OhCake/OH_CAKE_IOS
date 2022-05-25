@@ -7,23 +7,25 @@
 
 import UIKit
 
-class NotificationsViewController: UIViewController, UITabBarDelegate, UITableViewDataSource{
+class NotificationsViewController: UIViewController, UITabBarDelegate, UITableViewDataSource, UITableViewDelegate{
     
     
-
+    @IBOutlet weak var notificationsTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.notificationsTableView.delegate = self
+        self.notificationsTableView.dataSource = self
     }
     
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "notificationscell", for: indexPath) as! NotificationsCell
         
         return cell
     }
