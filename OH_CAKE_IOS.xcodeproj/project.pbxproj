@@ -22,6 +22,8 @@
 		F476046D2833B9A6005FCE32 /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F476046C2833B9A6005FCE32 /* SelectionViewController.swift */; };
 		F47CB6F3282900DB002CA287 /* CategoriasCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47CB6F2282900DB002CA287 /* CategoriasCell.swift */; };
 		F486F3A628251549006DD483 /* CategoriasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F486F3A528251549006DD483 /* CategoriasViewController.swift */; };
+		F48FD8B2283E5A98002E4625 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48FD8B1283E5A98002E4625 /* NotificationsViewController.swift */; };
+		F48FD8B4283E5D7B002E4625 /* NotificationsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48FD8B3283E5D7B002E4625 /* NotificationsCell.swift */; };
 		F49F963C2816876B00DE5880 /* RegistroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49F963B2816876B00DE5880 /* RegistroViewController.swift */; };
 		F4A25B1C2833B30300C38BBE /* LogedUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A25B1B2833B30300C38BBE /* LogedUserViewController.swift */; };
 		F4A25B1E2833B34800C38BBE /* TABBARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A25B1D2833B34800C38BBE /* TABBARViewController.swift */; };
@@ -55,6 +57,8 @@
 		F476046C2833B9A6005FCE32 /* SelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
 		F47CB6F2282900DB002CA287 /* CategoriasCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriasCell.swift; sourceTree = "<group>"; };
 		F486F3A528251549006DD483 /* CategoriasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriasViewController.swift; sourceTree = "<group>"; };
+		F48FD8B1283E5A98002E4625 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		F48FD8B3283E5D7B002E4625 /* NotificationsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsCell.swift; sourceTree = "<group>"; };
 		F49F963B2816876B00DE5880 /* RegistroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroViewController.swift; sourceTree = "<group>"; };
 		F4A25B1B2833B30300C38BBE /* LogedUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogedUserViewController.swift; sourceTree = "<group>"; };
 		F4A25B1D2833B34800C38BBE /* TABBARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TABBARViewController.swift; sourceTree = "<group>"; };
@@ -186,6 +190,15 @@
 			path = Categorias;
 			sourceTree = "<group>";
 		};
+		F48FD8B0283E5734002E4625 /* Notificaciones */ = {
+			isa = PBXGroup;
+			children = (
+				F48FD8B1283E5A98002E4625 /* NotificationsViewController.swift */,
+				F48FD8B3283E5D7B002E4625 /* NotificationsCell.swift */,
+			);
+			path = Notificaciones;
+			sourceTree = "<group>";
+		};
 		F4A4FED927FF0C06006B7DCD /* Collections */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +211,7 @@
 		F4CC12E8283CF4030006D948 /* Funciones Usuario */ = {
 			isa = PBXGroup;
 			children = (
+				F48FD8B0283E5734002E4625 /* Notificaciones */,
 				F4CC12E9283CF4220006D948 /* ContactoViewController.swift */,
 			);
 			path = "Funciones Usuario";
@@ -331,6 +345,7 @@
 				F486F3A628251549006DD483 /* CategoriasViewController.swift in Sources */,
 				F42BEA502816A62F009E626C /* Step1ViewController.swift in Sources */,
 				4A0C3FA4282C18E500ED6C74 /* Step4ViewController.swift in Sources */,
+				F48FD8B4283E5D7B002E4625 /* NotificationsCell.swift in Sources */,
 				F4A25B1E2833B34800C38BBE /* TABBARViewController.swift in Sources */,
 				F4CC12EA283CF4220006D948 /* ContactoViewController.swift in Sources */,
 				F4F6835628129D0500A2F67D /* LoginViewController.swift in Sources */,
@@ -344,6 +359,7 @@
 				F476046D2833B9A6005FCE32 /* SelectionViewController.swift in Sources */,
 				F49F963C2816876B00DE5880 /* RegistroViewController.swift in Sources */,
 				F47CB6F3282900DB002CA287 /* CategoriasCell.swift in Sources */,
+				F48FD8B2283E5A98002E4625 /* NotificationsViewController.swift in Sources */,
 				F4E68781282CF5D50071D3A2 /* Step5ViewController.swift in Sources */,
 				F44AC5D128326E6200F44F75 /* FinalStepViewController.swift in Sources */,
 				4A05491C27E25D6300D9EB71 /* AppDelegate.swift in Sources */,

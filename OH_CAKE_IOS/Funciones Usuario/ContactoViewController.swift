@@ -16,6 +16,9 @@ class ContactoViewController: UIViewController {
     }
     
 
-   
+    @IBAction func backBTN(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
+    
 
 }

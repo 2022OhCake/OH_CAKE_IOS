@@ -1667,6 +1667,17 @@
                                                     <color key="baseBackgroundColor" red="0.74509803919999995" green="0.8862745098" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 </buttonConfiguration>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ky-IF-JPc">
+                                                <rect key="frame" x="243.5" y="20" width="46.5" height="31"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" image="arrowshape.turn.up.backward.fill" catalog="system" title="">
+                                                    <color key="baseForegroundColor" red="0.35686274509999999" green="0.18823529410000001" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="backBTN:" destination="k3H-ZO-TCJ" eventType="touchUpInside" id="NRa-E0-bv7"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.98823529409999999" green="0.96078431369999995" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -1686,11 +1697,13 @@
                                             <constraint firstItem="out-Do-wh9" firstAttribute="leading" secondItem="dac-qr-70H" secondAttribute="leading" constant="30" id="RSf-zQ-a5B"/>
                                             <constraint firstItem="MI9-UP-ybV" firstAttribute="leading" secondItem="dac-qr-70H" secondAttribute="leading" constant="30" id="SJV-se-y6M"/>
                                             <constraint firstItem="Hp7-fs-bIJ" firstAttribute="leading" secondItem="dac-qr-70H" secondAttribute="leading" constant="30" id="U31-M2-wqj"/>
+                                            <constraint firstAttribute="trailing" secondItem="4Ky-IF-JPc" secondAttribute="trailing" constant="30" id="Uzj-Vq-7BL"/>
                                             <constraint firstItem="NnY-jz-O6g" firstAttribute="leading" secondItem="dac-qr-70H" secondAttribute="leading" constant="30" id="a48-7A-Xs7"/>
                                             <constraint firstItem="XBy-vL-SbC" firstAttribute="top" secondItem="dac-qr-70H" secondAttribute="top" constant="20" id="bfb-HI-TZI"/>
                                             <constraint firstItem="XBy-vL-SbC" firstAttribute="leading" secondItem="dac-qr-70H" secondAttribute="leading" constant="30" id="edT-7H-FaJ"/>
                                             <constraint firstItem="dkz-Kb-TAs" firstAttribute="top" secondItem="MyK-nO-2pb" secondAttribute="bottom" constant="30" id="fyy-hy-CLk"/>
                                             <constraint firstItem="ZUS-MM-B2b" firstAttribute="top" secondItem="dkz-Kb-TAs" secondAttribute="bottom" constant="10" id="gGQ-zL-VrJ"/>
+                                            <constraint firstItem="4Ky-IF-JPc" firstAttribute="top" secondItem="dac-qr-70H" secondAttribute="top" constant="20" id="gy5-YU-Zq1"/>
                                             <constraint firstAttribute="trailing" secondItem="K58-NT-g50" secondAttribute="trailing" constant="50" id="jKu-3X-1gx"/>
                                             <constraint firstItem="MI9-UP-ybV" firstAttribute="top" secondItem="NnY-jz-O6g" secondAttribute="bottom" constant="10" id="krh-Ph-mnw"/>
                                             <constraint firstAttribute="trailing" secondItem="ZUS-MM-B2b" secondAttribute="trailing" constant="30" id="kxj-bk-cF6"/>
@@ -2655,6 +2668,7 @@
     <resources>
         <image name="Logo" width="399" height="334"/>
         <image name="Logo_Menu_icon" width="40" height="40"/>
+        <image name="arrowshape.turn.up.backward.fill" catalog="system" width="128" height="106"/>
         <image name="banner" width="5924" height="2353"/>
         <image name="base_vacia" width="433" height="355"/>
         <image name="cart.fill" catalog="system" width="128" height="102"/>

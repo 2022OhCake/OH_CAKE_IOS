@@ -34,7 +34,7 @@ class LogedUserViewController: UIViewController, UIImagePickerControllerDelegate
     @IBAction func ContactoBtn(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "contacto") as! ContactoViewController
-        navigationController?.pushViewController(vc, animated: true)
+        self.present(vc, animated: true)
     }
     @IBAction func logout(_ sender: Any) {
         
