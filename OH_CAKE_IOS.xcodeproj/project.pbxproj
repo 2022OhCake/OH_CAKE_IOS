@@ -21,6 +21,10 @@
 		F44AC5D128326E6200F44F75 /* FinalStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44AC5D028326E6200F44F75 /* FinalStepViewController.swift */; };
 		F476046D2833B9A6005FCE32 /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F476046C2833B9A6005FCE32 /* SelectionViewController.swift */; };
 		F47CB6F3282900DB002CA287 /* CategoriasCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47CB6F2282900DB002CA287 /* CategoriasCell.swift */; };
+		F4863CF1283F7181008E70B5 /* PedidosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4863CF0283F7181008E70B5 /* PedidosViewController.swift */; };
+		F4863CF3283F71A2008E70B5 /* PedidosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4863CF2283F71A2008E70B5 /* PedidosCell.swift */; };
+		F4863CF6283F9B03008E70B5 /* TartasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4863CF5283F9B03008E70B5 /* TartasViewController.swift */; };
+		F4863CF8283F9BAF008E70B5 /* TartasCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4863CF7283F9BAF008E70B5 /* TartasCell.swift */; };
 		F486F3A628251549006DD483 /* CategoriasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F486F3A528251549006DD483 /* CategoriasViewController.swift */; };
 		F48FD8B2283E5A98002E4625 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48FD8B1283E5A98002E4625 /* NotificationsViewController.swift */; };
 		F48FD8B4283E5D7B002E4625 /* NotificationsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48FD8B3283E5D7B002E4625 /* NotificationsCell.swift */; };
@@ -56,6 +60,10 @@
 		F44AC5D028326E6200F44F75 /* FinalStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalStepViewController.swift; sourceTree = "<group>"; };
 		F476046C2833B9A6005FCE32 /* SelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
 		F47CB6F2282900DB002CA287 /* CategoriasCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriasCell.swift; sourceTree = "<group>"; };
+		F4863CF0283F7181008E70B5 /* PedidosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedidosViewController.swift; sourceTree = "<group>"; };
+		F4863CF2283F71A2008E70B5 /* PedidosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedidosCell.swift; sourceTree = "<group>"; };
+		F4863CF5283F9B03008E70B5 /* TartasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TartasViewController.swift; sourceTree = "<group>"; };
+		F4863CF7283F9BAF008E70B5 /* TartasCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TartasCell.swift; sourceTree = "<group>"; };
 		F486F3A528251549006DD483 /* CategoriasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriasViewController.swift; sourceTree = "<group>"; };
 		F48FD8B1283E5A98002E4625 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		F48FD8B3283E5D7B002E4625 /* NotificationsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsCell.swift; sourceTree = "<group>"; };
@@ -172,6 +180,24 @@
 			path = OtherStuff;
 			sourceTree = "<group>";
 		};
+		F4863CEF283F7105008E70B5 /* Mis Pedidos */ = {
+			isa = PBXGroup;
+			children = (
+				F4863CF0283F7181008E70B5 /* PedidosViewController.swift */,
+				F4863CF2283F71A2008E70B5 /* PedidosCell.swift */,
+			);
+			path = "Mis Pedidos";
+			sourceTree = "<group>";
+		};
+		F4863CF4283F9A02008E70B5 /* Tartas */ = {
+			isa = PBXGroup;
+			children = (
+				F4863CF5283F9B03008E70B5 /* TartasViewController.swift */,
+				F4863CF7283F9BAF008E70B5 /* TartasCell.swift */,
+			);
+			path = Tartas;
+			sourceTree = "<group>";
+		};
 		F486F3A328251514006DD483 /* Principal */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +228,7 @@
 		F4A4FED927FF0C06006B7DCD /* Collections */ = {
 			isa = PBXGroup;
 			children = (
+				F4863CF4283F9A02008E70B5 /* Tartas */,
 				F486F3A42825152E006DD483 /* Categorias */,
 				F486F3A328251514006DD483 /* Principal */,
 			);
@@ -211,6 +238,7 @@
 		F4CC12E8283CF4030006D948 /* Funciones Usuario */ = {
 			isa = PBXGroup;
 			children = (
+				F4863CEF283F7105008E70B5 /* Mis Pedidos */,
 				F48FD8B0283E5734002E4625 /* Notificaciones */,
 				F4CC12E9283CF4220006D948 /* ContactoViewController.swift */,
 			);
@@ -341,9 +369,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4863CF1283F7181008E70B5 /* PedidosViewController.swift in Sources */,
 				F4EA0E63282A55C200E9E71A /* Step2ViewController.swift in Sources */,
 				F486F3A628251549006DD483 /* CategoriasViewController.swift in Sources */,
 				F42BEA502816A62F009E626C /* Step1ViewController.swift in Sources */,
+				F4863CF3283F71A2008E70B5 /* PedidosCell.swift in Sources */,
 				4A0C3FA4282C18E500ED6C74 /* Step4ViewController.swift in Sources */,
 				F48FD8B4283E5D7B002E4625 /* NotificationsCell.swift in Sources */,
 				F4A25B1E2833B34800C38BBE /* TABBARViewController.swift in Sources */,
@@ -357,10 +387,12 @@
 				4A05492027E25D6300D9EB71 /* ViewController.swift in Sources */,
 				F4EA0E66282A573400E9E71A /* FormaCell.swift in Sources */,
 				F476046D2833B9A6005FCE32 /* SelectionViewController.swift in Sources */,
+				F4863CF8283F9BAF008E70B5 /* TartasCell.swift in Sources */,
 				F49F963C2816876B00DE5880 /* RegistroViewController.swift in Sources */,
 				F47CB6F3282900DB002CA287 /* CategoriasCell.swift in Sources */,
 				F48FD8B2283E5A98002E4625 /* NotificationsViewController.swift in Sources */,
 				F4E68781282CF5D50071D3A2 /* Step5ViewController.swift in Sources */,
+				F4863CF6283F9B03008E70B5 /* TartasViewController.swift in Sources */,
 				F44AC5D128326E6200F44F75 /* FinalStepViewController.swift in Sources */,
 				4A05491C27E25D6300D9EB71 /* AppDelegate.swift in Sources */,
 				F4A25B1C2833B30300C38BBE /* LogedUserViewController.swift in Sources */,

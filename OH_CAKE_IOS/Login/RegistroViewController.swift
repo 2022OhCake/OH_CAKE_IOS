@@ -173,7 +173,7 @@ class RegistroViewController: UIViewController {
             present(alert, animated: true, completion: nil)
         }
         else{
-            //Otro codigo significa que al servidor le ha dado aun mas ansiedad y se muere
+            //Otro codigo significa que al servidor le ha dado aun mas ansiedad y se ha muerto fuerte
             let alert = UIAlertController(title: "Error", message: "Error desconcido, prueba a intentarlo más tarde", preferredStyle: .alert)
             
             let action = UIAlertAction(title: "Aceptar", style: .destructive, handler: nil)

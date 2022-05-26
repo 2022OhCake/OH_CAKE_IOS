@@ -29,6 +29,12 @@ class CategoriasViewController: UIViewController, UICollectionViewDelegate, UICo
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "tartascontroller") as! TartasViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     
     func getcategorias(){
         let urlString = ""
