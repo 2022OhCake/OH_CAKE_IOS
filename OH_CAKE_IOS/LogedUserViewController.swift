@@ -12,7 +12,8 @@ class LogedUserViewController: UIViewController, UIImagePickerControllerDelegate
     //Defaults y funcion para coger fotos
     let defaults = UserDefaults.standard
     var imagepicker: UIImagePickerController = UIImagePickerController()
-
+    @IBOutlet weak var UsuarioLabel: UILabel!
+    
     @IBOutlet weak var foto_perfil: UIImageView!
     
     override func viewDidLoad() {
@@ -21,7 +22,9 @@ class LogedUserViewController: UIViewController, UIImagePickerControllerDelegate
         foto_perfil.makeRounded()
         imagepicker.delegate = self
         imagepicker.sourceType = .photoLibrary
-      
+        let nombre = defaults.object(forKey: "usuario")
+        let apellido = defaults.object(forKey: "apellido")
+        UsuarioLabel.text = "Bienvenido, \(nombre!) \(apellido!)"
     }
     
     //Instaciar Controlador de notificaciones
@@ -61,6 +64,7 @@ class LogedUserViewController: UIViewController, UIImagePickerControllerDelegate
             self.dismiss(animated: true)
             self.defaults.set(false, forKey: "logued")
             self.tabBarController?.selectedIndex = 0
+            clearAllUserDefaultsData()
         })
         
         //Si pulsa cancelar pues no hace nada
@@ -90,6 +94,16 @@ class LogedUserViewController: UIViewController, UIImagePickerControllerDelegate
         }
 //5B300D
 
+}
+
+
+func clearAllUserDefaultsData(){
+   let userDefaults = UserDefaults.standard
+   let dics = userDefaults.dictionaryRepresentation()
+   for key in dics {
+       userDefaults.removeObject(forKey: key.key)
+   }
+   userDefaults.synchronize()
 }
 
 extension UIImageView {

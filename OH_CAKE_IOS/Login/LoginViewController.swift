@@ -101,6 +101,8 @@ class LoginViewController: UIViewController {
                     //Parametros del usuario
                        let bodyData = "email=\(user)&password=\(passwd)&password_confirmation=\(passwd)"
         
+                       //request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
                        request.setValue(String(bodyData.lengthOfBytes(using: .utf8)), forHTTPHeaderField: "Content-Length")
         
                        request.httpBody = bodyData.data(using: String.Encoding.utf8)
@@ -125,47 +127,38 @@ class LoginViewController: UIViewController {
                            guard let datos = data else {return}
                             
                            do{
-                               let json = try JSONSerialization.jsonObject(with: datos, options: .fragmentsAllowed)
                                
-                               //Obtengo los datos del json
-                               guard let newValue = json as? [String: Any] else {
-                                                           print("invalid format")
-                                                           return
-                                                        }
+                               let json = try JSONSerialization.jsonObject(with: datos, options: .fragmentsAllowed) as! NSDictionary
                                
-                               print(newValue)
                                
-                               //Si el campo email no viene vacio quiere decir que hay un error
-                               if !(newValue["email"] == nil){
-                                
-                                   let texto = String(describing: newValue["email"]!)
-                                   
-                                   let a = texto.replacingOccurrences(of: "(", with: "")
-                                   let o = a.replacingOccurrences(of: ")", with: "")
+                               
+                               //let MensajeServer = String(decoding: datos, as: UTF8.self)
+
+                               print(json["user"])
+                               
+                               if code == 200{
+                                   let usuario = json["user"] as! [String:Any]
                                    
                                    DispatchQueue.main.async {
-                                       self.alertas(code: code, message: o)
-                                    }
+                                       self.alertas(code: code, message: "", user: usuario["first_name"] as! String, apellidos: usuario["last_name"] as! String)
+                                   }
                                }
-                               
                                else{
                                    DispatchQueue.main.async {
-                                       //Si no hay ningun mensaje se procede al alert, los parametros son el status code y el mensaje(En este caso, esta abajo)
-                                       self.alertas(code: code, message: "")
-                                    }
+                                       self.alertas(code: code, message: "", user: "", apellidos: "")
+                                   }
                                }
-                               
                            
                            }
                            catch let jsonError{
-                              // print("Error: \(jsonError)")
+                               print("Error: \(jsonError)")
                            }
  
                        }.resume()
     }
     
 
-    func alertas(code:Int, message: String){
+    func alertas(code:Int, message: String, user: String, apellidos: String){
         //Esta funcion es para organizar las alertas por que si no se queda la peticion hecha una porqueria
         
         
@@ -197,13 +190,16 @@ class LoginViewController: UIViewController {
         //Si el status code es 200, quiere decir que esta todo guay y que el login se ha hecho bien
         else if code == 200{
            
-            let alert = UIAlertController(title: "¡Hola de nuevo!", message: "Bienvenido ;)", preferredStyle: .alert)
+            let alert = UIAlertController(title: "¡Hola de nuevo!", message: "Bienvenido, \(user) ;)", preferredStyle: .alert)
             
             let action = UIAlertAction(title: "Aceptar", style: .default, handler: {_ in
                 
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = storyboard.instantiateViewController(withIdentifier: "select") as! SelectionViewController
                 self.navigationController?.pushViewController(vc, animated: true)
+                
+                self.defaults.set(user, forKey: "usuario")
+                self.defaults.set(apellidos, forKey: "apellido")
                 
                 //Selecciono la primera pantalla para que el tabbar me lleve a inicio
                 self.tabBarController!.selectedIndex = 0

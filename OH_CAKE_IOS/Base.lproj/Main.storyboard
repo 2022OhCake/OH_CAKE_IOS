@@ -810,8 +810,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="WZu-4l-it1"/>
                     <connections>
+                        <outlet property="UsuarioLabel" destination="zf5-10-D5K" id="Nqu-Cb-aNw"/>
+                        <outlet property="crearcuentaBtn" destination="my9-X9-wDX" id="Ajj-oG-dVS"/>
                         <outlet property="mejorCollection" destination="rFu-o7-QeM" id="oTC-D9-bdR"/>
                         <outlet property="ofertasCollection" destination="Ais-bs-zTv" id="gbM-Wa-5LP"/>
+                        <outlet property="registradoLabel" destination="hUu-IL-ci8" id="83W-fj-HJP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ybJ-Z3-JMJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1535,7 +1538,7 @@
                                     <constraint firstAttribute="height" constant="40" id="GFU-AD-lZb"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre Usuario" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFl-cF-mFV">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre Usuario" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CFl-cF-mFV">
                                 <rect key="frame" x="30" y="180" width="260" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <color key="textColor" red="0.35686274509999999" green="0.18823529410000001" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -1595,6 +1598,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Vrc-1d-ktE"/>
                     <connections>
+                        <outlet property="UsuarioLabel" destination="CFl-cF-mFV" id="5ey-s1-T9S"/>
                         <outlet property="foto_perfil" destination="jU4-lR-IVq" id="Zc0-DN-b95"/>
                     </connections>
                 </viewController>
@@ -1753,7 +1757,7 @@
                 <navigationController id="ijn-MX-tnx" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="5Sx-th-Me0"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NGy-gS-pR0">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -2138,7 +2142,7 @@
                 <navigationController id="7m2-Zh-tiz" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Tdr-xJ-6ti"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fRU-Ba-iRY">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>

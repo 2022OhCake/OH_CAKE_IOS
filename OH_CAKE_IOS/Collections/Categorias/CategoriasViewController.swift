@@ -17,6 +17,8 @@ class CategoriasViewController: UIViewController, UICollectionViewDelegate, UICo
         super.viewDidLoad()
         categoriascollection.delegate = self
         categoriascollection.dataSource = self
+        
+        self.getcategorias()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -37,7 +39,7 @@ class CategoriasViewController: UIViewController, UICollectionViewDelegate, UICo
     
     
     func getcategorias(){
-        let urlString = ""
+        let urlString = "http://rumpusroom.es/tfc/back_cake_api_panels/public/api/cakecategory"
         
         guard let url = URL(string: urlString) else {return}
         
@@ -62,7 +64,8 @@ class CategoriasViewController: UIViewController, UICollectionViewDelegate, UICo
             guard let datos = data else {return}
             
             do{
-            let cosas = try JSONSerialization.data(withJSONObject: datos, options: .fragmentsAllowed)
+                let cosas = try JSONSerialization.jsonObject(with: datos, options: .fragmentsAllowed)
+                print(cosas)
             }
             catch{
                 print("Error: \(error)")
