@@ -130,3 +130,61 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
 }
 
+extension UIImageView {
+
+    //Esta funcion es para redondear la foto de perfil
+    func makeRounded() {
+
+        self.layer.borderWidth = 1
+        self.layer.masksToBounds = true
+        self.layer.borderColor = hexStringToUIColor(hex: "#5B300D").cgColor
+        self.layer.borderWidth = 3
+        self.layer.cornerRadius = self.frame.height / 2
+        assert(bounds.height == bounds.width, "The aspect ratio isn't 1/1. You can never round this image view!")
+        self.clipsToBounds = true
+    }
+    
+    //Esta esta declarada en mas sitios pero sirve para pasar un string de color hexadecimal a UICOLOR
+    func hexStringToUIColor (hex:String) -> UIColor {
+        var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+
+        if (cString.hasPrefix("#")) {
+            cString.remove(at: cString.startIndex)
+        }
+
+        if ((cString.count) != 6) {
+            return UIColor.gray
+        }
+
+        var rgbValue:UInt64 = 0
+        Scanner(string: cString).scanHexInt64(&rgbValue)
+
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
+    }
+    
+    func downloaded(from url: URL, contentMode mode: ContentMode = .scaleAspectFit) {
+            contentMode = mode
+            URLSession.shared.dataTask(with: url) { data, response, error in
+                guard
+                    let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+                    let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
+                    let data = data, error == nil,
+                    let image = UIImage(data: data)
+                    else { return }
+                DispatchQueue.main.async() { [weak self] in
+                    self?.image = image
+                }
+            }.resume()
+        }
+        func downloaded(from link: String, contentMode mode: ContentMode = .scaleAspectFit) {
+            guard let url = URL(string: link) else { return }
+            downloaded(from: url, contentMode: mode)
+        }
+}
+
+

@@ -9,7 +9,7 @@ import UIKit
 
 class CategoriasViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
     
-    let categorias = [""]
+    var categorias:[[String:Any]] = [[:]]
     
     @IBOutlet weak var categoriascollection: UICollectionView!
     
@@ -22,12 +22,21 @@ class CategoriasViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
+        return categorias.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "celdaCategorias", for: indexPath) as! CategoriasCell
         
+        if !categorias[indexPath.row].isEmpty{
+            cell.CategoriaLabel.text = categorias[indexPath.row]["name_category"] as? String
+            
+            let urlString = categorias[indexPath.row]["image"] as! String
+            guard let url = URL(string: urlString) else {return cell}
+            cell.fotoCategoria.downloaded(from: url)
+            print(categorias[indexPath.item]["name_category"]!)
+        }
+ 
         return cell
     }
     
@@ -64,8 +73,14 @@ class CategoriasViewController: UIViewController, UICollectionViewDelegate, UICo
             guard let datos = data else {return}
             
             do{
-                let cosas = try JSONSerialization.jsonObject(with: datos, options: .fragmentsAllowed)
-                print(cosas)
+                let cosas = try JSONSerialization.jsonObject(with: datos, options: .fragmentsAllowed) as! [[String:Any]]
+     
+                self.categorias = cosas
+         
+                DispatchQueue.main.async {
+                    self.categoriascollection.reloadData()
+                }
+                
             }
             catch{
                 print("Error: \(error)")
