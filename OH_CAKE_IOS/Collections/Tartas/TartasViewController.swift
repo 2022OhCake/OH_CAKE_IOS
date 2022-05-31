@@ -76,7 +76,7 @@ class TartasViewController: UIViewController, UICollectionViewDelegate, UICollec
             do{
                 let cosas = try JSONSerialization.jsonObject(with: datos, options: .fragmentsAllowed) as! [String:Any]
      
-                print(cosas["default_cakes"])
+                //print(cosas["default_cakes"])
                 
                 self.tartas = cosas["default_cakes"] as! [[String : Any]]
                 

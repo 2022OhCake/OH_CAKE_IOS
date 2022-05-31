@@ -86,6 +86,7 @@ class CategoriasViewController: UIViewController, UICollectionViewDelegate, UICo
                 let cosas = try JSONSerialization.jsonObject(with: datos, options: .fragmentsAllowed) as! [[String:Any]]
      
                 self.categorias = cosas
+                print(cosas)
          
                 DispatchQueue.main.async {
                     self.categoriascollection.reloadData()
