@@ -9,4 +9,6 @@ import UIKit
 
 class TartasCell: UICollectionViewCell {
     
+    @IBOutlet weak var Foto_tarta: UIImageView!
+    @IBOutlet weak var NombreLabel: UILabel!
 }

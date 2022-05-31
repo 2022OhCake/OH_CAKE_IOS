@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QDC-1D-BdM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QDC-1D-BdM">
     <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -145,10 +145,10 @@
             </objects>
             <point key="canvasLocation" x="6066" y="-786"/>
         </scene>
-        <!--View Controller-->
+        <!--Una Tarta View Controller-->
         <scene sceneID="aYb-3w-Beo">
             <objects>
-                <viewController id="bqh-uD-RxQ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="singletarta" id="bqh-uD-RxQ" customClass="UnaTartaViewController" customModule="OH_CAKE_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CCE-5g-XxK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -543,7 +543,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Q0-49-A5Y">
                                                 <rect key="frame" x="30" y="239.5" width="120" height="35.5"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="120" id="KHc-dE-5YW"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="KHc-dE-5YW"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -629,7 +629,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7r-Sg-mvM">
                                                 <rect key="frame" x="170" y="239.5" width="120" height="35.5"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="120" id="q7f-N9-keg"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="q7f-N9-keg"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Customiza" cornerStyle="medium">
@@ -761,7 +761,7 @@
                                             <constraint firstItem="6Q0-49-A5Y" firstAttribute="top" secondItem="T8l-As-kcD" secondAttribute="bottom" constant="25" id="Deo-YR-tWi"/>
                                             <constraint firstItem="zf5-10-D5K" firstAttribute="top" secondItem="Djc-cT-MJr" secondAttribute="top" constant="20" symbolic="YES" id="JGK-EM-wi0"/>
                                             <constraint firstItem="bVF-46-xO6" firstAttribute="leading" secondItem="Djc-cT-MJr" secondAttribute="leading" constant="30" id="KUA-KS-J6S"/>
-                                            <constraint firstItem="c7r-Sg-mvM" firstAttribute="leading" secondItem="6Q0-49-A5Y" secondAttribute="trailing" constant="20" id="KgU-bi-HJO"/>
+                                            <constraint firstItem="c7r-Sg-mvM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Q0-49-A5Y" secondAttribute="trailing" constant="20" id="KgU-bi-HJO"/>
                                             <constraint firstAttribute="trailing" secondItem="hUu-IL-ci8" secondAttribute="trailing" constant="30" id="Kku-9W-0PU"/>
                                             <constraint firstAttribute="trailing" secondItem="CWD-IW-W9T" secondAttribute="trailing" constant="30" id="LB8-Lf-420"/>
                                             <constraint firstItem="Ais-bs-zTv" firstAttribute="top" secondItem="xeC-OF-E4Y" secondAttribute="bottom" constant="10" id="NwS-2N-3b9"/>
@@ -1757,7 +1757,7 @@
                 <navigationController id="ijn-MX-tnx" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="5Sx-th-Me0"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NGy-gS-pR0">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -2142,7 +2142,7 @@
                 <navigationController id="7m2-Zh-tiz" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Tdr-xJ-6ti"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fRU-Ba-iRY">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -2607,13 +2607,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CATEGORIA_TARTA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9LV-sx-L7z">
-                                <rect key="frame" x="20" y="20" width="214" height="28"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <rect key="frame" x="20" y="20" width="279" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" red="0.35686274509999999" green="0.18823529410000001" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="j2a-1B-HKc">
-                                <rect key="frame" x="20" y="56" width="280" height="424"/>
+                                <rect key="frame" x="20" y="64" width="280" height="416"/>
                                 <color key="backgroundColor" red="0.98431372549999996" green="0.96078431369999995" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" sectionInsetReference="safeArea" id="xky-jY-A9x">
                                     <size key="itemSize" width="130" height="168"/>
@@ -2629,13 +2629,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="130" height="168"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="base_vacia" translatesAutoresizingMaskIntoConstraints="NO" id="FSn-iy-sUT">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="FSn-iy-sUT">
                                                     <rect key="frame" x="13" y="8" width="104" height="88.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="FSn-iy-sUT" secondAttribute="height" multiplier="20:17" id="kyL-QN-83V"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tarta" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psK-bV-mVk">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tarta" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="psK-bV-mVk">
                                                     <rect key="frame" x="20" y="106.5" width="90" height="44.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" red="0.35686274509999999" green="0.18823529410000001" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -2653,6 +2653,10 @@
                                                 <constraint firstItem="FSn-iy-sUT" firstAttribute="top" secondItem="dIX-aC-GoP" secondAttribute="top" constant="8" id="qUN-Gd-AVa"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="Foto_tarta" destination="FSn-iy-sUT" id="IRO-XJ-8Vu"/>
+                                            <outlet property="NombreLabel" destination="psK-bV-mVk" id="Vny-eG-4s1"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -2671,6 +2675,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="f3y-nb-Jx5"/>
                     <connections>
+                        <outlet property="CategoriaLabel" destination="9LV-sx-L7z" id="vX6-xL-fgo"/>
                         <outlet property="TartasCollection" destination="j2a-1B-HKc" id="PtW-aN-v36"/>
                     </connections>
                 </viewController>

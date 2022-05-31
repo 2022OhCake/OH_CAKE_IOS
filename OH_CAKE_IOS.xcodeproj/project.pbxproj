@@ -29,6 +29,7 @@
 		F48FD8B2283E5A98002E4625 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48FD8B1283E5A98002E4625 /* NotificationsViewController.swift */; };
 		F48FD8B4283E5D7B002E4625 /* NotificationsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48FD8B3283E5D7B002E4625 /* NotificationsCell.swift */; };
 		F49F963C2816876B00DE5880 /* RegistroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49F963B2816876B00DE5880 /* RegistroViewController.swift */; };
+		F4A1506E2846200A001929B7 /* UnaTartaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A1506D2846200A001929B7 /* UnaTartaViewController.swift */; };
 		F4A25B1C2833B30300C38BBE /* LogedUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A25B1B2833B30300C38BBE /* LogedUserViewController.swift */; };
 		F4A25B1E2833B34800C38BBE /* TABBARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A25B1D2833B34800C38BBE /* TABBARViewController.swift */; };
 		F4A4FEDB27FF0C2C006B7DCD /* OfertasCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A4FEDA27FF0C2C006B7DCD /* OfertasCell.swift */; };
@@ -68,6 +69,7 @@
 		F48FD8B1283E5A98002E4625 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		F48FD8B3283E5D7B002E4625 /* NotificationsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsCell.swift; sourceTree = "<group>"; };
 		F49F963B2816876B00DE5880 /* RegistroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroViewController.swift; sourceTree = "<group>"; };
+		F4A1506D2846200A001929B7 /* UnaTartaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnaTartaViewController.swift; sourceTree = "<group>"; };
 		F4A25B1B2833B30300C38BBE /* LogedUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogedUserViewController.swift; sourceTree = "<group>"; };
 		F4A25B1D2833B34800C38BBE /* TABBARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TABBARViewController.swift; sourceTree = "<group>"; };
 		F4A4FEDA27FF0C2C006B7DCD /* OfertasCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfertasCell.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			children = (
 				F4863CF5283F9B03008E70B5 /* TartasViewController.swift */,
 				F4863CF7283F9BAF008E70B5 /* TartasCell.swift */,
+				F4A1506D2846200A001929B7 /* UnaTartaViewController.swift */,
 			);
 			path = Tartas;
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 				F4863CF6283F9B03008E70B5 /* TartasViewController.swift in Sources */,
 				F44AC5D128326E6200F44F75 /* FinalStepViewController.swift in Sources */,
 				4A05491C27E25D6300D9EB71 /* AppDelegate.swift in Sources */,
+				F4A1506E2846200A001929B7 /* UnaTartaViewController.swift in Sources */,
 				F4A25B1C2833B30300C38BBE /* LogedUserViewController.swift in Sources */,
 				4A05491E27E25D6300D9EB71 /* SceneDelegate.swift in Sources */,
 			);

@@ -21,6 +21,10 @@ class CategoriasViewController: UIViewController, UICollectionViewDelegate, UICo
         self.getcategorias()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return categorias.count
     }
@@ -33,8 +37,10 @@ class CategoriasViewController: UIViewController, UICollectionViewDelegate, UICo
             
             let urlString = categorias[indexPath.row]["image"] as! String
             guard let url = URL(string: urlString) else {return cell}
-            cell.fotoCategoria.downloaded(from: url)
+            cell.fotoCategoria.load(url: url)
             print(categorias[indexPath.item]["name_category"]!)
+            
+            
         }
  
         return cell
@@ -43,6 +49,10 @@ class CategoriasViewController: UIViewController, UICollectionViewDelegate, UICo
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "tartascontroller") as! TartasViewController
+        
+        vc.id_categoria = categorias[indexPath.item]["id"] as! Int
+        vc.nombreCat = (categorias[indexPath.row]["name_category"] as? String)!
+
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

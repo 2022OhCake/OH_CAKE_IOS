@@ -129,9 +129,7 @@ class LoginViewController: UIViewController {
                            do{
                                
                                let json = try JSONSerialization.jsonObject(with: datos, options: .fragmentsAllowed) as! NSDictionary
-                               
-                               
-                               
+      
                                //let MensajeServer = String(decoding: datos, as: UTF8.self)
 
                                print(json["user"])
