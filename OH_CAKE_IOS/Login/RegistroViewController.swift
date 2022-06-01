@@ -187,9 +187,21 @@ class RegistroViewController: UIViewController {
     //Estos 3 botones son para seleccionar el sexo, se cambian de color al pulsar cada uno
     @IBAction func ManBtn(_ sender: Any) {
         sexo = "Male"
-        HombreBtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#EBD3DA")
-        MujerBtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
-        OtroBtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
+        if #available(iOS 15.0, *) {
+            HombreBtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#EBD3DA")
+        } else {
+            // Fallback on earlier versions
+        }
+        if #available(iOS 15.0, *) {
+            MujerBtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
+        } else {
+            // Fallback on earlier versions
+        }
+        if #available(iOS 15.0, *) {
+            OtroBtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
+        } else {
+            // Fallback on earlier versions
+        }
         
         //EBD3DA rosa
         //77CBCC azul
@@ -197,16 +209,40 @@ class RegistroViewController: UIViewController {
     
     @IBAction func WomanBtn(_ sender: Any) {
         sexo = "Female"
-        HombreBtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
-        MujerBtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#EBD3DA")
-        OtroBtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
+        if #available(iOS 15.0, *) {
+            HombreBtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
+        } else {
+            // Fallback on earlier versions
+        }
+        if #available(iOS 15.0, *) {
+            MujerBtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#EBD3DA")
+        } else {
+            // Fallback on earlier versions
+        }
+        if #available(iOS 15.0, *) {
+            OtroBtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     @IBAction func OtherBtn(_ sender: Any) {
         sexo = "Other"
-        HombreBtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
-        MujerBtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
-        OtroBtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#EBD3DA")
+        if #available(iOS 15.0, *) {
+            HombreBtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
+        } else {
+            // Fallback on earlier versions
+        }
+        if #available(iOS 15.0, *) {
+            MujerBtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
+        } else {
+            // Fallback on earlier versions
+        }
+        if #available(iOS 15.0, *) {
+            OtroBtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#EBD3DA")
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     //Esta funcion transforma un codigo hexadecimal a UIColor ya que swift no lo admite por defecto

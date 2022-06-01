@@ -26,23 +26,59 @@ class Step1ViewController: UIViewController {
     ///Botones para seleccionar el tamanio
     @IBAction func Small(_ sender: Any) {
         size = "Pequeña"
-        smallbtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
-        mediumbtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#FCF5F1")
-        bigbtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#FCF5F1")
+        if #available(iOS 15.0, *) {
+            smallbtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
+        } else {
+            // Fallback on earlier versions
+        }
+        if #available(iOS 15.0, *) {
+            mediumbtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#FCF5F1")
+        } else {
+            // Fallback on earlier versions
+        }
+        if #available(iOS 15.0, *) {
+            bigbtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#FCF5F1")
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     @IBAction func Medium(_ sender: Any) {
         size = "Mediana"
-        smallbtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#FCF5F1")
-        mediumbtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
-        bigbtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#FCF5F1")
+        if #available(iOS 15.0, *) {
+            smallbtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#FCF5F1")
+        } else {
+            // Fallback on earlier versions
+        }
+        if #available(iOS 15.0, *) {
+            mediumbtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
+        } else {
+            // Fallback on earlier versions
+        }
+        if #available(iOS 15.0, *) {
+            bigbtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#FCF5F1")
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     @IBAction func Big(_ sender: Any) {
         size = "Grande"
-        smallbtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#FCF5F1")
-        mediumbtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#FCF5F1")
-        bigbtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
+        if #available(iOS 15.0, *) {
+            smallbtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#FCF5F1")
+        } else {
+            // Fallback on earlier versions
+        }
+        if #available(iOS 15.0, *) {
+            mediumbtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#FCF5F1")
+        } else {
+            // Fallback on earlier versions
+        }
+        if #available(iOS 15.0, *) {
+            bigbtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     
