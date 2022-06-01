@@ -48,6 +48,16 @@ class TartasViewController: UIViewController, UICollectionViewDelegate, UICollec
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "singletarta") as! UnaTartaViewController
+        
+        vc.id_tarta = tartas[indexPath.item]["id"] as! Int
+        
+
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func getTartas(){
         let urlString = "http://rumpusroom.es/tfc/back_cake_api_panels/public/api/defaultcakecategory/\(id_categoria)"
         

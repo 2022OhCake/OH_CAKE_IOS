@@ -11,6 +11,7 @@ class CategoriasViewController: UIViewController, UICollectionViewDelegate, UICo
     
     var categorias:[[String:Any]] = [[:]]
     
+    @IBOutlet weak var LoadingView: UIView!
     @IBOutlet weak var categoriascollection: UICollectionView!
     
     override func viewDidLoad() {
@@ -90,6 +91,7 @@ class CategoriasViewController: UIViewController, UICollectionViewDelegate, UICo
          
                 DispatchQueue.main.async {
                     self.categoriascollection.reloadData()
+                    self.LoadingView.isHidden = true
                 }
                 
             }

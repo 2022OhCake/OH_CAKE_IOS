@@ -26,6 +26,7 @@
 		F4863CF6283F9B03008E70B5 /* TartasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4863CF5283F9B03008E70B5 /* TartasViewController.swift */; };
 		F4863CF8283F9BAF008E70B5 /* TartasCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4863CF7283F9BAF008E70B5 /* TartasCell.swift */; };
 		F486F3A628251549006DD483 /* CategoriasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F486F3A528251549006DD483 /* CategoriasViewController.swift */; };
+		F48BB7EA28475C48008AF047 /* TartaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48BB7E928475C48008AF047 /* TartaCell.swift */; };
 		F48FD8B2283E5A98002E4625 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48FD8B1283E5A98002E4625 /* NotificationsViewController.swift */; };
 		F48FD8B4283E5D7B002E4625 /* NotificationsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48FD8B3283E5D7B002E4625 /* NotificationsCell.swift */; };
 		F49F963C2816876B00DE5880 /* RegistroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49F963B2816876B00DE5880 /* RegistroViewController.swift */; };
@@ -66,6 +67,7 @@
 		F4863CF5283F9B03008E70B5 /* TartasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TartasViewController.swift; sourceTree = "<group>"; };
 		F4863CF7283F9BAF008E70B5 /* TartasCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TartasCell.swift; sourceTree = "<group>"; };
 		F486F3A528251549006DD483 /* CategoriasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriasViewController.swift; sourceTree = "<group>"; };
+		F48BB7E928475C48008AF047 /* TartaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TartaCell.swift; sourceTree = "<group>"; };
 		F48FD8B1283E5A98002E4625 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		F48FD8B3283E5D7B002E4625 /* NotificationsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsCell.swift; sourceTree = "<group>"; };
 		F49F963B2816876B00DE5880 /* RegistroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroViewController.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				F4863CF5283F9B03008E70B5 /* TartasViewController.swift */,
 				F4863CF7283F9BAF008E70B5 /* TartasCell.swift */,
 				F4A1506D2846200A001929B7 /* UnaTartaViewController.swift */,
+				F48BB7E928475C48008AF047 /* TartaCell.swift */,
 			);
 			path = Tartas;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 				F4863CF6283F9B03008E70B5 /* TartasViewController.swift in Sources */,
 				F44AC5D128326E6200F44F75 /* FinalStepViewController.swift in Sources */,
 				4A05491C27E25D6300D9EB71 /* AppDelegate.swift in Sources */,
+				F48BB7EA28475C48008AF047 /* TartaCell.swift in Sources */,
 				F4A1506E2846200A001929B7 /* UnaTartaViewController.swift in Sources */,
 				F4A25B1C2833B30300C38BBE /* LogedUserViewController.swift in Sources */,
 				4A05491E27E25D6300D9EB71 /* SceneDelegate.swift in Sources */,
