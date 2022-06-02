@@ -9,6 +9,7 @@ import UIKit
 
 class CategoriasViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
     
+    //Esta variable es un diccionario de diccionarios de String:Any, se rellena abajo en la peticion
     var categorias:[[String:Any]] = [[:]]
     
     @IBOutlet weak var LoadingView: UIView!
@@ -22,6 +23,7 @@ class CategoriasViewController: UIViewController, UICollectionViewDelegate, UICo
         self.getcategorias()
     }
     
+    //Esto es para esconder la barra de navegacion
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
     }
@@ -33,6 +35,7 @@ class CategoriasViewController: UIViewController, UICollectionViewDelegate, UICo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "celdaCategorias", for: indexPath) as! CategoriasCell
         
+        //Primero compruebo que el array no este vacio para que no pete
         if !categorias[indexPath.row].isEmpty{
             cell.CategoriaLabel.text = categorias[indexPath.row]["name_category"] as? String
             
@@ -51,6 +54,7 @@ class CategoriasViewController: UIViewController, UICollectionViewDelegate, UICo
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "tartascontroller") as! TartasViewController
         
+        //le paso el id para la peticion en la siguiente pantalla
         vc.id_categoria = categorias[indexPath.item]["id"] as! Int
         vc.nombreCat = (categorias[indexPath.row]["name_category"] as? String)!
 
@@ -90,7 +94,10 @@ class CategoriasViewController: UIViewController, UICollectionViewDelegate, UICo
                 print(cosas)
          
                 DispatchQueue.main.async {
+                    //Como la peticion es asíncrona se actualiza de manera independiente respecto al codigo, por eso hasta que no llega aqui no actualizo el collection
                     self.categoriascollection.reloadData()
+                    
+                    //Cuando los datos han terminado de cargar, quito la pantalla de carga, "La escondo"
                     self.LoadingView.isHidden = true
                 }
                 

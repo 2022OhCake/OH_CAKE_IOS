@@ -10,13 +10,20 @@ import UIKit
 class UnaTartaViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
-
+    //El tableview donde van los ingredientes
     @IBOutlet weak var IngredientesTable: UITableView!
     
+    //Outlets de los campos
     @IBOutlet weak var DescriptionLabel: UILabel!
     @IBOutlet weak var foto_tarta: UIImageView!
     @IBOutlet weak var NombreTartaLabel: UILabel!
     @IBOutlet weak var precioLabel: UILabel!
+    
+    //Tres vistas que se usan a modo de "TabLayout"
+    @IBOutlet weak var VistaIngredientes: UIView!
+    @IBOutlet weak var VistaDescripcion: UIView!
+    @IBOutlet weak var VistaAlergenos: UIView!
+    
     
     var detalles:[String:Any] = [:]
     var ingredientes:[[String:Any]] = [[:]]
@@ -46,11 +53,29 @@ class UnaTartaViewController: UIViewController, UITableViewDelegate, UITableView
         
         return  cell
     }
-   
+    
+    //Las vistas estan stackeadas una dentro de otra en el siguiente orden => Ingredientes(Principal) -> Descripcion(Dentro de ingredientes) -> Alergenos(Dentro de Descripcion)
+    //Lo que hago es esconder las vistas que hay debajo en funcion del seleccionado tipo si elijo ingredientes se esconden descripcion y alergenos o si elijo alergenos no se esconde ninguno
+    @IBAction func IngredientesBtn(_ sender: Any) {
+        self.VistaAlergenos.isHidden = true
+        self.VistaDescripcion.isHidden = true
+    }
+    
+    @IBAction func DescriptionBtn(_ sender: Any) {
+        self.VistaAlergenos.isHidden = true
+        self.VistaDescripcion.isHidden = false
+    }
+    
+    @IBAction func AlergenosBt(_ sender: Any) {
+        self.VistaAlergenos.isHidden = false
+    }
+    
     @IBAction func CarritoBtn(_ sender: Any) {
+        //Esto esta aqui a la espera
     }
     
     @IBAction func ComprarBtn(_ sender: Any) {
+        //Esto tambien xd
     }
     
     func getTarta(){
@@ -82,21 +107,27 @@ class UnaTartaViewController: UIViewController, UITableViewDelegate, UITableView
             do{
                 let cosas = try JSONSerialization.jsonObject(with: datos, options: .fragmentsAllowed) as! [String:Any]
                 
+                //En detalles meto el resto de detalles de la tarta
                 self.detalles = cosas
+                
+                //Y aqui saco los ingredientes a parte
                 self.ingredientes = cosas["ingredients"] as! [[String : Any]]
                 
                 print(cosas)
                 
                 DispatchQueue.main.async {
+                    //Actualizo la tabla
                     self.IngredientesTable.reloadData()
+                    
+                    //Aplico la imagen
                     let string = cosas["image"] as! String
                     guard let url = URL(string: string) else {return}
                     self.foto_tarta.load(url: url)
+                    //Aplico nombre, descripcion y demases de la tarta
                     self.NombreTartaLabel.text = cosas["name"] as! String
                     self.DescriptionLabel.text = cosas["description"] as! String
                     self.precioLabel.text = "\(cosas["cost"] as! String) €"
                 }
-                
             }
             catch{
                 print("Error: \(error)")

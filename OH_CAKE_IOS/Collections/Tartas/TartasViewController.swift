@@ -12,9 +12,14 @@ class TartasViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     @IBOutlet weak var TartasCollection: UICollectionView!
     @IBOutlet weak var CategoriaLabel: UILabel!
+    
+    //Esto funciona de la misma forma que en el controller de las categorias
     var tartas:[[String:Any]] = [[:]]
+    
+    //Esto se lo paso al instanciar este controlador en las categorias
     var id_categoria = 0
     var nombreCat = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,6 +43,7 @@ class TartasViewController: UIViewController, UICollectionViewDelegate, UICollec
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tartascell", for: indexPath) as! TartasCell
     
+        //Si el array de tartas no esta vacio hace cosas
         if !tartas[indexPath.row].isEmpty {
             cell.NombreLabel.text = tartas[indexPath.row]["name"] as! String
             let urlString = tartas[indexPath.row]["image"] as! String
@@ -49,12 +55,12 @@ class TartasViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "singletarta") as! UnaTartaViewController
         
         vc.id_tarta = tartas[indexPath.item]["id"] as! Int
         
-
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -85,12 +91,12 @@ class TartasViewController: UIViewController, UICollectionViewDelegate, UICollec
             
             do{
                 let cosas = try JSONSerialization.jsonObject(with: datos, options: .fragmentsAllowed) as! [String:Any]
-     
-                //print(cosas["default_cakes"])
                 
+                //Asigno los datos de las tartas de esta categoria
                 self.tartas = cosas["default_cakes"] as! [[String : Any]]
                 
                 DispatchQueue.main.async {
+                    //Actualizo la tabla
                     self.TartasCollection.reloadData()
                 }
                 
