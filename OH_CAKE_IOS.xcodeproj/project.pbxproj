@@ -26,6 +26,8 @@
 		F4863CF6283F9B03008E70B5 /* TartasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4863CF5283F9B03008E70B5 /* TartasViewController.swift */; };
 		F4863CF8283F9BAF008E70B5 /* TartasCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4863CF7283F9BAF008E70B5 /* TartasCell.swift */; };
 		F486F3A628251549006DD483 /* CategoriasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F486F3A528251549006DD483 /* CategoriasViewController.swift */; };
+		F4889DB3284A008F00E316C6 /* CarritoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4889DB2284A008F00E316C6 /* CarritoViewController.swift */; };
+		F4889DB5284A016C00E316C6 /* ProductoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4889DB4284A016C00E316C6 /* ProductoCell.swift */; };
 		F48BB7EA28475C48008AF047 /* TartaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48BB7E928475C48008AF047 /* TartaCell.swift */; };
 		F48FD8B2283E5A98002E4625 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48FD8B1283E5A98002E4625 /* NotificationsViewController.swift */; };
 		F48FD8B4283E5D7B002E4625 /* NotificationsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48FD8B3283E5D7B002E4625 /* NotificationsCell.swift */; };
@@ -67,6 +69,8 @@
 		F4863CF5283F9B03008E70B5 /* TartasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TartasViewController.swift; sourceTree = "<group>"; };
 		F4863CF7283F9BAF008E70B5 /* TartasCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TartasCell.swift; sourceTree = "<group>"; };
 		F486F3A528251549006DD483 /* CategoriasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriasViewController.swift; sourceTree = "<group>"; };
+		F4889DB2284A008F00E316C6 /* CarritoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarritoViewController.swift; sourceTree = "<group>"; };
+		F4889DB4284A016C00E316C6 /* ProductoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductoCell.swift; sourceTree = "<group>"; };
 		F48BB7E928475C48008AF047 /* TartaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TartaCell.swift; sourceTree = "<group>"; };
 		F48FD8B1283E5A98002E4625 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		F48FD8B3283E5D7B002E4625 /* NotificationsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsCell.swift; sourceTree = "<group>"; };
@@ -132,6 +136,7 @@
 				F44A6C98282262BB00B4C67D /* MapaViewController.swift */,
 				F4A25B1D2833B34800C38BBE /* TABBARViewController.swift */,
 				F4A25B1B2833B30300C38BBE /* LogedUserViewController.swift */,
+				F4889DB1284A006F00E316C6 /* Carrito */,
 				F4CC12E8283CF4030006D948 /* Funciones Usuario */,
 				F44A6C972822626500B4C67D /* Login */,
 				F42BEA4E2816A5A6009E626C /* Tarta_Custom */,
@@ -220,6 +225,15 @@
 				F47CB6F2282900DB002CA287 /* CategoriasCell.swift */,
 			);
 			path = Categorias;
+			sourceTree = "<group>";
+		};
+		F4889DB1284A006F00E316C6 /* Carrito */ = {
+			isa = PBXGroup;
+			children = (
+				F4889DB2284A008F00E316C6 /* CarritoViewController.swift */,
+				F4889DB4284A016C00E316C6 /* ProductoCell.swift */,
+			);
+			path = Carrito;
 			sourceTree = "<group>";
 		};
 		F48FD8B0283E5734002E4625 /* Notificaciones */ = {
@@ -393,6 +407,7 @@
 				4A05492027E25D6300D9EB71 /* ViewController.swift in Sources */,
 				F4EA0E66282A573400E9E71A /* FormaCell.swift in Sources */,
 				F476046D2833B9A6005FCE32 /* SelectionViewController.swift in Sources */,
+				F4889DB3284A008F00E316C6 /* CarritoViewController.swift in Sources */,
 				F4863CF8283F9BAF008E70B5 /* TartasCell.swift in Sources */,
 				F49F963C2816876B00DE5880 /* RegistroViewController.swift in Sources */,
 				F47CB6F3282900DB002CA287 /* CategoriasCell.swift in Sources */,
@@ -403,6 +418,7 @@
 				4A05491C27E25D6300D9EB71 /* AppDelegate.swift in Sources */,
 				F48BB7EA28475C48008AF047 /* TartaCell.swift in Sources */,
 				F4A1506E2846200A001929B7 /* UnaTartaViewController.swift in Sources */,
+				F4889DB5284A016C00E316C6 /* ProductoCell.swift in Sources */,
 				F4A25B1C2833B30300C38BBE /* LogedUserViewController.swift in Sources */,
 				4A05491E27E25D6300D9EB71 /* SceneDelegate.swift in Sources */,
 			);
@@ -481,7 +497,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -536,7 +552,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

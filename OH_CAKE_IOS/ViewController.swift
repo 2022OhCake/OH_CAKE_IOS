@@ -7,7 +7,13 @@
 
 import UIKit
 //Comprobar fittedSheets -> https://github.com/gordontucker/FittedSheets
+
+
+var carrito:[[String:Any]] = [[:]]
+
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITabBarControllerDelegate{
+    
+    
    
     @IBOutlet weak var ofertasCollection: UICollectionView!
     @IBOutlet weak var mejorCollection: UICollectionView!

@@ -71,7 +71,25 @@ class UnaTartaViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     @IBAction func CarritoBtn(_ sender: Any) {
-        //Esto esta aqui a la espera
+        
+        let id = detalles["id"] as! Int
+        let imagen = detalles["image"] as! String
+        let precio = detalles["cost"] as! String
+        let nombre = detalles["name"] as! String
+        
+        let tarta = ["Id":id,"image":imagen,"precio":precio,"nombre":nombre] as [String : Any]
+        
+        carrito.append(tarta)
+        
+        let alert = UIAlertController(title: "¡Genial!", message: "Tu tarta ha sido añadida al carrito", preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
+        
+        alert.addAction(action)
+        
+        present(alert, animated: true, completion: nil)
+        
+        print(carrito)
     }
     
     @IBAction func ComprarBtn(_ sender: Any) {

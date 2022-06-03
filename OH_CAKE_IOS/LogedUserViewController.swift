@@ -53,6 +53,12 @@ class LogedUserViewController: UIViewController, UIImagePickerControllerDelegate
         self.present(vc, animated: true)
     }
     
+    @IBAction func CarritoBtn(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "carrito") as! CarritoViewController
+        self.present(vc, animated: true)
+    }
+    
     //Funcion para hacerlogout
     @IBAction func logout(_ sender: Any) {
 
