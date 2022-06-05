@@ -33,10 +33,9 @@ class ProductoCell: UITableViewCell {
     }
     
     @IBAction func menosBtn(_ sender: Any) {
-        if currentUnidades > 0 {
+        if currentUnidades > 1 {
             currentUnidades -= 1
         }
-        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

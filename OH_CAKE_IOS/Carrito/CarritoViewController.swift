@@ -22,6 +22,12 @@ class CarritoViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.ProductosTableView.delegate = self
         self.ProductosTableView.dataSource = self
         
+        if !carrito.isEmpty{
+            if carrito[0].isEmpty{
+                carrito.remove(at: 0)
+            }
+        }
+        
     }
     
     
@@ -49,14 +55,15 @@ class CarritoViewController: UIViewController, UITableViewDelegate, UITableViewD
             guard let numStr = carrito[indexPath.item]["precio"] as? String else {
                 return cell
             }
-            
+  
             let precio = Double(numStr)
-            
+                
             let subt = precio! * Double(cell.currentUnidades)
-            
+                
             print(subt)
-            
+                
             SubtotalLabel.text = "\(currentSubtotal + subt) €"
+        
         }
         return cell
     }

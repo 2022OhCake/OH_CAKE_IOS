@@ -27,6 +27,7 @@ class UnaTartaViewController: UIViewController, UITableViewDelegate, UITableView
     
     var detalles:[String:Any] = [:]
     var ingredientes:[[String:Any]] = [[:]]
+    var alergenos:[[String:Any]] = [[:]]
     
     var id_tarta = 0
     
@@ -96,6 +97,50 @@ class UnaTartaViewController: UIViewController, UITableViewDelegate, UITableView
         //Esto tambien xd
     }
     
+    func getalergenos(id_ingrediente: Int){
+            let urlString = "http://rumpusroom.es/tfc/back_cake_api_panels/public/api/allergeningredient/\(id_ingrediente)"
+            
+            guard let url = URL(string: urlString) else {return}
+            
+            var request = URLRequest(url: url)
+            
+            request.httpMethod = "GET"
+            
+            URLSession.shared.dataTask(with: request){(data,response,error) in
+
+                //Si el error no es nulo que nos diga que está pasando
+                if error != nil {
+                    print ("Error: \(error!.localizedDescription)")
+                }
+                //Si la respuesta es nula,que nos digo que no hay respuesta
+                if response != nil {
+                    print (response ?? "No se ha obtenido respuesta")
+                }
+                if let res = response as? HTTPURLResponse {
+                    print("Status code: \(res.statusCode)")
+                }
+                
+                guard let datos = data else {return}
+                
+                do{
+                    let cosas = try JSONSerialization.jsonObject(with: datos, options: .fragmentsAllowed) as! [String:Any]
+                    
+                    print(cosas)
+                    
+                    DispatchQueue.main.async {
+                        //Actualizo la tabla
+                        self.alergenos.append(cosas["allergens"] as! [String : Any])
+                        print(self.alergenos)
+                    }
+                    
+                }
+                catch{
+                    print("Error: \(error)")
+                }
+
+            }.resume()
+    }
+    
     func getTarta(){
         
         let urlString = "http://rumpusroom.es/tfc/back_cake_api_panels/public/api/defaultcakeingredient/\(id_tarta)"
@@ -145,6 +190,10 @@ class UnaTartaViewController: UIViewController, UITableViewDelegate, UITableView
                     self.NombreTartaLabel.text = cosas["name"] as! String
                     self.DescriptionLabel.text = cosas["description"] as! String
                     self.precioLabel.text = "\(cosas["cost"] as! String) €"
+                    
+                    for i in 0...self.ingredientes.count - 1{
+                        self.getalergenos(id_ingrediente: self.ingredientes[i]["id"] as! Int)
+                    }
                 }
             }
             catch{
