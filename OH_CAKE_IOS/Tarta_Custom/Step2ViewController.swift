@@ -14,22 +14,38 @@ class Step2ViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     @IBOutlet weak var formacollection: UICollectionView!
     
+    @IBOutlet weak var foto_muestra: UIImageView!
+    var Phase2Data:[[String:Any]] = [[:]]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if Phase2Data[0].isEmpty{
+            Phase2Data.remove(at: 0)
+        }
 
         formacollection.delegate = self
         formacollection.dataSource = self
+        
+        self.getPhase2()
         
     }
     
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return Phase2Data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "formacell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "formacell", for: indexPath) as! FormaCell
+        
+        if Phase2Data.count > 1{
+            let urlString = Phase2Data[indexPath.item]["image"] as! String
+            guard let url = URL(string: urlString) else {return cell}
+            cell.foto_forma.load(url: url)
+    
+            cell.nombre_forma.text = Phase2Data[indexPath.item]["name"] as! String
+        }
         
         if cell.isSelected {
             cell.contentView.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
@@ -47,6 +63,11 @@ class Step2ViewController: UIViewController, UICollectionViewDelegate, UICollect
         let selectedCell:UICollectionViewCell = formacollection.cellForItem(at: indexPath)!
         shape = "kk"
               selectedCell.contentView.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
+        
+        let urlString = Phase2Data[indexPath.item]["image_customization"] as! String
+        guard let url = URL(string: urlString) else {return}
+        self.foto_muestra.load(url: url)
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
@@ -79,6 +100,48 @@ class Step2ViewController: UIViewController, UICollectionViewDelegate, UICollect
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
+    }
+    
+    func getPhase2(){
+        let urlString = "http://rumpusroom.es/tfc/back_cake_api_panels/public/api/customcakemodel/1"
+        
+        guard let url = URL(string: urlString) else {return}
+        
+        var request = URLRequest(url: url)
+        
+        request.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: request){(data,response,error) in
+
+            //Si el error no es nulo que nos diga que está pasando
+            if error != nil {
+                print ("Error: \(error!.localizedDescription)")
+            }
+            //Si la respuesta es nula,que nos digo que no hay respuesta
+            if response != nil {
+                print (response ?? "No se ha obtenido respuesta")
+            }
+            if let res = response as? HTTPURLResponse {
+                print("Status code: \(res.statusCode)")
+            }
+            
+            guard let datos = data else {return}
+            
+            do{
+                let cosas = try JSONSerialization.jsonObject(with: datos, options: .fragmentsAllowed) as! [[String:Any]]
+                
+                self.Phase2Data = cosas
+                
+                DispatchQueue.main.async {
+                    self.formacollection.reloadData()
+                }
+                }
+            
+            catch{
+                print("Error: \(error)")
+            }
+
+        }.resume()
     }
     
     func hexStringToUIColor (hex:String) -> UIColor {

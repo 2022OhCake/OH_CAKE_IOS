@@ -28,7 +28,18 @@ class RegistroViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let tapGesture = UITapGestureRecognizer(target: self, action:     #selector(tapGestureHandler))
+              view.addGestureRecognizer(tapGesture)
     }
+    
+    @objc func tapGestureHandler() {
+        nombreText.endEditing(true)
+        ApellidosText.endEditing(true)
+        telefonoText.endEditing(true)
+        emailText.endEditing(true)
+        PasswdText.endEditing(true)
+        RepeatPasswdText.endEditing(true)
+      }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false

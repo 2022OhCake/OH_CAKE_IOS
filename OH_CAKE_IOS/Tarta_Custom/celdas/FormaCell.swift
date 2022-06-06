@@ -9,4 +9,7 @@ import UIKit
 
 class FormaCell: UICollectionViewCell {
     
+    @IBOutlet weak var foto_forma: UIImageView!
+    
+    @IBOutlet weak var nombre_forma: UILabel!
 }

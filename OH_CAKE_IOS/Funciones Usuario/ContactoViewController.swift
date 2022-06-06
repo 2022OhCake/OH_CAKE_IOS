@@ -19,8 +19,18 @@ class ContactoViewController: UIViewController, MFMailComposeViewControllerDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let tapGesture = UITapGestureRecognizer(target: self, action:     #selector(tapGestureHandler))
+              view.addGestureRecognizer(tapGesture)
         
     }
+    
+    @objc func tapGestureHandler() {
+        NombreText.endEditing(true)
+        EmailText.endEditing(true)
+        TlfnText.endEditing(true)
+        DireccionText.endEditing(true)
+        MensajeText.endEditing(true)
+      }
     
     @IBAction func EnviarBtn(_ sender: Any) {
         if NombreText.text == "" {

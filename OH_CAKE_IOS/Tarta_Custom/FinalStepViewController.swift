@@ -26,6 +26,9 @@ class FinalStepViewController: UIViewController, UIImagePickerControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let tapGesture = UITapGestureRecognizer(target: self, action:     #selector(tapGestureHandler))
+              view.addGestureRecognizer(tapGesture)
+        
         imagepicker.delegate = self
         imagepicker.sourceType = .photoLibrary
         
@@ -33,6 +36,9 @@ class FinalStepViewController: UIViewController, UIImagePickerControllerDelegate
         view.addSubview(imageview)
     }
     
+    @objc func tapGestureHandler() {
+        dedicatoriaText.endEditing(true)
+      }
     
     @IBAction func pickImage(_ sender: Any) {
         present(imagepicker, animated: true)

@@ -19,6 +19,10 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action:     #selector(tapGestureHandler))
+              view.addGestureRecognizer(tapGesture)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -26,6 +30,11 @@ class LoginViewController: UIViewController {
         //Esto esconde la barra cuando se instancia
         self.navigationController?.navigationBar.isHidden = true
     }
+    
+    @objc func tapGestureHandler() {
+            UserText.endEditing(true)
+            PassText.endEditing(true)
+      }
     
 
     @IBAction func EnviarButton(_ sender: Any) {
