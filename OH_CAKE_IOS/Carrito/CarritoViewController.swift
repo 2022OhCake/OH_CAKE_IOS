@@ -22,12 +22,10 @@ class CarritoViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.ProductosTableView.delegate = self
         self.ProductosTableView.dataSource = self
         
-        if !carrito.isEmpty{
-            if carrito[0].isEmpty{
-                carrito.remove(at: 0)
-            }
-        }
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.ProductosTableView.reloadData()
     }
     
     
@@ -39,7 +37,7 @@ class CarritoViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "producto", for: indexPath) as! ProductoCell
     
         
-        if carrito.count > 1 {
+        if carrito.count > 0 {
             cell.Nombre_Producto_Label.text = carrito[indexPath.item]["nombre"] as? String
             cell.Precio_Producto_label.text = carrito[indexPath.item]["precio"] as? String
             
@@ -61,7 +59,7 @@ class CarritoViewController: UIViewController, UITableViewDelegate, UITableViewD
             let subt = precio! * Double(cell.currentUnidades)
                 
             print(subt)
-                
+            
             SubtotalLabel.text = "\(currentSubtotal + subt) €"
         
         }

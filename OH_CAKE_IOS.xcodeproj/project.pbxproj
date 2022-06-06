@@ -19,6 +19,7 @@
 		F44A6C99282262BB00B4C67D /* MapaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A6C98282262BB00B4C67D /* MapaViewController.swift */; };
 		F44A6C9B282264FC00B4C67D /* ArtWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A6C9A282264FC00B4C67D /* ArtWork.swift */; };
 		F44AC5D128326E6200F44F75 /* FinalStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44AC5D028326E6200F44F75 /* FinalStepViewController.swift */; };
+		F46B0727284DF97500AB41C4 /* AllergenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46B0726284DF97500AB41C4 /* AllergenCell.swift */; };
 		F476046D2833B9A6005FCE32 /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F476046C2833B9A6005FCE32 /* SelectionViewController.swift */; };
 		F47CB6F3282900DB002CA287 /* CategoriasCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47CB6F2282900DB002CA287 /* CategoriasCell.swift */; };
 		F4863CF1283F7181008E70B5 /* PedidosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4863CF0283F7181008E70B5 /* PedidosViewController.swift */; };
@@ -29,8 +30,6 @@
 		F4889DB3284A008F00E316C6 /* CarritoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4889DB2284A008F00E316C6 /* CarritoViewController.swift */; };
 		F4889DB5284A016C00E316C6 /* ProductoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4889DB4284A016C00E316C6 /* ProductoCell.swift */; };
 		F48BB7EA28475C48008AF047 /* TartaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48BB7E928475C48008AF047 /* TartaCell.swift */; };
-		F48FD8B2283E5A98002E4625 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48FD8B1283E5A98002E4625 /* NotificationsViewController.swift */; };
-		F48FD8B4283E5D7B002E4625 /* NotificationsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48FD8B3283E5D7B002E4625 /* NotificationsCell.swift */; };
 		F49F963C2816876B00DE5880 /* RegistroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49F963B2816876B00DE5880 /* RegistroViewController.swift */; };
 		F4A1506E2846200A001929B7 /* UnaTartaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A1506D2846200A001929B7 /* UnaTartaViewController.swift */; };
 		F4A25B1C2833B30300C38BBE /* LogedUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A25B1B2833B30300C38BBE /* LogedUserViewController.swift */; };
@@ -62,6 +61,7 @@
 		F44A6C98282262BB00B4C67D /* MapaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapaViewController.swift; sourceTree = "<group>"; };
 		F44A6C9A282264FC00B4C67D /* ArtWork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtWork.swift; sourceTree = "<group>"; };
 		F44AC5D028326E6200F44F75 /* FinalStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalStepViewController.swift; sourceTree = "<group>"; };
+		F46B0726284DF97500AB41C4 /* AllergenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergenCell.swift; sourceTree = "<group>"; };
 		F476046C2833B9A6005FCE32 /* SelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
 		F47CB6F2282900DB002CA287 /* CategoriasCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriasCell.swift; sourceTree = "<group>"; };
 		F4863CF0283F7181008E70B5 /* PedidosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedidosViewController.swift; sourceTree = "<group>"; };
@@ -72,8 +72,6 @@
 		F4889DB2284A008F00E316C6 /* CarritoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarritoViewController.swift; sourceTree = "<group>"; };
 		F4889DB4284A016C00E316C6 /* ProductoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductoCell.swift; sourceTree = "<group>"; };
 		F48BB7E928475C48008AF047 /* TartaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TartaCell.swift; sourceTree = "<group>"; };
-		F48FD8B1283E5A98002E4625 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
-		F48FD8B3283E5D7B002E4625 /* NotificationsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsCell.swift; sourceTree = "<group>"; };
 		F49F963B2816876B00DE5880 /* RegistroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroViewController.swift; sourceTree = "<group>"; };
 		F4A1506D2846200A001929B7 /* UnaTartaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnaTartaViewController.swift; sourceTree = "<group>"; };
 		F4A25B1B2833B30300C38BBE /* LogedUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogedUserViewController.swift; sourceTree = "<group>"; };
@@ -205,6 +203,7 @@
 				F4863CF7283F9BAF008E70B5 /* TartasCell.swift */,
 				F4A1506D2846200A001929B7 /* UnaTartaViewController.swift */,
 				F48BB7E928475C48008AF047 /* TartaCell.swift */,
+				F46B0726284DF97500AB41C4 /* AllergenCell.swift */,
 			);
 			path = Tartas;
 			sourceTree = "<group>";
@@ -236,15 +235,6 @@
 			path = Carrito;
 			sourceTree = "<group>";
 		};
-		F48FD8B0283E5734002E4625 /* Notificaciones */ = {
-			isa = PBXGroup;
-			children = (
-				F48FD8B1283E5A98002E4625 /* NotificationsViewController.swift */,
-				F48FD8B3283E5D7B002E4625 /* NotificationsCell.swift */,
-			);
-			path = Notificaciones;
-			sourceTree = "<group>";
-		};
 		F4A4FED927FF0C06006B7DCD /* Collections */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,7 +249,6 @@
 			isa = PBXGroup;
 			children = (
 				F4863CEF283F7105008E70B5 /* Mis Pedidos */,
-				F48FD8B0283E5734002E4625 /* Notificaciones */,
 				F4CC12E9283CF4220006D948 /* ContactoViewController.swift */,
 			);
 			path = "Funciones Usuario";
@@ -395,7 +384,6 @@
 				F42BEA502816A62F009E626C /* Step1ViewController.swift in Sources */,
 				F4863CF3283F71A2008E70B5 /* PedidosCell.swift in Sources */,
 				4A0C3FA4282C18E500ED6C74 /* Step4ViewController.swift in Sources */,
-				F48FD8B4283E5D7B002E4625 /* NotificationsCell.swift in Sources */,
 				F4A25B1E2833B34800C38BBE /* TABBARViewController.swift in Sources */,
 				F4CC12EA283CF4220006D948 /* ContactoViewController.swift in Sources */,
 				F4F6835628129D0500A2F67D /* LoginViewController.swift in Sources */,
@@ -409,9 +397,9 @@
 				F476046D2833B9A6005FCE32 /* SelectionViewController.swift in Sources */,
 				F4889DB3284A008F00E316C6 /* CarritoViewController.swift in Sources */,
 				F4863CF8283F9BAF008E70B5 /* TartasCell.swift in Sources */,
+				F46B0727284DF97500AB41C4 /* AllergenCell.swift in Sources */,
 				F49F963C2816876B00DE5880 /* RegistroViewController.swift in Sources */,
 				F47CB6F3282900DB002CA287 /* CategoriasCell.swift in Sources */,
-				F48FD8B2283E5A98002E4625 /* NotificationsViewController.swift in Sources */,
 				F4E68781282CF5D50071D3A2 /* Step5ViewController.swift in Sources */,
 				F4863CF6283F9B03008E70B5 /* TartasViewController.swift in Sources */,
 				F44AC5D128326E6200F44F75 /* FinalStepViewController.swift in Sources */,

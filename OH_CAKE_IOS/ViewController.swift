@@ -26,6 +26,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        if !carrito.isEmpty{
+            if carrito[0].isEmpty{
+                carrito.remove(at: 0)
+            }
+        }
      
         self.tabBarController?.delegate = self
         
@@ -82,6 +89,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         if collectionView == self.ofertasCollection {
             return 5
         }

@@ -30,11 +30,13 @@ class ProductoCell: UITableViewCell {
 
     @IBAction func masBtn(_ sender: Any) {
         currentUnidades += 1
+        self.reloadInputViews()
     }
     
     @IBAction func menosBtn(_ sender: Any) {
         if currentUnidades > 1 {
             currentUnidades -= 1
+            self.reloadInputViews()
         }
     }
     

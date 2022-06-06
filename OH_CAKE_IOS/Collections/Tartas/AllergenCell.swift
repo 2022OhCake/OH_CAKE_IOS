@@ -1,20 +1,15 @@
 //
-//  NotificationsCell.swift
+//  AllergenCell.swift
 //  OH_CAKE_IOS
 //
-//  Created by Jose Manuel Qastusoft on 25/5/22.
+//  Created by Jose Manuel Qastusoft on 6/6/22.
 //
 
 import UIKit
 
-class NotificationsCell: UITableViewCell {
-    
-    
-    @IBOutlet weak var NumPedido: UILabel!
-    @IBOutlet weak var tituloPedido: UILabel!
-    @IBOutlet weak var FechaPedido: UILabel!
-    @IBOutlet weak var foto_pedido: UIImageView!
-    
+class AllergenCell: UITableViewCell {
+
+    @IBOutlet weak var AlergenoLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

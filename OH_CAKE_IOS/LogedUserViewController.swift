@@ -27,12 +27,6 @@ class LogedUserViewController: UIViewController, UIImagePickerControllerDelegate
         UsuarioLabel.text = "Bienvenido, \(nombre!) \(apellido!)"
     }
     
-    //Instaciar Controlador de notificaciones
-    @IBAction func notificationsBtn(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "notifications") as! NotificationsViewController
-        self.present(vc, animated: true)
-    }
     
     //Instaciar controlador de Pedidos
     @IBAction func PedidosBtn(_ sender: Any) {

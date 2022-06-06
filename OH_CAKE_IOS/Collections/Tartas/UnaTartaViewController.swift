@@ -12,6 +12,7 @@ class UnaTartaViewController: UIViewController, UITableViewDelegate, UITableView
     
     //El tableview donde van los ingredientes
     @IBOutlet weak var IngredientesTable: UITableView!
+    @IBOutlet weak var AlergenosTable: UITableView!
     
     //Outlets de los campos
     @IBOutlet weak var DescriptionLabel: UILabel!
@@ -33,26 +34,53 @@ class UnaTartaViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.IngredientesTable.delegate = self
         self.IngredientesTable.dataSource = self
+        
+        self.AlergenosTable.delegate = self
+        self.AlergenosTable.dataSource = self
+
+        
+        
+       
         
         self.getTarta()
         
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ingredientes.count
+        if tableView == IngredientesTable {
+            return ingredientes.count
+        }
+        else{
+            return alergenos.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ingredientes", for: indexPath) as! TartaCell
-        
-        if ingredientes.count > 1{
-            cell.IngredienteLabel.text = ingredientes[indexPath.item]["name"] as! String
+
+        if tableView == IngredientesTable{
+            let ingrediente = tableView.dequeueReusableCell(withIdentifier: "ingredientes", for: indexPath) as! TartaCell
+            if ingredientes.count > 1{
+                ingrediente.IngredienteLabel.text = ingredientes[indexPath.item]["name"] as! String
+            }
+            
+            return ingrediente
         }
         
-        return  cell
+        else{
+            let alergeno = tableView.dequeueReusableCell(withIdentifier: "alergenos", for: indexPath) as! AllergenCell
+            if alergenos[0].isEmpty{
+                self.alergenos.remove(at: 0)
+            }
+            if alergenos.count > 1{
+                
+                alergeno.AlergenoLabel.text = alergenos[indexPath.item]["name"] as! String
+            }
+            
+            return alergeno
+        }
     }
     
     //Las vistas estan stackeadas una dentro de otra en el siguiente orden => Ingredientes(Principal) -> Descripcion(Dentro de ingredientes) -> Alergenos(Dentro de Descripcion)
@@ -68,6 +96,7 @@ class UnaTartaViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     @IBAction func AlergenosBt(_ sender: Any) {
+        self.VistaDescripcion.isHidden = false
         self.VistaAlergenos.isHidden = false
     }
     
@@ -129,8 +158,8 @@ class UnaTartaViewController: UIViewController, UITableViewDelegate, UITableView
                     
                     DispatchQueue.main.async {
                         //Actualizo la tabla
-                        self.alergenos.append(cosas["allergens"] as! [String : Any])
-                        print(self.alergenos)
+                        self.alergenos.append(contentsOf: cosas["allergens"] as! [[String : Any]])
+                        self.AlergenosTable.reloadData()
                     }
                     
                 }
