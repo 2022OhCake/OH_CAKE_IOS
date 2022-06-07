@@ -26,5 +26,7 @@ class TABBARViewController: UITabBarController, UITabBarControllerDelegate{
         self.tabBar.items![0].title = "Inicio"
         
     }
+    
+    
    
 }

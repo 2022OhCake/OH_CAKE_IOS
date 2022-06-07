@@ -9,6 +9,12 @@ import UIKit
 
 class PedidosCell: UITableViewCell {
 
+    @IBOutlet weak var Num_Pedido_Label: UILabel!
+    @IBOutlet weak var Estado_Pedido_Label: UILabel!
+    @IBOutlet weak var Descripcion_Pedido_Label: UILabel!
+    @IBOutlet weak var Fecha_Pedido_Label: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

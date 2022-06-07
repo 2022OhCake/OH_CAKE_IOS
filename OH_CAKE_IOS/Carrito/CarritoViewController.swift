@@ -34,9 +34,9 @@ class CarritoViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "producto", for: indexPath) as! ProductoCell
     
-        
         if carrito.count > 0 {
             cell.Nombre_Producto_Label.text = carrito[indexPath.item]["nombre"] as? String
             cell.Precio_Producto_label.text = carrito[indexPath.item]["precio"] as? String

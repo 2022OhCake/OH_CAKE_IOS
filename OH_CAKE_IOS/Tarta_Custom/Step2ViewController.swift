@@ -16,6 +16,7 @@ class Step2ViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     @IBOutlet weak var foto_muestra: UIImageView!
     var Phase2Data:[[String:Any]] = [[:]]
+    var urlfotoforma = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +43,7 @@ class Step2ViewController: UIViewController, UICollectionViewDelegate, UICollect
         if Phase2Data.count > 1{
             let urlString = Phase2Data[indexPath.item]["image"] as! String
             guard let url = URL(string: urlString) else {return cell}
+            urlfotoforma = urlString
             cell.foto_forma.load(url: url)
     
             cell.nombre_forma.text = Phase2Data[indexPath.item]["name"] as! String
@@ -61,16 +63,21 @@ class Step2ViewController: UIViewController, UICollectionViewDelegate, UICollect
         //Capturar aqui que boton ha pulsado
         
         let selectedCell:UICollectionViewCell = formacollection.cellForItem(at: indexPath)!
-        shape = "kk"
-              selectedCell.contentView.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
+        
+        selectedCell.contentView.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
+        
+        shape = Phase2Data[indexPath.item]["name"] as! String
+       
         
         let urlString = Phase2Data[indexPath.item]["image_customization"] as! String
         guard let url = URL(string: urlString) else {return}
+        urlfotoforma = urlString
         self.foto_muestra.load(url: url)
         
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        
         
         //Esto hay que hacerlo con un if let por que ios destruye las celdas que no estan en pantalla asi que si la pulsas de vuelta despues de hacer scroll, le da ansiedad, se muere y peta
         if let cellToDeselect:UICollectionViewCell = formacollection.cellForItem(at: indexPath){
@@ -97,6 +104,8 @@ class Step2ViewController: UIViewController, UICollectionViewDelegate, UICollect
             //Le voy pasando los datos en cascada, quiere decir que la peticion estara en el ultimo vc de la customizacion
             vc.size = size
             vc.shape = shape
+            
+            vc.urlfoto = urlfotoforma
             self.navigationController?.pushViewController(vc, animated: true)
         }
         

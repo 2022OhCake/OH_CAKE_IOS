@@ -16,22 +16,54 @@ class Step4ViewController: UIViewController, UICollectionViewDelegate, UICollect
     var shape = ""
     var base = ""
     var relleno = ""
+    
+    @IBOutlet weak var foto_forma: UIImageView!
+    @IBOutlet weak var foto_relleno: UIImageView!
+    @IBOutlet weak var Foto_Base: UIImageView!
+    
+    var urlStringforma = ""
+    var urlStringBase = ""
+    
+    var Rellenos:[[String:Any]] = [[:]]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        guard let urlForma = URL(string: urlStringforma) else {return}
+        guard let urlBase = URL(string: urlStringBase) else {return}
+        
+        foto_forma.load(url: urlForma)
+        Foto_Base.load(url: urlBase)
+        
+        if Rellenos[0].isEmpty{
+            Rellenos.remove(at: 0)
+        }
 
         // Do any additional setup after loading the view.
         rellenoCollection.delegate = self
         rellenoCollection.dataSource = self
         
+        self.getPhase4()
+        
     }
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return Rellenos.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "celdarelleno", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "celdarelleno", for: indexPath) as! RellenoCell
+        
+        
+        if Rellenos.count > 1{
+            
+            let urlString = Rellenos[indexPath.item]["image"] as! String
+            guard let url = URL(string: urlString) else {return cell}
+            
+            cell.foto_relleno.load(url: url)
+            cell.nombre_relleno.text = Rellenos[indexPath.item]["name"] as! String
+            
+        }
         
         if cell.isSelected {
             cell.contentView.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
@@ -46,9 +78,15 @@ class Step4ViewController: UIViewController, UICollectionViewDelegate, UICollect
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //Capturar aqui que boton ha pulsado
         
+        let urlString = Rellenos[indexPath.item]["image"] as! String
+        guard let url = URL(string: urlString) else {return}
+        
+        foto_relleno.load(url: url)
+        relleno = Rellenos[indexPath.item]["name"] as! String
+        
         let selectedCell:UICollectionViewCell = rellenoCollection.cellForItem(at: indexPath)!
-        relleno = "kk"
-              selectedCell.contentView.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
+
+        selectedCell.contentView.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
@@ -59,6 +97,7 @@ class Step4ViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     @IBAction func ingredientesBtn(_ sender: Any) {
+        
         if relleno == ""{
             let alert = UIAlertController(title: "Error", message: "¡No has elegido el relleno!", preferredStyle: .alert)
             
@@ -80,6 +119,65 @@ class Step4ViewController: UIViewController, UICollectionViewDelegate, UICollect
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
+    
+    
+    func getPhase4(){
+        
+        let urlString = "http://rumpusroom.es/tfc/back_cake_api_panels/public/api/customcakemodel/3"
+        
+        guard let url = URL(string: urlString) else {return}
+        
+        var request = URLRequest(url: url)
+        
+        request.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: request){(data,response,error) in
+
+            //Si el error no es nulo que nos diga que está pasando
+            if error != nil {
+                print ("Error: \(error!.localizedDescription)")
+            }
+            //Si la respuesta es nula,que nos digo que no hay respuesta
+            if response != nil {
+                print (response ?? "No se ha obtenido respuesta")
+            }
+            if let res = response as? HTTPURLResponse {
+                print("Status code: \(res.statusCode)")
+            }
+            
+            guard let datos = data else {return}
+            
+            do{
+                let cosas = try JSONSerialization.jsonObject(with: datos, options: .fragmentsAllowed) as! [[String:Any]]
+                
+                print(cosas)
+                
+                var Phase4Data:[[String:Any]] = [[:]]
+                Phase4Data = cosas
+
+                    DispatchQueue.main.async {
+                        
+                        for i in 0...Phase4Data.count - 1{
+                        
+                            let nombre = Phase4Data[i]["name"] as! String
+                            
+                            if nombre.contains(self.shape){
+                                self.Rellenos.append(Phase4Data[i])
+                                print(self.Rellenos)
+                            }
+                        }
+                        self.rellenoCollection.reloadData()
+                    }
+                }
+            
+            catch{
+                print("Error: \(error)")
+            }
+
+        }.resume()
+    }
+    
+    
     
     
     func hexStringToUIColor (hex:String) -> UIColor {
