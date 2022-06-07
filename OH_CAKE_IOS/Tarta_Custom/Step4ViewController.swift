@@ -61,7 +61,11 @@ class Step4ViewController: UIViewController, UICollectionViewDelegate, UICollect
             guard let url = URL(string: urlString) else {return cell}
             
             cell.foto_relleno.load(url: url)
-            cell.nombre_relleno.text = Rellenos[indexPath.item]["name"] as! String
+            let nombre = Rellenos[indexPath.item]["name"] as! String
+            let index = nombre.firstIndex(of: " ")!
+            let recorte = nombre[..<index]
+            let recortado = String(recorte)
+            cell.nombre_relleno.text = recortado
             
         }
         
@@ -78,7 +82,7 @@ class Step4ViewController: UIViewController, UICollectionViewDelegate, UICollect
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //Capturar aqui que boton ha pulsado
         
-        let urlString = Rellenos[indexPath.item]["image"] as! String
+        let urlString = Rellenos[indexPath.item]["image_customization"] as! String
         guard let url = URL(string: urlString) else {return}
         
         foto_relleno.load(url: url)
@@ -107,6 +111,7 @@ class Step4ViewController: UIViewController, UICollectionViewDelegate, UICollect
             
             present(alert, animated: true, completion: nil)
         }
+        
         else{
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "paso5") as! Step5ViewController

@@ -48,7 +48,13 @@ class Step3ViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         
         if Bases.count > 1{
-                cell.Nombre_Base.text = Bases[indexPath.item]["name"] as! String
+            
+            let nombre = Bases[indexPath.item]["name"] as! String
+            let index = nombre.firstIndex(of: " ")!
+            let recorte = nombre[..<index]
+            let recortado = String(recorte)
+            cell.Nombre_Base.text = recortado
+            
                 let urlString = Bases[indexPath.item]["image"] as! String
                 guard let url = URL(string: urlString) else {return cell}
                 cell.foto_Base.load(url: url)
@@ -78,7 +84,7 @@ class Step3ViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         let selectedCell:UICollectionViewCell = basecollection.cellForItem(at: indexPath)!
   
-              selectedCell.contentView.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
+        selectedCell.contentView.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {

@@ -47,6 +47,7 @@ class Step2ViewController: UIViewController, UICollectionViewDelegate, UICollect
             cell.foto_forma.load(url: url)
     
             cell.nombre_forma.text = Phase2Data[indexPath.item]["name"] as! String
+            
         }
         
         if cell.isSelected {

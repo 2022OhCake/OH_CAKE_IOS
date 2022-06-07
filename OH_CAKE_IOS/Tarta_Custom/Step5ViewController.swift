@@ -13,53 +13,100 @@ class Step5ViewController: UIViewController, UICollectionViewDelegate, UICollect
     var shape = ""
     var base = ""
     var relleno = ""
-    var ingredientes = "kk"
+    var ingredientes:[[String:Int]] = [["":0]]
+    var Ingredients:[[String:Any]] = [[:]]
+    
+    var isSelected = false
+    
     @IBOutlet weak var IngredientesCollection: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if Ingredients[0].isEmpty{
+            Ingredients.remove(at: 0)
+        }
+        
+        if ingredientes[0] == ["":0]{
+            ingredientes.remove(at: 0)
+        }
 
         IngredientesCollection.delegate = self
         IngredientesCollection.dataSource = self
+        
+        self.GetIngredientes()
         
     }
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return Ingredients.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "celdaIngrediente", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "celdaIngrediente", for: indexPath) as! IngredientesCell
         
-        if cell.isSelected {
-            cell.contentView.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
+        if Ingredients.count > 1{
+            
+            let urlString = Ingredients[indexPath.item]["image"] as! String
+            guard let url = URL(string: urlString) else {return cell}
+            
+            cell.foto_Ingrediente.load(url: url)
+            cell.nombre_ingrediente.text = Ingredients[indexPath.item]["name"] as! String
         }
-        else{
-            cell.contentView.backgroundColor = UIColor.clear
-        }
+        
+        
+//        if cell.isSelected {
+//            cell.contentView.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
+//        }
+//        else{
+//            cell.contentView.backgroundColor = UIColor.clear
+//        }
         
         return cell
     }
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         //Capturar aqui que boton ha pulsado
         
-        let selectedCell:UICollectionViewCell = IngredientesCollection.cellForItem(at: indexPath)!
-        relleno = "kk"
-              selectedCell.contentView.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
+        //ingredientes.append("\(Ingredients[indexPath.item]["name"] as! String)",3)
+        print(ingredientes)
+        
+        let selectedCell = IngredientesCollection.cellForItem(at: indexPath) as! IngredientesCell
+        
+       
+        if !isSelected {
+            selectedCell.contentView.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
+            selectedCell.currentUnidades = 1
+            ingredientes.append([Ingredients[indexPath.item]["name"] as! String:selectedCell.currentUnidades])
+            print(ingredientes)
+            isSelected = true
+        }
+        else{
+            selectedCell.contentView.backgroundColor = UIColor.clear
+            selectedCell.currentUnidades = 0
+            ingredientes.remove(at: indexPath.item)
+            print(ingredientes)
+            isSelected = false
+        }
+
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         
-        if let cellToDeselect:UICollectionViewCell = IngredientesCollection.cellForItem(at: indexPath){
-            cellToDeselect.contentView.backgroundColor = UIColor.clear
-        }
+        
+//        if let cellToDeselect:UICollectionViewCell = IngredientesCollection.cellForItem(at: indexPath){
+//            cellToDeselect.contentView.backgroundColor = UIColor.clear
+//        }
     }
 
     @IBAction func FinalStepBtn(_ sender: Any) {
-        if ingredientes == ""{
-            let alert = UIAlertController(title: "Error", message: "¡No has elegido la Base!", preferredStyle: .alert)
+        
+        if ingredientes.isEmpty{
+            
+            let alert = UIAlertController(title: "Error", message: "¡No has elegido ningun ingrediente!", preferredStyle: .alert)
             
             let action = UIAlertAction(title: "Aceptar", style: .destructive, handler: nil)
             
@@ -68,6 +115,7 @@ class Step5ViewController: UIViewController, UICollectionViewDelegate, UICollect
             present(alert, animated: true, completion: nil)
         }
         else{
+            
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "final") as! FinalStepViewController
             
@@ -75,11 +123,70 @@ class Step5ViewController: UIViewController, UICollectionViewDelegate, UICollect
             vc.shape = shape
             vc.base = base
             vc.relleno = relleno
-            vc.ingredientes = ingredientes
+            //vc.ingredientes = ingredientes
             
             self.navigationController?.pushViewController(vc, animated: true)
+            
         }
     }
+    
+    
+    func GetIngredientes(){
+        let urlString = "http://rumpusroom.es/tfc/back_cake_api_panels/public/api/customcakemodel/4"
+        
+        guard let url = URL(string: urlString) else {return}
+        
+        var request = URLRequest(url: url)
+        
+        request.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: request){(data,response,error) in
+
+            //Si el error no es nulo que nos diga que está pasando
+            if error != nil {
+                print ("Error: \(error!.localizedDescription)")
+            }
+            //Si la respuesta es nula,que nos digo que no hay respuesta
+            if response != nil {
+                print (response ?? "No se ha obtenido respuesta")
+            }
+            if let res = response as? HTTPURLResponse {
+                print("Status code: \(res.statusCode)")
+            }
+            
+            guard let datos = data else {return}
+            
+            do{
+                let cosas = try JSONSerialization.jsonObject(with: datos, options: .fragmentsAllowed) as! [[String:Any]]
+                
+                print(cosas)
+                
+                var Phase5Data:[[String:Any]] = [[:]]
+                Phase5Data = cosas
+
+                    DispatchQueue.main.async {
+                        
+                        for i in 0...Phase5Data.count - 1{
+                        
+                            let nombre = Phase5Data[i]["name"] as! String
+                            
+                            if nombre.contains(self.shape){
+                                self.Ingredients.append(Phase5Data[i])
+                                print(self.Ingredients)
+                            }
+                        }
+                        self.IngredientesCollection.reloadData()
+                    }
+                }
+            
+            catch{
+                print("Error: \(error)")
+            }
+
+        }.resume()
+    }
+    
+    
     func hexStringToUIColor (hex:String) -> UIColor {
         var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
 
