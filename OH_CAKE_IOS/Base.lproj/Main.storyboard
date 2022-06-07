@@ -1802,7 +1802,7 @@
                 <navigationController id="IU7-s1-ynC" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="1Ob-Mn-zY4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eAM-X7-IuN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -2539,6 +2539,9 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="1nT-EZ-3Ky">
                                 <rect key="frame" x="40" y="203" width="240" height="167.5"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="vLB-p4-I4c">
+                                <rect key="frame" x="40" y="203" width="240" height="167.5"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ELIGE LOS INGREDIENTES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4J-i2-SHo">
                                 <rect key="frame" x="20" y="20" width="228" height="30"/>
                                 <fontDescription key="fontDescription" name="Kanit-Bold" family="Kanit" pointSize="20"/>
@@ -2557,9 +2560,6 @@
                                     <action selector="FinalStepBtn:" destination="b14-X0-aIo" eventType="touchUpInside" id="eYs-VD-oCC"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="vLB-p4-I4c">
-                                <rect key="frame" x="40" y="203" width="240" height="167.5"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9XY-zN-44T"/>
                         <color key="backgroundColor" red="0.98823529409999999" green="0.96078431369999995" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2582,7 +2582,6 @@
                             <constraint firstItem="9XY-zN-44T" firstAttribute="trailing" secondItem="vLB-p4-I4c" secondAttribute="trailing" constant="40" id="d5w-th-MYX"/>
                             <constraint firstItem="vLB-p4-I4c" firstAttribute="top" secondItem="t77-EZ-sWV" secondAttribute="bottom" constant="8" symbolic="YES" id="epz-NU-ntM"/>
                             <constraint firstItem="t77-EZ-sWV" firstAttribute="centerX" secondItem="hzg-dn-vSa" secondAttribute="centerX" id="f8U-kh-WOp"/>
-                            <constraint firstItem="WO5-QQ-rny" firstAttribute="centerX" secondItem="hzg-dn-vSa" secondAttribute="centerX" id="geh-Lh-ZRF"/>
                             <constraint firstItem="9XY-zN-44T" firstAttribute="trailing" secondItem="1nT-EZ-3Ky" secondAttribute="trailing" constant="40" id="irs-et-3Gc"/>
                             <constraint firstItem="9XY-zN-44T" firstAttribute="trailing" secondItem="WO5-QQ-rny" secondAttribute="trailing" constant="40" id="mBQ-iA-zdI"/>
                             <constraint firstItem="3go-8d-3Fp" firstAttribute="top" secondItem="z02-Eb-MjK" secondAttribute="bottom" constant="30" id="oJP-sx-EuS"/>
@@ -2595,6 +2594,10 @@
                     </view>
                     <connections>
                         <outlet property="IngredientesCollection" destination="t77-EZ-sWV" id="Mvq-W3-Xjh"/>
+                        <outlet property="foto_base" destination="z02-Eb-MjK" id="1Y2-IM-2KF"/>
+                        <outlet property="foto_forma" destination="WO5-QQ-rny" id="RJh-M2-DWt"/>
+                        <outlet property="foto_ingrediente" destination="vLB-p4-I4c" id="TbG-E5-ap1"/>
+                        <outlet property="foto_relleno" destination="1nT-EZ-3Ky" id="P9S-vH-RTC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9UD-XH-HL6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

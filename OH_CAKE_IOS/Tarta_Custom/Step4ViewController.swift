@@ -23,6 +23,7 @@ class Step4ViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     var urlStringforma = ""
     var urlStringBase = ""
+    var urlStringRelleno = ""
     
     var Rellenos:[[String:Any]] = [[:]]
     
@@ -87,6 +88,7 @@ class Step4ViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         foto_relleno.load(url: url)
         relleno = Rellenos[indexPath.item]["name"] as! String
+        urlStringRelleno = Rellenos[indexPath.item]["name"] as! String
         
         let selectedCell:UICollectionViewCell = rellenoCollection.cellForItem(at: indexPath)!
 
@@ -120,6 +122,10 @@ class Step4ViewController: UIViewController, UICollectionViewDelegate, UICollect
             vc.shape = shape
             vc.base = base
             vc.relleno = relleno
+            
+            vc.urlStringforma = urlStringforma
+            vc.urlStringBase = urlStringBase
+            vc.urlStringRelleno = urlStringRelleno
             
             self.navigationController?.pushViewController(vc, animated: true)
         }

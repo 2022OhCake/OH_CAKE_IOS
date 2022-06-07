@@ -13,14 +13,36 @@ class Step5ViewController: UIViewController, UICollectionViewDelegate, UICollect
     var shape = ""
     var base = ""
     var relleno = ""
+    
     var ingredientes:[[String:Int]] = [["":0]]
     var Ingredients:[[String:Any]] = [[:]]
+    
+    var urlStringforma = ""
+    var urlStringBase = ""
+    var urlStringRelleno = ""
+    
+    
+    @IBOutlet weak var foto_forma: UIImageView!
+    @IBOutlet weak var foto_base: UIImageView!
+    @IBOutlet weak var foto_relleno: UIImageView!
+    @IBOutlet weak var foto_ingrediente: UIImageView!
+    
     
     var isSelected = false
     
     @IBOutlet weak var IngredientesCollection: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let urlForma = URL(string: urlStringforma)
+        guard let urlBase = URL(string: urlStringBase) else {return}
+        guard let urlRelleno = URL(string: urlStringRelleno) else {return}
+
+//        self.foto_forma.load(url: urlForma!)
+//        self.foto_base.load(url: urlBase)
+//        self.foto_relleno.load(url: urlRelleno)
+//
+        
         
         if Ingredients[0].isEmpty{
             Ingredients.remove(at: 0)
@@ -77,6 +99,11 @@ class Step5ViewController: UIViewController, UICollectionViewDelegate, UICollect
         
        
         if !isSelected {
+            let urlString = Ingredients[indexPath.item]["image_customization"] as! String
+            guard let url = URL(string: urlString) else {return}
+            
+            self.foto_ingrediente.load(url: url)
+            
             selectedCell.contentView.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
             selectedCell.currentUnidades = 1
             ingredientes.append([Ingredients[indexPath.item]["name"] as! String:selectedCell.currentUnidades])
@@ -84,9 +111,10 @@ class Step5ViewController: UIViewController, UICollectionViewDelegate, UICollect
             isSelected = true
         }
         else{
+            self.foto_ingrediente = nil
             selectedCell.contentView.backgroundColor = UIColor.clear
             selectedCell.currentUnidades = 0
-            ingredientes.remove(at: indexPath.item)
+            //ingredientes.remove(at: indexPath.item)
             print(ingredientes)
             isSelected = false
         }
