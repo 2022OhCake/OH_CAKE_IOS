@@ -47,15 +47,17 @@ class FinalStepViewController: UIViewController, UIImagePickerControllerDelegate
     }
     
     @IBAction func LIstoBtn(_ sender: Any) {
+        
 //        let alert = UIAlertController(title: "¡Genial!", message: "¡Pedido Realizado con Exito!", preferredStyle: .alert)
 //
 //        let action = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
 //
 //        alert.addAction(action)
 //
-//        present(alert, animated: true, completion: nil)
+//        present(alert, animated: true, completion: nil)]
         
         self.PedirTartaCustom(Size: size, Shape: shape, Base: base, Relleno: relleno, Ingredients: ingredientes, Dedicatoria: dedicatoriaText.text, Image: foto_personalizada)
+        
     }
     
     func PedirTartaCustom(Size:String, Shape:String, Base:String, Relleno:String, Ingredients:[[String:Int]], Dedicatoria:String?, Image:UIImageView?){
@@ -63,54 +65,34 @@ class FinalStepViewController: UIViewController, UIImagePickerControllerDelegate
         let datas = try! JSONSerialization.data(withJSONObject: Ingredients, options: JSONSerialization.WritingOptions.prettyPrinted)
         let ingredi = NSString(data: datas, encoding: String.Encoding.utf8.rawValue)
         
+        let id = defaults.object(forKey: "usuario_id")
         
-        
-        let parametros:[String:Any] = [
-            "user_id":"8",
-            "products":[
-                "custom_cake":[
-                    "custom_cake1":[
-                            "size":Size,
-                            "base":Base,
-                            "filling":Relleno,
-                            "cost":"21",
-                            "top_image":"",
-                            "inscription":Dedicatoria,
-                            "ingredients":ingredi
-                        ]
-                    ]
-                ]
-            ]
-        
-        
+        let json = "{'user_id':\(id),'products':{}"
         
         let urlString = "http://rumpusroom.es/tfc/back_cake_api_panels/public/api/order"
         guard let url = URL(string: urlString) else {return}
         
         var request = URLRequest(url: url)
-        
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        let data = try! JSONSerialization.data(withJSONObject: parametros, options: JSONSerialization.WritingOptions.prettyPrinted)
-        
-        let json = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
-        if let json = json{
-            print(json)
-        }
-        
-        request.httpBody = json!.data(using: String.Encoding.utf8.rawValue)
-        let alamoRequest = AF.request(request as URLRequestConvertible)
-        alamoRequest.validate(statusCode: 200..<300)
-        alamoRequest.responseString { response in
-            print(response.result)
-            
-        // Pagina aleatoria que igual me ayuda yo que se https://ajaxhispano.com/ask/como-enviar-una-solicitud-post-con-body-en-swift-40386/
-            
-        }
-        
-        
-        
-        
+//        
+//        request.httpMethod = "POST"
+//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+//        let data = try! JSONSerialization.data(withJSONObject: parametros, options: JSONSerialization.WritingOptions.prettyPrinted)
+//        
+//        let json = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
+//        if let json = json{
+//            print(json)
+//        }
+//        
+//        request.httpBody = json!.data(using: String.Encoding.utf8.rawValue)
+//        let alamoRequest = AF.request(request as URLRequestConvertible)
+//        alamoRequest.validate(statusCode: 200..<300)
+//        alamoRequest.responseString { response in
+//            
+//            print(response.result)
+//            
+//        // Pagina aleatoria que igual me ayuda yo que se https://ajaxhispano.com/ask/como-enviar-una-solicitud-post-con-body-en-swift-40386/
+//            
+//        }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

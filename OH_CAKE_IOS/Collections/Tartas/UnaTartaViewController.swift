@@ -32,6 +32,8 @@ class UnaTartaViewController: UIViewController, UITableViewDelegate, UITableView
     
     var id_tarta = 0
     
+    let defaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -120,10 +122,6 @@ class UnaTartaViewController: UIViewController, UITableViewDelegate, UITableView
         present(alert, animated: true, completion: nil)
         
         print(carrito)
-    }
-    
-    @IBAction func ComprarBtn(_ sender: Any) {
-        //Esto tambien xd
     }
     
     func getalergenos(id_ingrediente: Int){
@@ -231,6 +229,8 @@ class UnaTartaViewController: UIViewController, UITableViewDelegate, UITableView
 
         }.resume()
     }
+    
+    
     
     
 }
