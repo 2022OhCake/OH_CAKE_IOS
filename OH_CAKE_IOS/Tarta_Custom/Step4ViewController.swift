@@ -88,7 +88,7 @@ class Step4ViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         foto_relleno.load(url: url)
         relleno = Rellenos[indexPath.item]["name"] as! String
-        urlStringRelleno = Rellenos[indexPath.item]["name"] as! String
+        urlStringRelleno = Rellenos[indexPath.item]["image_customization"] as! String
         
         let selectedCell:UICollectionViewCell = rellenoCollection.cellForItem(at: indexPath)!
 

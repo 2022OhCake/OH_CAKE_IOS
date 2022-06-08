@@ -34,14 +34,14 @@ class Step5ViewController: UIViewController, UICollectionViewDelegate, UICollect
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let urlForma = URL(string: urlStringforma)
+        guard let urlForma = URL(string: urlStringforma) else {return}
         guard let urlBase = URL(string: urlStringBase) else {return}
         guard let urlRelleno = URL(string: urlStringRelleno) else {return}
 
-//        self.foto_forma.load(url: urlForma!)
-//        self.foto_base.load(url: urlBase)
-//        self.foto_relleno.load(url: urlRelleno)
-//
+        self.foto_forma.load(url: urlForma)
+        self.foto_base.load(url: urlBase)
+        self.foto_relleno.load(url: urlRelleno)
+
         
         
         if Ingredients[0].isEmpty{
@@ -102,16 +102,21 @@ class Step5ViewController: UIViewController, UICollectionViewDelegate, UICollect
             let urlString = Ingredients[indexPath.item]["image_customization"] as! String
             guard let url = URL(string: urlString) else {return}
             
-            self.foto_ingrediente.load(url: url)
+            foto_ingrediente.load(url: url)
             
             selectedCell.contentView.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
-            selectedCell.currentUnidades = 1
+            if selectedCell.currentUnidades < 1{
+                selectedCell.currentUnidades = 1
+            }
+            
             ingredientes.append([Ingredients[indexPath.item]["name"] as! String:selectedCell.currentUnidades])
             print(ingredientes)
             isSelected = true
         }
+        
         else{
-            self.foto_ingrediente = nil
+            
+            self.foto_ingrediente.image = nil
             selectedCell.contentView.backgroundColor = UIColor.clear
             selectedCell.currentUnidades = 0
             //ingredientes.remove(at: indexPath.item)
@@ -124,10 +129,10 @@ class Step5ViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         
+        if let cellToDeselect:UICollectionViewCell = IngredientesCollection.cellForItem(at: indexPath){
+            cellToDeselect.contentView.backgroundColor = UIColor.clear
+        }
         
-//        if let cellToDeselect:UICollectionViewCell = IngredientesCollection.cellForItem(at: indexPath){
-//            cellToDeselect.contentView.backgroundColor = UIColor.clear
-//        }
     }
 
     @IBAction func FinalStepBtn(_ sender: Any) {
@@ -151,7 +156,7 @@ class Step5ViewController: UIViewController, UICollectionViewDelegate, UICollect
             vc.shape = shape
             vc.base = base
             vc.relleno = relleno
-            //vc.ingredientes = ingredientes
+            vc.ingredientes = ingredientes
             
             self.navigationController?.pushViewController(vc, animated: true)
             

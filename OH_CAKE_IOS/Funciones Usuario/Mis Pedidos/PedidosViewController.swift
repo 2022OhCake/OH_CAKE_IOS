@@ -13,6 +13,7 @@ class PedidosViewController: UIViewController, UITableViewDataSource, UITableVie
     
     @IBOutlet weak var pedidosTableView: UITableView!
     
+    @IBOutlet weak var Empty_Label: UILabel!
     let defaults = UserDefaults.standard
     
     @IBOutlet weak var Loadingview: UIView!
@@ -61,7 +62,9 @@ class PedidosViewController: UIViewController, UITableViewDataSource, UITableVie
     
     
     func getPedidos(){
-        let urlString = "http://rumpusroom.es/tfc/back_cake_api_panels/public/api/orderdefaultcake/6"
+        
+        let id = defaults.object(forKey: "usuario_id")
+        let urlString = "http://rumpusroom.es/tfc/back_cake_api_panels/public/api/orderdefaultcake/\(id)"
         
         guard let url = URL(string: urlString) else {return}
         
@@ -95,6 +98,9 @@ class PedidosViewController: UIViewController, UITableViewDataSource, UITableVie
                 DispatchQueue.main.async {
                     self.pedidosTableView.reloadData()
                     self.Loadingview.isHidden = true
+                    if self.pedidos.isEmpty{
+                        self.Empty_Label.text = "¡No has realizado ningun pedido!"
+                    }
                 }
                     
                 }

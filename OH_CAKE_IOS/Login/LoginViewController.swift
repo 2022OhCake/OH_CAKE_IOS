@@ -146,6 +146,7 @@ class LoginViewController: UIViewController {
                                    let usuario = json["user"] as! [String:Any]
                                    
                                    DispatchQueue.main.async {
+                                       self.defaults.set(usuario["id"], forKey: "usuario_id")
                                        self.alertas(code: code, message: "", user: usuario["first_name"] as! String, apellidos: usuario["last_name"] as! String)
                                    }
                                }
@@ -221,7 +222,7 @@ class LoginViewController: UIViewController {
         
         else{
             
-            //Si entra aqui es por que algo se ha muerto muy basto y a partir de aqui probablemente no es mi problema
+            //Si entra aqui es por que algo se ha muerto muy basto, no deberia pasar a menos que se caiga el servidor o no haya internet o algo asi
             let alert = UIAlertController(title: "Error", message: "Error Desconocido", preferredStyle: .alert)
             
             let action = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
