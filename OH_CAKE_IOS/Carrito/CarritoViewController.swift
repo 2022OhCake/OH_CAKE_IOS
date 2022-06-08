@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Alamofire
 
 class CarritoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -15,9 +14,7 @@ class CarritoViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var ProductosTableView: UITableView!
     
-    
     var currentSubtotal = 0.0
-    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,47 +67,6 @@ class CarritoViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     @IBAction func FinalizarBtn(_ sender: Any) {
-        
-        
-    }
-    
-    func PedirTartas(id_tarta: Int){
-        
-        let parametros:[String:Any] = [
-            "user_id":defaults.object(forKey: "usuario_id"),
-                "products":[
-                    "default_cake":[
-                        "default_cake":[
-                            "default_cake1":id_tarta
-                        ]
-                    ]
-                ]
-            ]
-        
-        let urlString = "http://rumpusroom.es/tfc/back_cake_api_panels/public/api/order"
-        guard let url = URL(string: urlString) else {return}
-        
-        var request = URLRequest(url: url)
-        
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        let data = try! JSONSerialization.data(withJSONObject: parametros, options: JSONSerialization.WritingOptions.prettyPrinted)
-        
-        let json = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
-        if let json = json{
-            print(json)
-        }
-        
-        request.httpBody = json!.data(using: String.Encoding.utf8.rawValue)
-        let alamoRequest = AF.request(request as URLRequestConvertible)
-        alamoRequest.validate(statusCode: 200..<300)
-        alamoRequest.responseString { response in
-            
-            print(response.result)
-            
-        // Pagina aleatoria que igual me ayuda yo que se https://ajaxhispano.com/ask/como-enviar-una-solicitud-post-con-body-en-swift-40386/
-            
-        }
         
     }
     
