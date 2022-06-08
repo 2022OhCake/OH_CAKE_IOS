@@ -31,6 +31,7 @@ class UnaTartaViewController: UIViewController, UITableViewDelegate, UITableView
     var alergenos:[[String:Any]] = [[:]]
     
     var id_tarta = 0
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,17 +110,31 @@ class UnaTartaViewController: UIViewController, UITableViewDelegate, UITableView
         
         let tarta = ["Id":id,"image":imagen,"precio":precio,"nombre":nombre, "cantidad":1] as [String : Any]
         
-        carrito.append(tarta)
-        
-        let alert = UIAlertController(title: "¡Genial!", message: "Tu tarta ha sido añadida al carrito", preferredStyle: .alert)
-        
-        let action = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
-        
-        alert.addAction(action)
-        
-        present(alert, animated: true, completion: nil)
-        
-        print(carrito)
+        if !defaults.bool(forKey: "logued"){
+            let alert = UIAlertController(title: "¿Quieres más?", message: "¡Registrate para personalizar tu propia tarta!", preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "Aceptar", style: .default, handler: {_ in
+                
+                self.tabBarController?.selectedIndex = 4
+            })
+            
+            alert.addAction(action)
+            
+            present(alert, animated: true, completion: nil)
+        }
+        else{
+            carrito.append(tarta)
+            let alert = UIAlertController(title: "¡Genial!", message: "Tu tarta ha sido añadida al carrito", preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
+            
+            alert.addAction(action)
+            
+            present(alert, animated: true, completion: nil)
+            
+            print(carrito)
+        }
+
     }
     
    

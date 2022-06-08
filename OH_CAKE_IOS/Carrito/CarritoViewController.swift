@@ -16,6 +16,7 @@ class CarritoViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var ProductosTableView: UITableView!
     
     var currentSubtotal = 0.0
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,7 +84,7 @@ class CarritoViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func PedirCarrito(){
         let parametros:[String:Any] = [
-            "user_id":"8",
+            "user_id":defaults.object(forKey: "usuario_id"),
             "products":[
                 "default_cake":[
                     "default_cake":"4",

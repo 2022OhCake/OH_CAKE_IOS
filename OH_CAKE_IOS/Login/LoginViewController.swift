@@ -146,6 +146,7 @@ class LoginViewController: UIViewController {
                                    let usuario = json["user"] as! [String:Any]
                                    
                                    DispatchQueue.main.async {
+                                      
                                        self.defaults.set(usuario["id"], forKey: "usuario_id")
                                        self.alertas(code: code, message: "", user: usuario["first_name"] as! String, apellidos: usuario["last_name"] as! String)
                                    }

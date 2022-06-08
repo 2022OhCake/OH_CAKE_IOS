@@ -13,7 +13,7 @@ class Step1ViewController: UIViewController {
     @IBOutlet weak var bigbtn: UIButton!
     @IBOutlet weak var mediumbtn: UIButton!
     @IBOutlet weak var smallbtn: UIButton!
-    
+    let defaults = UserDefaults.standard
     //Tamanio de la tarta
     var size = ""
     
@@ -85,7 +85,19 @@ class Step1ViewController: UIViewController {
     @IBAction func step2Btn(_ sender: Any){
         
         //Si el usuario no ha seleccionado el tamanio, lanza un error
-        if size == ""{
+        if !defaults.bool(forKey: "logued"){
+            let alert = UIAlertController(title: "¿Quieres más?", message: "¡Registrate para personalizar tu propia tarta!", preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "Aceptar", style: .default, handler: {_ in
+                
+                self.tabBarController?.selectedIndex = 4
+            })
+            
+            alert.addAction(action)
+            
+            present(alert, animated: true, completion: nil)
+        }
+        else if size == ""{
             let alert = UIAlertController(title: "Error", message: "¡Necesitas decir el tamaño antes de continuar!", preferredStyle: .alert)
             
             let action = UIAlertAction(title: "Aceptar", style: .destructive, handler: nil)
