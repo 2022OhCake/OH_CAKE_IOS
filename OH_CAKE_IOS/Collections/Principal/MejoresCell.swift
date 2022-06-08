@@ -9,4 +9,16 @@ import UIKit
 
 class MejoresCell: UICollectionViewCell {
     
+    
+    @IBAction func VerButton(_ sender: Any) {
+        
+//        let instagram = URL(string: "instagram://app")!
+//
+//            if UIApplication.shared.canOpenURL(instagram) {
+//                    UIApplication.shared.open(instagram, options: nil, completionHandler: nil)
+//                } else {
+//                    print("Instagram not installed")
+//            }
+    }
+    
 }

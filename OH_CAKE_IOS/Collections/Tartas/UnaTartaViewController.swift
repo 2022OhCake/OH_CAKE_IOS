@@ -107,7 +107,7 @@ class UnaTartaViewController: UIViewController, UITableViewDelegate, UITableView
         let precio = detalles["cost"] as! String
         let nombre = detalles["name"] as! String
         
-        let tarta = ["Id":id,"image":imagen,"precio":precio,"nombre":nombre] as [String : Any]
+        let tarta = ["Id":id,"image":imagen,"precio":precio,"nombre":nombre, "cantidad":1] as [String : Any]
         
         carrito.append(tarta)
         
@@ -122,9 +122,7 @@ class UnaTartaViewController: UIViewController, UITableViewDelegate, UITableView
         print(carrito)
     }
     
-    @IBAction func ComprarBtn(_ sender: Any) {
-        //Esto tambien xd
-    }
+   
     
     func getalergenos(id_ingrediente: Int){
             let urlString = "http://rumpusroom.es/tfc/back_cake_api_panels/public/api/allergeningredient/\(id_ingrediente)"

@@ -28,11 +28,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         super.viewDidLoad()
         
         
-        if !carrito.isEmpty{
             if carrito[0].isEmpty{
                 carrito.remove(at: 0)
             }
-        }
+        
      
         self.tabBarController?.delegate = self
         
@@ -139,6 +138,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
         
     }
+    
+    
 }
 
 extension UIImageView {

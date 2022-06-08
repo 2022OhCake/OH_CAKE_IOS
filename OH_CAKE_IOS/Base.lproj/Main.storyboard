@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QDC-1D-BdM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QDC-1D-BdM">
     <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -472,19 +472,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mis Pedidos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ZdO-Y3-9Xg">
-                                <rect key="frame" x="20" y="20" width="111" height="30"/>
+                                <rect key="frame" x="20" y="20" width="111" height="23.5"/>
                                 <fontDescription key="fontDescription" name="Kanit-Bold" family="Kanit" pointSize="20"/>
                                 <color key="textColor" red="0.35686274509999999" green="0.18823529410000001" blue="0.050980392159999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aquí puedes consultar tus pedidos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rlf-X0-3fn">
-                                <rect key="frame" x="20" y="65" width="264" height="25.5"/>
+                                <rect key="frame" x="20" y="58.5" width="265" height="20"/>
                                 <fontDescription key="fontDescription" name="Kanit-Regular" family="Kanit" pointSize="17"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rpt-Tr-IuA">
-                                <rect key="frame" x="20" y="98.5" width="280" height="361.5"/>
+                                <rect key="frame" x="20" y="86.5" width="280" height="373.5"/>
                                 <color key="backgroundColor" red="0.98823529409999999" green="0.96078431369999995" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="pedidoscell" rowHeight="110" id="Xcz-pJ-cT8" customClass="PedidosCell" customModule="OH_CAKE_IOS" customModuleProvider="target">
@@ -495,25 +495,25 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Nº pedido" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hme-Pr-xmZ">
-                                                    <rect key="frame" x="16" y="11" width="75" height="25.5"/>
+                                                    <rect key="frame" x="16" y="11" width="76.5" height="20"/>
                                                     <fontDescription key="fontDescription" name="Kanit-Regular" family="Kanit" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smd-sP-k5x">
-                                                    <rect key="frame" x="16" y="44.5" width="52" height="25.5"/>
+                                                    <rect key="frame" x="16" y="39" width="53.5" height="27"/>
                                                     <fontDescription key="fontDescription" name="Kanit-Regular" family="Kanit" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="Descripción" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2VI-SX-CRe">
-                                                    <rect key="frame" x="16" y="78" width="89.5" height="16"/>
+                                                    <rect key="frame" x="16" y="74" width="90.5" height="20"/>
                                                     <fontDescription key="fontDescription" name="Kanit-Regular" family="Kanit" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fecha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kin-3R-QCx">
-                                                    <rect key="frame" x="225.5" y="10" width="44.5" height="25.5"/>
+                                                    <rect key="frame" x="223" y="10" width="47" height="20"/>
                                                     <fontDescription key="fontDescription" name="Kanit-Regular" family="Kanit" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -542,10 +542,10 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ff-Vx-aKh">
-                                <rect key="frame" x="20" y="100.5" width="280" height="359.5"/>
+                                <rect key="frame" x="20" y="88.5" width="280" height="371.5"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="SwD-DF-pxA">
-                                        <rect key="frame" x="121.5" y="161.5" width="37" height="37"/>
+                                        <rect key="frame" x="121.5" y="167.5" width="37" height="37"/>
                                         <color key="color" red="0.35686274509999999" green="0.18823529410000001" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </activityIndicatorView>
                                 </subviews>
@@ -802,10 +802,13 @@
                                                                         <constraint firstAttribute="height" constant="31" id="jAe-8F-jWa"/>
                                                                     </constraints>
                                                                     <state key="normal" title="Button"/>
-                                                                    <buttonConfiguration key="configuration" style="filled" title="Ver" cornerStyle="capsule">
+                                                                    <buttonConfiguration key="configuration" style="filled" title="Ir" cornerStyle="capsule">
                                                                         <color key="baseForegroundColor" red="0.35686274509999999" green="0.18823529410000001" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <color key="baseBackgroundColor" red="0.92156862750000001" green="0.82745098039999998" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                                                     </buttonConfiguration>
+                                                                    <connections>
+                                                                        <action selector="VerButton:" destination="Ec5-5p-oTR" eventType="touchUpInside" id="ztM-Kv-Zld"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                             <constraints>
@@ -1634,68 +1637,68 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="700"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONTACTO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBy-vL-SbC">
-                                                <rect key="frame" x="30" y="20" width="100.5" height="30"/>
+                                                <rect key="frame" x="30" y="20" width="108" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="Kanit-Bold" family="Kanit" pointSize="20"/>
                                                 <color key="textColor" red="0.35686274509999999" green="0.18823529410000001" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NnY-jz-O6g">
-                                                <rect key="frame" x="30" y="80" width="61" height="25.5"/>
+                                                <rect key="frame" x="30" y="73.5" width="61" height="20"/>
                                                 <fontDescription key="fontDescription" name="Kanit-Regular" family="Kanit" pointSize="17"/>
                                                 <color key="textColor" red="0.35686274509999999" green="0.18823529410000001" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MI9-UP-ybV">
-                                                <rect key="frame" x="30" y="115.5" width="260" height="34"/>
+                                                <rect key="frame" x="30" y="103.5" width="260" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fq-LT-Xga">
-                                                <rect key="frame" x="30" y="179.5" width="43" height="25.5"/>
+                                                <rect key="frame" x="30" y="167.5" width="42" height="20"/>
                                                 <fontDescription key="fontDescription" name="Kanit-Regular" family="Kanit" pointSize="17"/>
                                                 <color key="textColor" red="0.35686274509999999" green="0.18823529410000001" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Telefono" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ktd-gB-CFD">
-                                                <rect key="frame" x="30" y="279" width="66" height="25.5"/>
+                                                <rect key="frame" x="30" y="261.5" width="64" height="20"/>
                                                 <fontDescription key="fontDescription" name="Kanit-Regular" family="Kanit" pointSize="17"/>
                                                 <color key="textColor" red="0.35686274509999999" green="0.18823529410000001" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Direccion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkz-Kb-TAs">
-                                                <rect key="frame" x="30" y="378.5" width="71.5" height="25.5"/>
+                                                <rect key="frame" x="30" y="355.5" width="71.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="Kanit-Regular" family="Kanit" pointSize="17"/>
                                                 <color key="textColor" red="0.35686274509999999" green="0.18823529410000001" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QfQ-ws-cMQ">
-                                                <rect key="frame" x="30" y="215" width="260" height="34"/>
+                                                <rect key="frame" x="30" y="197.5" width="260" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MyK-nO-2pb">
-                                                <rect key="frame" x="30" y="314.5" width="260" height="34"/>
+                                                <rect key="frame" x="30" y="291.5" width="260" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZUS-MM-B2b">
-                                                <rect key="frame" x="30" y="414" width="260" height="34"/>
+                                                <rect key="frame" x="30" y="385.5" width="260" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="out-Do-wh9">
-                                                <rect key="frame" x="30" y="513.5" width="260" height="34"/>
+                                                <rect key="frame" x="30" y="479.5" width="260" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mensaje" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hp7-fs-bIJ">
-                                                <rect key="frame" x="30" y="478" width="64" height="25.5"/>
+                                                <rect key="frame" x="30" y="449.5" width="64" height="20"/>
                                                 <fontDescription key="fontDescription" name="Kanit-Regular" family="Kanit" pointSize="17"/>
                                                 <color key="textColor" red="0.35686274509999999" green="0.18823529410000001" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K58-NT-g50">
-                                                <rect key="frame" x="50" y="597.5" width="220" height="51.5"/>
+                                                <rect key="frame" x="50" y="563.5" width="220" height="43.5"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Enviar">
                                                     <fontDescription key="titleFontDescription" name="Kanit-Bold" family="Kanit" pointSize="25"/>
@@ -1796,7 +1799,7 @@
                 <navigationController id="ijn-MX-tnx" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="5Sx-th-Me0"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NGy-gS-pR0">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -3098,6 +3101,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="Finalizar" destination="E5k-aL-Igc" id="VZV-Iq-FLE"/>
                         <outlet property="ProductosTableView" destination="l88-y1-RYk" id="iDJ-Zu-aCG"/>
                         <outlet property="SubtotalLabel" destination="wlp-tJ-VxK" id="4Ii-Y9-Uto"/>
                         <outlet property="totalLabel" destination="hUU-fE-g0j" id="inY-06-pjy"/>

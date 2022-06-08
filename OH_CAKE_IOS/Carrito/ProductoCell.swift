@@ -21,9 +21,7 @@ class ProductoCell: UITableViewCell {
                 Unidades_Produto_Label.text = "\(currentUnidades)"
             }
         }
-    
-    
-  
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }

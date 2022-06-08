@@ -25,7 +25,7 @@ class Step1ViewController: UIViewController {
     
     ///Botones para seleccionar el tamanio
     @IBAction func Small(_ sender: Any) {
-        size = "Pequeña"
+        size = "small"
         if #available(iOS 15.0, *) {
             smallbtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
         } else {
@@ -44,7 +44,7 @@ class Step1ViewController: UIViewController {
     }
     
     @IBAction func Medium(_ sender: Any) {
-        size = "Mediana"
+        size = "medium"
         if #available(iOS 15.0, *) {
             smallbtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#FCF5F1")
         } else {
@@ -63,7 +63,7 @@ class Step1ViewController: UIViewController {
     }
     
     @IBAction func Big(_ sender: Any) {
-        size = "Grande"
+        size = "xl"
         if #available(iOS 15.0, *) {
             smallbtn.configuration?.background.backgroundColor = hexStringToUIColor(hex: "#FCF5F1")
         } else {

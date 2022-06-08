@@ -6,12 +6,13 @@
 //
 
 import UIKit
-
+import Alamofire
 class CarritoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     @IBOutlet weak var SubtotalLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
+    @IBOutlet weak var Finalizar: UIButton!
     @IBOutlet weak var ProductosTableView: UITableView!
     
     var currentSubtotal = 0.0
@@ -22,10 +23,18 @@ class CarritoViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.ProductosTableView.delegate = self
         self.ProductosTableView.dataSource = self
         
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.ProductosTableView.reloadData()
+        if carrito.isEmpty{
+            Finalizar.isEnabled = false
+        }
+        else{
+            Finalizar.isEnabled = true
+        }
     }
     
     
@@ -38,6 +47,7 @@ class CarritoViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "producto", for: indexPath) as! ProductoCell
     
         if carrito.count > 0 {
+            
             cell.Nombre_Producto_Label.text = carrito[indexPath.item]["nombre"] as? String
             cell.Precio_Producto_label.text = carrito[indexPath.item]["precio"] as? String
             
@@ -67,8 +77,41 @@ class CarritoViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     @IBAction func FinalizarBtn(_ sender: Any) {
-        
+        PedirCarrito()
     }
     
-
+    
+    func PedirCarrito(){
+        let parametros:[String:Any] = [
+            "user_id":"8",
+            "products":[
+                "default_cake":[
+                    "default_cake":"4",
+                ]
+            ]
+        ]
+        
+        let urlString = "http://rumpusroom.es/tfc/back_cake_api_panels/public/api/order"
+        guard let url = URL(string: urlString) else {return}
+        
+        var request = URLRequest(url: url)
+        
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let data = try! JSONSerialization.data(withJSONObject: parametros, options: JSONSerialization.WritingOptions.prettyPrinted)
+        
+        let json = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
+        if let json = json{
+            print(json)
+        }
+        
+        request.httpBody = json!.data(using: String.Encoding.utf8.rawValue)
+        let alamoRequest = AF.request(request as URLRequestConvertible)
+        alamoRequest.validate(statusCode: 200..<300)
+        alamoRequest.responseString { response in
+            print(response.result)
+            carrito.removeAll()
+            self.ProductosTableView.reloadData()
+        }
+    }
 }

@@ -60,28 +60,59 @@ class FinalStepViewController: UIViewController, UIImagePickerControllerDelegate
     
     func PedirTartaCustom(Size:String, Shape:String, Base:String, Relleno:String, Ingredients:[[String:Int]], Dedicatoria:String?, Image:UIImageView?){
         
+        let id = defaults.object(forKey: "usuario_id")
         let datas = try! JSONSerialization.data(withJSONObject: Ingredients, options: JSONSerialization.WritingOptions.prettyPrinted)
         let ingredi = NSString(data: datas, encoding: String.Encoding.utf8.rawValue)
         
         
         
+//        let parametros:Dictionary<String, Any> = [
+//            "user_id":"8",
+//            "products":[
+//                "custom_cake":[
+//                    "custom_cake1":[
+//                            "size":Size,
+//                            "base":Base,
+//                            "filling":Relleno,
+//                            "cost":"21",
+//                            "top_image":"",
+//                            "inscription":Dedicatoria,
+//                            "ingredients":[
+//                                "":""
+//                            ]
+//                        ]
+//                    ]
+//                ]
+//            ]
+
+        
         let parametros:[String:Any] = [
             "user_id":"8",
             "products":[
+                "default_cake":[
+                    "default_cake1":"10",
+                    "default_cake2":"3"
+                    ],
                 "custom_cake":[
                     "custom_cake1":[
-                            "size":Size,
-                            "base":Base,
-                            "filling":Relleno,
-                            "cost":"21",
-                            "top_image":"",
-                            "inscription":Dedicatoria,
-                            "ingredients":ingredi
-                        ]
+                       "size":Size,
+                       "base":Base,
+                       "filling":Relleno,
+                       "cost":"21",
+                       "top_image":"lalala",
+                       "inscription":Dedicatoria,
+                       "ingredients":[
+                          "ingredient_id1":"7",
+                          "ingredient_id2":"6",
+                          "ingredient_id3":"8"
+                       ]
                     ]
                 ]
             ]
+        ]
         
+        
+//        let cosa = "['user_id':\(id),'products':{'custom_cake':{'custom_cake1':{'size':\(Size),'base':\(Base),'filling':\(Relleno),'cost':'21','top_image':'','inscription':\(Dedicatoria),'ingredients':[])}}}]"
         
         
         let urlString = "http://rumpusroom.es/tfc/back_cake_api_panels/public/api/order"
@@ -103,8 +134,6 @@ class FinalStepViewController: UIViewController, UIImagePickerControllerDelegate
         alamoRequest.validate(statusCode: 200..<300)
         alamoRequest.responseString { response in
             print(response.result)
-            
-        // Pagina aleatoria que igual me ayuda yo que se https://ajaxhispano.com/ask/como-enviar-una-solicitud-post-con-body-en-swift-40386/
             
         }
         

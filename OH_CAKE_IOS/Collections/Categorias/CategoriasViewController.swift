@@ -37,7 +37,8 @@ class CategoriasViewController: UIViewController, UICollectionViewDelegate, UICo
         
         //Primero compruebo que el array no este vacio para que no pete
         if !categorias[indexPath.row].isEmpty{
-            cell.CategoriaLabel.text = categorias[indexPath.row]["name_category"] as? String
+            let nombrecat = categorias[indexPath.row]["name_category"] as? String
+            cell.CategoriaLabel.text? = (nombrecat?.uppercased())!
             
             let urlString = categorias[indexPath.row]["image"] as! String
             guard let url = URL(string: urlString) else {return cell}
