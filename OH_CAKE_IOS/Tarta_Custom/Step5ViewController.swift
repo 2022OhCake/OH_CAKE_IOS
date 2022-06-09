@@ -14,7 +14,7 @@ class Step5ViewController: UIViewController, UICollectionViewDelegate, UICollect
     var base = ""
     var relleno = ""
     
-    var ingredientes:[[String:Int]] = [["":0]]
+    var ingredientes:[[Int:Int]] = [[0:0]]
     var Ingredients:[[String:Any]] = [[:]]
     
     var urlStringforma = ""
@@ -48,7 +48,7 @@ class Step5ViewController: UIViewController, UICollectionViewDelegate, UICollect
             Ingredients.remove(at: 0)
         }
         
-        if ingredientes[0] == ["":0]{
+        if ingredientes[0] == [0:0]{
             ingredientes.remove(at: 0)
         }
 
@@ -75,15 +75,6 @@ class Step5ViewController: UIViewController, UICollectionViewDelegate, UICollect
             cell.foto_Ingrediente.load(url: url)
             cell.nombre_ingrediente.text = Ingredients[indexPath.item]["name"] as! String
         }
-        
-        
-//        if cell.isSelected {
-//            cell.contentView.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
-//        }
-//        else{
-//            cell.contentView.backgroundColor = UIColor.clear
-//        }
-        
         return cell
     }
     
@@ -109,7 +100,7 @@ class Step5ViewController: UIViewController, UICollectionViewDelegate, UICollect
                 selectedCell.currentUnidades = 1
             }
             
-            ingredientes.append([Ingredients[indexPath.item]["name"] as! String:selectedCell.currentUnidades])
+            ingredientes.append([Ingredients[indexPath.item]["id"] as! Int:selectedCell.currentUnidades])
             print(ingredientes)
             isSelected = true
         }

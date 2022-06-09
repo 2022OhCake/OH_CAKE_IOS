@@ -32,6 +32,10 @@ class Step2ViewController: UIViewController, UICollectionViewDelegate, UICollect
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
+    }
+    
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return Phase2Data.count

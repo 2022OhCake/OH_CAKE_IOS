@@ -23,6 +23,10 @@ class Step1ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
     ///Botones para seleccionar el tamanio
     @IBAction func Small(_ sender: Any) {
         size = "small"

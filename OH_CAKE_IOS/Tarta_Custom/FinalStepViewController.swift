@@ -17,7 +17,7 @@ class FinalStepViewController: UIViewController, UIImagePickerControllerDelegate
     var shape = ""
     var base = ""
     var relleno = ""
-    var ingredientes:[[String:Int]] = [[:]]
+    var ingredientes:[[Int:Int]] = [[:]]
     
     
     @IBOutlet weak var foto_personalizada: UIImageView!
@@ -58,34 +58,28 @@ class FinalStepViewController: UIViewController, UIImagePickerControllerDelegate
         self.PedirTartaCustom(Size: size, Shape: shape, Base: base, Relleno: relleno, Ingredients: ingredientes, Dedicatoria: dedicatoriaText.text, Image: foto_personalizada)
     }
     
-    func PedirTartaCustom(Size:String, Shape:String, Base:String, Relleno:String, Ingredients:[[String:Int]], Dedicatoria:String?, Image:UIImageView?){
+    
+    
+    func PedirTartaCustom(Size:String, Shape:String, Base:String, Relleno:String, Ingredients:[[Int:Int]], Dedicatoria:String?, Image:UIImageView?){
         
-        let id = defaults.object(forKey: "usuario_id")
-        let datas = try! JSONSerialization.data(withJSONObject: Ingredients, options: JSONSerialization.WritingOptions.prettyPrinted)
-        let ingredi = NSString(data: datas, encoding: String.Encoding.utf8.rawValue)
+        var ingr:[String:[String:Any]] = [
+            "ingredient":[
+               "id":"3",
+               "ingredient_quantity":"2"
+            ]
+         ]
         
-        
-        
-//        let parametros:Dictionary<String, Any> = [
-//            "user_id":"8",
-//            "products":[
-//                "custom_cake":[
-//                    "custom_cake1":[
-//                            "size":Size,
-//                            "base":Base,
-//                            "filling":Relleno,
-//                            "cost":"21",
-//                            "top_image":"",
-//                            "inscription":Dedicatoria,
-//                            "ingredients":[
-//                                "":""
-//                            ]
-//                        ]
-//                    ]
-//                ]
-//            ]
+        print(Ingredients)
 
-        
+        for i in 0...Ingredients.count - 1{
+                ingr[""] = [
+                "ingredient\(i)":[
+                   "id":"3",
+                   "ingredient_quantity":"2"
+                ]
+             ]
+        }
+
         let parametros:[String:Any] = [
             "user_id":defaults.object(forKey: "usuario_id"),
             "products":[
@@ -97,19 +91,11 @@ class FinalStepViewController: UIViewController, UIImagePickerControllerDelegate
                        "cost":"21",
                        "top_image":"lalala",
                        "inscription":Dedicatoria,
-                       "ingredients":[
-                          "ingredient_id1":"7",
-                          "ingredient_id2":"6",
-                          "ingredient_id3":"8"
-                       ]
+                       "ingredients":ingr
                     ]
                 ]
             ]
         ]
-        
-        
-//        let cosa = "['user_id':\(id),'products':{'custom_cake':{'custom_cake1':{'size':\(Size),'base':\(Base),'filling':\(Relleno),'cost':'21','top_image':'','inscription':\(Dedicatoria),'ingredients':[])}}}]"
-        
         
         let urlString = "http://rumpusroom.es/tfc/back_cake_api_panels/public/api/order"
         guard let url = URL(string: urlString) else {return}
@@ -130,6 +116,31 @@ class FinalStepViewController: UIViewController, UIImagePickerControllerDelegate
         alamoRequest.validate(statusCode: 200..<300)
         alamoRequest.responseString { response in
             print(response.result)
+            print(response.response?.statusCode)
+            if response.response?.statusCode == 201{
+                let alert = UIAlertController(title: "¡Delicioso!", message: "¡Muchas gracias por tu pedido, puedes consultar su estado en tu perfil!", preferredStyle: .alert)
+                
+                let action = UIAlertAction(title: "Aceptar", style: .default, handler: {_ in
+                    self.tabBarController?.selectedIndex = 4
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let vc = storyboard.instantiateViewController(withIdentifier: "paso0") as! Step1ViewController
+                  
+                    self.navigationController?.pushViewController(vc, animated: true)
+                })
+                
+                alert.addAction(action)
+                
+                self.present(alert, animated: true, completion: nil)
+            }
+            else{
+                let alert = UIAlertController(title: "Error", message: "¡Ha ocurrido un error al realizar tu pedido!", preferredStyle: .alert)
+                
+                let action = UIAlertAction(title: "Aceptar", style: .destructive, handler: nil)
+                
+                alert.addAction(action)
+                
+                self.present(alert, animated: true, completion: nil)
+            }
         }
     }
     
