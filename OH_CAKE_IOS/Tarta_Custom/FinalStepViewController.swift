@@ -47,14 +47,7 @@ class FinalStepViewController: UIViewController, UIImagePickerControllerDelegate
     }
     
     @IBAction func LIstoBtn(_ sender: Any) {
-//        let alert = UIAlertController(title: "¡Genial!", message: "¡Pedido Realizado con Exito!", preferredStyle: .alert)
-//
-//        let action = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
-//
-//        alert.addAction(action)
-//
-//        present(alert, animated: true, completion: nil)
-        
+
         self.PedirTartaCustom(Size: size, Shape: shape, Base: base, Relleno: relleno, Ingredients: ingredientes, Dedicatoria: dedicatoriaText.text, Image: foto_personalizada)
     }
     
@@ -62,22 +55,21 @@ class FinalStepViewController: UIViewController, UIImagePickerControllerDelegate
     
     func PedirTartaCustom(Size:String, Shape:String, Base:String, Relleno:String, Ingredients:[[Int:Int]], Dedicatoria:String?, Image:UIImageView?){
         
-        var ingr:[String:[String:Any]] = [
-            "ingredient":[
-               "id":"3",
-               "ingredient_quantity":"2"
-            ]
-         ]
+        var ingr:[String:[String:Any]] = [:]
         
-        print(Ingredients)
-
+        print(Ingredients[0])
+        
         for i in 0...Ingredients.count - 1{
-                ingr[""] = [
-                "ingredient\(i)":[
-                   "id":"3",
-                   "ingredient_quantity":"2"
+            let a = Ingredients[i]
+            let id = Ingredients[i].keys
+            let quant = Ingredients[i].values
+            
+            print(type(of: id))
+                ingr["ingredient\(i)"] =
+                [
+                    "id":"\(id.first ?? 0)",
+                    "ingredient_quantity":"\(quant.first ?? 0)"
                 ]
-             ]
         }
 
         let parametros:[String:Any] = [

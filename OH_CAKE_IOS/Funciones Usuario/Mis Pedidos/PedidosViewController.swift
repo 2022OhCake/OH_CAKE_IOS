@@ -104,7 +104,7 @@ class PedidosViewController: UIViewController, UITableViewDataSource, UITableVie
             if pedidos_custom.count > 1 {
                 let id = "\(pedidos_custom[indexPath.item]["id"] as! Int)"
                 customPedidos.num_pedido_custom.text = id
-                customPedidos.Estado_Pedido_Custom.text = pedidos_custom[indexPath.item]["status"] as! String
+                //customPedidos.Estado_Pedido_Custom.text = pedidos_custom[indexPath.item]["status"] as! String
                 
                 if pedidos_custom[indexPath.item]["created_at"] != nil{
                     //cell.Fecha_Pedido_Label.text = pedidos[indexPath.item]["created_at"] as! String

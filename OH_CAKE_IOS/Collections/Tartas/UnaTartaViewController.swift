@@ -42,10 +42,6 @@ class UnaTartaViewController: UIViewController, UITableViewDelegate, UITableView
         self.AlergenosTable.delegate = self
         self.AlergenosTable.dataSource = self
 
-        
-        
-       
-        
         self.getTarta()
         
     }
@@ -136,9 +132,7 @@ class UnaTartaViewController: UIViewController, UITableViewDelegate, UITableView
         }
 
     }
-    
-   
-    
+
     func getalergenos(id_ingrediente: Int){
             let urlString = "http://rumpusroom.es/tfc/back_cake_api_panels/public/api/allergeningredient/\(id_ingrediente)"
             

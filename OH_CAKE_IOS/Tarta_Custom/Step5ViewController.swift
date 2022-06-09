@@ -103,6 +103,7 @@ class Step5ViewController: UIViewController, UICollectionViewDelegate, UICollect
             ingredientes.append([Ingredients[indexPath.item]["id"] as! Int:selectedCell.currentUnidades])
             print(ingredientes)
             isSelected = true
+            
         }
         
         else{
