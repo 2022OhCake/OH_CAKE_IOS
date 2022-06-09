@@ -78,8 +78,7 @@ class Step2ViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        
-        
+ 
         //Esto hay que hacerlo con un if let por que ios destruye las celdas que no estan en pantalla asi que si la pulsas de vuelta despues de hacer scroll, le da ansiedad, se muere y peta
         if let cellToDeselect:UICollectionViewCell = formacollection.cellForItem(at: indexPath){
             cellToDeselect.contentView.backgroundColor = UIColor.clear
@@ -87,6 +86,7 @@ class Step2ViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     @IBAction func step3Btn(_ sender: Any) {
+        
         //Si la forma no esta seleccionada, lanza un error
         if shape == ""{
             let alert = UIAlertController(title: "Error", message: "¡No has elegido la forma!", preferredStyle: .alert)
@@ -142,11 +142,10 @@ class Step2ViewController: UIViewController, UICollectionViewDelegate, UICollect
                 
                 self.Phase2Data = cosas
                 
-                DispatchQueue.main.async {
-                    self.formacollection.reloadData()
+                    DispatchQueue.main.async {
+                        self.formacollection.reloadData()
+                    }
                 }
-                }
-            
             catch{
                 print("Error: \(error)")
             }

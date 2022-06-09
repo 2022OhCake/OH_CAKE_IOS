@@ -34,6 +34,7 @@
 		4A621B42284E572400F36BCC /* Kanit-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A621B2F284E572400F36BCC /* Kanit-Thin.ttf */; };
 		4A621B43284E572400F36BCC /* Kanit-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A621B30284E572400F36BCC /* Kanit-BoldItalic.ttf */; };
 		F2E79924403B7E7650104974 /* Pods_OH_CAKE_IOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8CB15E757EDD99E2A8D6066 /* Pods_OH_CAKE_IOS.framework */; };
+		F4176AA02851EB8F0008A9BD /* Custom_PedidoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4176A9F2851EB8F0008A9BD /* Custom_PedidoCell.swift */; };
 		F42BEA502816A62F009E626C /* Step1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42BEA4F2816A62F009E626C /* Step1ViewController.swift */; };
 		F44A6C99282262BB00B4C67D /* MapaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A6C98282262BB00B4C67D /* MapaViewController.swift */; };
 		F44A6C9B282264FC00B4C67D /* ArtWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A6C9A282264FC00B4C67D /* ArtWork.swift */; };
@@ -98,6 +99,7 @@
 		4A621B30284E572400F36BCC /* Kanit-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kanit-BoldItalic.ttf"; sourceTree = "<group>"; };
 		A8CB15E757EDD99E2A8D6066 /* Pods_OH_CAKE_IOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OH_CAKE_IOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B899825D28F01247DDD2317A /* Pods-OH_CAKE_IOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OH_CAKE_IOS.release.xcconfig"; path = "Target Support Files/Pods-OH_CAKE_IOS/Pods-OH_CAKE_IOS.release.xcconfig"; sourceTree = "<group>"; };
+		F4176A9F2851EB8F0008A9BD /* Custom_PedidoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Custom_PedidoCell.swift; sourceTree = "<group>"; };
 		F42BEA4F2816A62F009E626C /* Step1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step1ViewController.swift; sourceTree = "<group>"; };
 		F44A6C98282262BB00B4C67D /* MapaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapaViewController.swift; sourceTree = "<group>"; };
 		F44A6C9A282264FC00B4C67D /* ArtWork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtWork.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 			children = (
 				F4863CF0283F7181008E70B5 /* PedidosViewController.swift */,
 				F4863CF2283F71A2008E70B5 /* PedidosCell.swift */,
+				F4176A9F2851EB8F0008A9BD /* Custom_PedidoCell.swift */,
 			);
 			path = "Mis Pedidos";
 			sourceTree = "<group>";
@@ -490,6 +493,7 @@
 				F44A6C99282262BB00B4C67D /* MapaViewController.swift in Sources */,
 				4A05492027E25D6300D9EB71 /* ViewController.swift in Sources */,
 				F4EA0E66282A573400E9E71A /* FormaCell.swift in Sources */,
+				F4176AA02851EB8F0008A9BD /* Custom_PedidoCell.swift in Sources */,
 				F476046D2833B9A6005FCE32 /* SelectionViewController.swift in Sources */,
 				F4889DB3284A008F00E316C6 /* CarritoViewController.swift in Sources */,
 				F4863CF8283F9BAF008E70B5 /* TartasCell.swift in Sources */,

@@ -87,12 +87,8 @@ class FinalStepViewController: UIViewController, UIImagePickerControllerDelegate
 
         
         let parametros:[String:Any] = [
-            "user_id":"8",
+            "user_id":defaults.object(forKey: "usuario_id"),
             "products":[
-                "default_cake":[
-                    "default_cake1":"10",
-                    "default_cake2":"3"
-                    ],
                 "custom_cake":[
                     "custom_cake1":[
                        "size":Size,
@@ -134,12 +130,7 @@ class FinalStepViewController: UIViewController, UIImagePickerControllerDelegate
         alamoRequest.validate(statusCode: 200..<300)
         alamoRequest.responseString { response in
             print(response.result)
-            
         }
-        
-        
-        
-        
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

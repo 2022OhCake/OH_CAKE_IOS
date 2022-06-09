@@ -14,6 +14,7 @@ class CarritoViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var Finalizar: UIButton!
     @IBOutlet weak var ProductosTableView: UITableView!
+    @IBOutlet weak var Botonfinalizar: UIButton!
     
     var currentSubtotal = 0.0
     let defaults = UserDefaults.standard
@@ -24,12 +25,11 @@ class CarritoViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.ProductosTableView.delegate = self
         self.ProductosTableView.dataSource = self
         
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.ProductosTableView.reloadData()
+        
         if carrito.isEmpty{
             Finalizar.isEnabled = false
         }
@@ -78,20 +78,25 @@ class CarritoViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     @IBAction func FinalizarBtn(_ sender: Any) {
-        PedirCarrito()
+        PedirCarrito(carritoPedido: carrito)
     }
     
     
-    func PedirCarrito(){
+    func PedirCarrito(carritoPedido: [[String:Any]]){
+        
+        var carritoVacio = [String:String]()
+        
+        for i in 0...carritoPedido.count - 1{
+            carritoVacio["default_cake\(i)"] = "\(carritoPedido[i]["Id"] ?? "")"
+        }
+        
         let parametros:[String:Any] = [
             "user_id":defaults.object(forKey: "usuario_id"),
             "products":[
-                "default_cake":[
-                    "default_cake":"4",
-                ]
+                "default_cake":carritoVacio
             ]
         ]
-        
+       
         let urlString = "http://rumpusroom.es/tfc/back_cake_api_panels/public/api/order"
         guard let url = URL(string: urlString) else {return}
         
@@ -112,6 +117,8 @@ class CarritoViewController: UIViewController, UITableViewDelegate, UITableViewD
         alamoRequest.responseString { response in
             print(response.result)
             carrito.removeAll()
+            carritoVacio.removeAll()
+            self.Botonfinalizar.isEnabled = false
             self.ProductosTableView.reloadData()
         }
     }
