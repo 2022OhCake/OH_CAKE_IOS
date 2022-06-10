@@ -24,6 +24,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var registradoLabel: UILabel!
     @IBOutlet weak var crearcuentaBtn: UIButton!
     var tartas:[[String:Any]] = [[:]]
+    var tartas2:[[String:Any]] = [[:]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +48,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         //self.defaults.set(true, forKey: "logued")
         
         self.getTartas()
+        self.getTartas2()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -95,7 +98,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
         
         else{
-            return 10
+            return 5
         }
     }
     
@@ -138,14 +141,18 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
         
         else{
-            
             //Si no, instancia la otra
             let mejores = collectionView.dequeueReusableCell(withReuseIdentifier: "mejorCelda", for: indexPath) as! MejoresCell
             
+            if tartas2.count > 1{
+                let urlString = tartas2[indexPath.row]["image"] as! String
+                guard let url = URL(string: urlString) else {return mejores}
+                
+                mejores.foto_mejores.load(url: url)
+            }
             return mejores
         }
-        
-    }
+}
     
     
     func getTartas(){
@@ -192,8 +199,52 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }.resume()
     }
     
+    func getTartas2(){
+        let urlString = "http://rumpusroom.es/tfc/back_cake_api_panels/public/api/defaultcakecategory/2"
+        
+        guard let url = URL(string: urlString) else {return}
+        
+        var request = URLRequest(url: url)
+        
+        request.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: request){(data,response,error) in
+
+            //Si el error no es nulo que nos diga que está pasando
+            if error != nil {
+                print ("Error: \(error!.localizedDescription)")
+            }
+            //Si la respuesta es nula,que nos digo que no hay respuesta
+            if response != nil {
+                print (response ?? "No se ha obtenido respuesta")
+            }
+            if let res = response as? HTTPURLResponse {
+                print("Status code: \(res.statusCode)")
+            }
+            
+            guard let datos = data else {return}
+            
+            do{
+                let cosas = try JSONSerialization.jsonObject(with: datos, options: .fragmentsAllowed) as! [String:Any]
+                
+                //Asigno los datos de las tartas de esta categoria
+                self.tartas2 = cosas["default_cakes"] as! [[String : Any]]
+                
+                DispatchQueue.main.async {
+                    //Actualizo la tabla
+                    self.mejorCollection.reloadData()
+                }
+                
+            }
+            catch{
+                print("Error: \(error)")
+            }
+
+        }.resume()
+    }
+    }
     
-}
+
 
 extension UIImageView {
 
@@ -243,7 +294,6 @@ extension UIImageView {
             }
         }
     }
-
 }
 
 

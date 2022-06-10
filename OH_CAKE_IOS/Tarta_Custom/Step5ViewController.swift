@@ -90,17 +90,16 @@ class Step5ViewController: UIViewController, UICollectionViewDelegate, UICollect
         
        
         if !isSelected {
+            
             let urlString = Ingredients[indexPath.item]["image_customization"] as! String
             guard let url = URL(string: urlString) else {return}
             
             foto_ingrediente.load(url: url)
             
             selectedCell.contentView.backgroundColor = hexStringToUIColor(hex: "#BEE2E0")
-            if selectedCell.currentUnidades < 1{
-                selectedCell.currentUnidades = 1
-            }
+           
             
-            ingredientes.append([Ingredients[indexPath.item]["id"] as! Int:selectedCell.currentUnidades])
+            ingredientes.append([Ingredients[indexPath.item]["id"] as! Int:1])
             print(ingredientes)
             isSelected = true
             
@@ -110,9 +109,6 @@ class Step5ViewController: UIViewController, UICollectionViewDelegate, UICollect
             
             self.foto_ingrediente.image = nil
             selectedCell.contentView.backgroundColor = UIColor.clear
-            selectedCell.currentUnidades = 0
-            //ingredientes.remove(at: indexPath.item)
-            print(ingredientes)
             isSelected = false
         }
 
