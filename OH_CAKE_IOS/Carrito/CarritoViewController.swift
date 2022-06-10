@@ -116,10 +116,33 @@ class CarritoViewController: UIViewController, UITableViewDelegate, UITableViewD
         alamoRequest.validate(statusCode: 200..<300)
         alamoRequest.responseString { response in
             print(response.result)
-            carrito.removeAll()
-            carritoVacio.removeAll()
-            self.Botonfinalizar.isEnabled = false
-            self.ProductosTableView.reloadData()
+            
+            if response.response?.statusCode == 201{
+                let alert = UIAlertController(title: "¡Genial!", message: "¡Muchas Gracias por hacer tu pedido con nosotros, Disfruta :D!", preferredStyle: .alert)
+                
+                let action = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
+                
+                alert.addAction(action)
+                
+                self.present(alert, animated: true, completion: nil)
+                
+                carrito.removeAll()
+                carritoVacio.removeAll()
+                self.Botonfinalizar.isEnabled = false
+                self.ProductosTableView.reloadData()
+            }
+            else{
+                let alert = UIAlertController(title: "¡Vaya!", message: "¡Parece que algo salio mal con tu pedido!, Comprueba que estas conectado a la red e intentalo de nuevo", preferredStyle: .alert)
+                
+                let action = UIAlertAction(title: "Aceptar", style: .destructive, handler: {_ in
+                    self.dismiss(animated: true)
+                })
+                
+                alert.addAction(action)
+                
+                self.present(alert, animated: true, completion: nil)
+            }
+            
         }
     }
 }

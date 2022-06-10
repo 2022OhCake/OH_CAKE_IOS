@@ -30,6 +30,11 @@ class PedidosViewController: UIViewController, UITableViewDataSource, UITableVie
             pedidos.remove(at: 0)
         }
         
+        
+        if pedidos_custom[0].isEmpty{
+            pedidos_custom.remove(at: 0)
+        }
+        
         self.pedidos_customTableview.delegate = self
         self.pedidos_customTableview.dataSource = self
 
@@ -82,13 +87,18 @@ class PedidosViewController: UIViewController, UITableViewDataSource, UITableVie
         
         if tableView == pedidosTableView{
             let defaultPedidos = tableView.dequeueReusableCell(withIdentifier: "pedidoscell", for: indexPath) as! PedidosCell
-            if pedidos.count > 1 {
+            if pedidos.count > 0 {
                 let id = "\(pedidos[indexPath.item]["id"] as! Int)"
                 defaultPedidos.Num_Pedido_Label.text = id
-                defaultPedidos.Estado_Pedido_Label.text = pedidos[indexPath.item]["status"] as! String
+                defaultPedidos.Estado_Pedido_Label.text = pedidos[indexPath.item]["status"] as? String
                 
                 if pedidos[indexPath.item]["created_at"] != nil{
-                    //cell.Fecha_Pedido_Label.text = pedidos[indexPath.item]["created_at"] as! String
+                    let fecha = pedidos[indexPath.item]["created_at"] as? String
+                    let index = fecha!.firstIndex(of: "T")!
+                    let recorte = fecha![..<index]
+                    let recortado = String(recorte)
+                   
+                    defaultPedidos.Fecha_Pedido_Label.text = recortado
                 }
                 else{
                     defaultPedidos.Fecha_Pedido_Label.text = "Desconocido"
@@ -101,13 +111,19 @@ class PedidosViewController: UIViewController, UITableViewDataSource, UITableVie
         
         else{
             let customPedidos = tableView.dequeueReusableCell(withIdentifier: "custompedido", for: indexPath) as! Custom_PedidoCell
-            if pedidos_custom.count > 1 {
+            if pedidos_custom.count > 0 {
                 let id = "\(pedidos_custom[indexPath.item]["id"] as! Int)"
                 customPedidos.num_pedido_custom.text = id
-                //customPedidos.Estado_Pedido_Custom.text = pedidos_custom[indexPath.item]["status"] as! String
+                customPedidos.Estado_Pedido_Custom.text = pedidos_custom[indexPath.item]["status"] as? String
                 
                 if pedidos_custom[indexPath.item]["created_at"] != nil{
-                    //cell.Fecha_Pedido_Label.text = pedidos[indexPath.item]["created_at"] as! String
+                    
+                    let fecha = pedidos_custom[indexPath.item]["created_at"] as? String
+                    let index = fecha!.firstIndex(of: "T")!
+                    let recorte = fecha![..<index]
+                    let recortado = String(recorte)
+                   
+                    customPedidos.Fecha_pedido_Custom.text = recortado
                 }
                 else{
                     customPedidos.Fecha_pedido_Custom.text = "Desconocido"

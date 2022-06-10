@@ -9,6 +9,7 @@ import UIKit
 
 class OfertasCell: UICollectionViewCell {
     
+    @IBOutlet weak var foto_ofertas: UIImageView!
     override class func awakeFromNib() {
         //Do things
     }

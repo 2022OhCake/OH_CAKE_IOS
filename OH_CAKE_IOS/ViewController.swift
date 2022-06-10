@@ -23,6 +23,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     @IBOutlet weak var registradoLabel: UILabel!
     @IBOutlet weak var crearcuentaBtn: UIButton!
+    var tartas:[[String:Any]] = [[:]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +46,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
  
         //self.defaults.set(true, forKey: "logued")
         
-        
+        self.getTartas()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -125,6 +126,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         if collectionView == ofertasCollection {
             
             let ofertas = collectionView.dequeueReusableCell(withReuseIdentifier: "ofertascelda", for: indexPath) as! OfertasCell
+            if tartas.count > 1{
+                let urlString = tartas[indexPath.row]["image"] as! String
+                guard let url = URL(string: urlString) else {return ofertas}
+                
+                ofertas.foto_ofertas.load(url: url)
+            }
+            
             
             return ofertas
         }
@@ -137,6 +145,51 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             return mejores
         }
         
+    }
+    
+    
+    func getTartas(){
+        let urlString = "http://rumpusroom.es/tfc/back_cake_api_panels/public/api/defaultcakecategory/5"
+        
+        guard let url = URL(string: urlString) else {return}
+        
+        var request = URLRequest(url: url)
+        
+        request.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: request){(data,response,error) in
+
+            //Si el error no es nulo que nos diga que está pasando
+            if error != nil {
+                print ("Error: \(error!.localizedDescription)")
+            }
+            //Si la respuesta es nula,que nos digo que no hay respuesta
+            if response != nil {
+                print (response ?? "No se ha obtenido respuesta")
+            }
+            if let res = response as? HTTPURLResponse {
+                print("Status code: \(res.statusCode)")
+            }
+            
+            guard let datos = data else {return}
+            
+            do{
+                let cosas = try JSONSerialization.jsonObject(with: datos, options: .fragmentsAllowed) as! [String:Any]
+                
+                //Asigno los datos de las tartas de esta categoria
+                self.tartas = cosas["default_cakes"] as! [[String : Any]]
+                
+                DispatchQueue.main.async {
+                    //Actualizo la tabla
+                    self.ofertasCollection.reloadData()
+                }
+                
+            }
+            catch{
+                print("Error: \(error)")
+            }
+
+        }.resume()
     }
     
     
