@@ -9,6 +9,7 @@ import UIKit
 
 class MejoresCell: UICollectionViewCell {
     
+    @IBOutlet weak var foto_mejor: UIImageView!
     
     @IBAction func VerButton(_ sender: Any) {
         

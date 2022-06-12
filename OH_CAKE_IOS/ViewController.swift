@@ -95,7 +95,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
         
         else{
-            return 10
+            return 5
         }
     }
     
@@ -141,6 +141,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
             //Si no, instancia la otra
             let mejores = collectionView.dequeueReusableCell(withReuseIdentifier: "mejorCelda", for: indexPath) as! MejoresCell
+            
+            if tartas.count > 1{
+                let urlString = tartas[indexPath.row]["image"] as! String
+                guard let url = URL(string: urlString) else {return mejores}
+                
+                mejores.foto_mejor.load(url: url)
+            }
             
             return mejores
         }
